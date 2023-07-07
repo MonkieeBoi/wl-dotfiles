@@ -56,7 +56,7 @@ shopt -s checkwinsize
 # esac
 
 export PATH="$HOME/.local/bin:$PATH"
-# export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export SUDO_ASKPASS="$HOME/.local/bin/tofi-pass"
 
 # Autocompletion for aliases
 _completion_loader git
