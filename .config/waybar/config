@@ -1,0 +1,115 @@
+{
+	"layer": "top",
+	"position": "top",
+    "height": 17,
+
+	"modules-left": [
+	],
+	"modules-center": [
+		"custom/left-arrow",
+		"clock#1",
+		"custom/left-arrow-alt",
+		"custom/left-arrow",
+		"clock#2",
+		"custom/right-arrow",
+		"custom/right-arrow-alt",
+		"clock#3",
+		"custom/right-arrow"
+	],
+	"modules-right": [
+		"custom/left-arrow",
+		"wireplumber",
+		"custom/left-arrow-alt",
+		"custom/left-arrow",
+		"memory",
+		"custom/left-arrow-alt",
+		"custom/left-arrow",
+		"cpu",
+		"custom/left-arrow-alt",
+		"custom/left-arrow",
+		"battery",
+		"custom/left-arrow-alt",
+		"custom/left-arrow",
+		"network",
+		"tray"
+	],
+
+	"custom/left-arrow": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-alt": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-alt": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"clock#1": {
+		"format": "{:󰃶 %A}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:󰅐 %H:%M:%S}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{: %m.%d.%y}",
+		"tooltip": false
+	},
+
+	"wireplumber": {
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟",
+		"scroll-step": 5,
+		"on-click": "pactl set-sink-mute 0 toggle",
+		"on-click-right": "qpwgraph",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+	},
+	"memory": {
+		"interval": 5,
+		"format": " {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "󰍛 {usage}%"
+	},
+	"battery": {
+		"states": {
+			"high": 100,
+            "normal": 79,
+			"low": 20,
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			" ",
+			" ",
+			" ",
+			" ",
+			" "
+		]
+	},
+    "network": {
+        "format": "{icon}",
+        "tooltip-format": "{icon} {essid} {ipaddr}",
+		"format-icons": [
+			"󰖪 ",
+			"󰖩 "
+		]
+    },
+	"tray": {
+		"icon-size": 15,
+        "spacing": 7,
+        "show-passive-items": true
+	}
+}

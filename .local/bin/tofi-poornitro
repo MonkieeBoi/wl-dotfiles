@@ -1,0 +1,8 @@
+#!/bin/sh
+window_class="discord"
+emote_dir=$HOME/Pictures/emotes/
+
+hyprctl activewindow | grep $window_class || exit 1
+
+img=$(ls $emote_dir -1 | sed 's/.png$//g' | tofi)'.png'
+wl-copy < $emote_dir/$img

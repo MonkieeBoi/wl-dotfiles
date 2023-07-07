@@ -1,0 +1,70 @@
+* {
+	font-size: 12px;
+	font-family: JetBrains Mono Nerd Font;
+}
+
+window#waybar {
+	background: #2e3440;
+	color: #fff;
+}
+
+#custom-right-arrow,
+#custom-left-arrow {
+	color: #4c566a;
+}
+#custom-right-arrow-alt,
+#custom-left-arrow-alt {
+	color: #2e3440;
+	background: #4c566a;
+}
+
+#clock.1,
+#clock.2,
+#clock.3,
+#wireplumber,
+#memory,
+#cpu,
+#battery,
+#network,
+#tray {
+	background: #4c566a;
+    padding-right: 5px;
+}
+
+/*
+#wireplumber {
+	color: #81a1c1;
+}
+#memory {
+	color: #88c0d0;
+}
+#cpu {
+	color: #cba6f7;
+}
+#battery {
+	color: #aebe8c;
+}
+#network {
+	color: #ebcb8b;
+}
+*/
+
+#clock,
+#wireplumber,
+#memory,
+#cpu,
+#battery {
+	padding: 0 8px;
+}
+
+#network {
+    padding: 0 5px
+}
+
+#battery.charging.high {
+    color: #aebe8c;
+}
+
+#battery.discharging.low {
+    color: #BF616A;
+}

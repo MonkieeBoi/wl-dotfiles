@@ -1,0 +1,10 @@
+#!/bin/sh
+file="$(xdg-user-dir PICTURES)/Screenshots/$(date +'Screenshot %y-%m-%d %X.png')"
+case "$1" in
+        s) grim -g "$(slurp)" - | wl-copy ; exit;;
+        f) grim - | wl-copy ; exit;;
+        ss) grim -g "$(slurp)" "$file";;
+        fs) grim "$file";;
+        *) exit;;
+esac
+notify-send -i "$file" "Screenshot saved"

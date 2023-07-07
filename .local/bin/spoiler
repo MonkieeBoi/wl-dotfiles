@@ -1,0 +1,2 @@
+#!/bin/sh
+tofi --prompt "String to spoiler" --require-match false <&- | sed 's/\(.\)/||\1||/g' | wl-copy

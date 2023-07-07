@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Kaomojis from http://kaomoji.ru/en/
+
+category=$(ls ~/.local/share/kaomoji | tofi -c ~/.config/tofi/vert)
+
+[ -z "$category" ] && exit
+
+kaomoji=$(tofi -c ~/.config/tofi/vert < "$HOME/.local/share/kaomoji/$category" )
+
+[ -z "$kaomoji" ] && exit
+
+printf "$kaomoji" | wl-copy
+notify-send -a 'Kaomoji Selected' "$kaomoji copied to clipboard"
