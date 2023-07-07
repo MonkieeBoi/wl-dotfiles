@@ -1,2 +1,2 @@
 #!/bin/sh
-tofi --hide-input true --prompt-text "$1" --require-match false <&- && echo
+tofi --hide-input true --prompt-text "$1" --require-match false <&- && cat /dev/null
