@@ -49,7 +49,7 @@
     # --- Text --- #
 
     # Set the font
-    font = "JetBrainsMono Nerd Font 11"
+    font = "JetBrainsMono Nerd Font 10"
 
     # Set line height to font height
     line_height = 0

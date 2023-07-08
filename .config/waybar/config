@@ -101,12 +101,11 @@
         ]
     },
     "network": {
-        "format": "{icon}",
-        "tooltip-format": "{icon} {essid} {ipaddr}",
-        "format-icons": [
-            "󰖪 ",
-            "󰖩 "
-        ]
+        "format": "󰖩 ",
+        "format-disconnected": "󰖪 ",
+        "format-disabled": "󰖪 ",
+        "tooltip-format": "󰖩 {essid} {ipaddr}",
+        "tooltip-format-disconnected": "󰖪"
     },
     "tray": {
         "icon-size": 15,
