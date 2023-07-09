@@ -4,4 +4,4 @@ if [ "$animate" = 1 ] ; then
     hyprctl keyword animations:enabled 0
     exit
 fi
-hyprctl reload
+hyprctl keyword animations:enabled 1
