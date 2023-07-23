@@ -2417,9 +2417,6 @@ config.bind(',p', 'mode-leave',  mode='passthrough')
 config.unbind('<Shift-Escape>', 'passthrough')
 
 # Fixes some issues with tetr.io
-config.bind('a', 'fake-key a', mode='passthrough')
-config.bind('s', 'fake-key s', mode='passthrough')
-config.bind('d', 'fake-key d', mode='passthrough')
 config.bind('A', 'fake-key A', mode='passthrough')
 config.bind('S', 'fake-key S', mode='passthrough')
 config.bind('D', 'fake-key D', mode='passthrough')
