@@ -1,64 +1,64 @@
 * {
-	font-size: 12px;
-	font-family: JetBrains Mono Nerd Font;
+    font-size: 12px;
+    font-family: "JetBrains Mono Nerd Font";
+    min-height: 0;
 }
 
 window#waybar {
-	background: #2e3440;
-	color: #fff;
+    background: #2e3440;
+    color: #fff;
 }
 
 #custom-right-arrow,
 #custom-left-arrow {
-	color: #4c566a;
+    color: #4c566a;
 }
 #custom-right-arrow-alt,
 #custom-left-arrow-alt {
-	color: #2e3440;
-	background: #4c566a;
+    color: #2e3440;
+    background: #4c566a;
 }
 
-#clock.1,
-#clock.2,
-#clock.3,
-#wireplumber,
-#memory,
-#cpu,
-#battery,
-#network,
-#tray {
-	background: #4c566a;
-    padding-right: 5px;
+#custom-logo {
+    background: #4c566a;
+    padding: 0 2px 0 6px;
 }
-
-/*
-#wireplumber {
-	color: #81a1c1;
-}
-#memory {
-	color: #88c0d0;
-}
-#cpu {
-	color: #cba6f7;
-}
-#battery {
-	color: #aebe8c;
-}
-#network {
-	color: #ebcb8b;
-}
-*/
 
 #clock,
 #wireplumber,
 #memory,
 #cpu,
 #battery {
-	padding: 0 8px;
+    background: #4c566a;
+    padding: 0 8px;
+}
+
+/*
+#wireplumber {
+    color: #81a1c1;
+}
+#memory {
+    color: #88c0d0;
+}
+#cpu {
+    color: #cba6f7;
+}
+#battery {
+    color: #aebe8c;
+}
+#network {
+    color: #ebcb8b;
+}
+*/
+
+#tray,
+#network {
+    background: #4c566a;
+    padding-right: 5px
 }
 
 #network {
-    padding: 0 5px
+    padding-left: 5px
 }
 
 #battery.charging.high {

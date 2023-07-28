@@ -1,0 +1,5 @@
+#!/bin/sh
+bm=$(grep -v '^#' ~/.local/share/bookmarks | tofi -c ~/.config/tofi/vert --prompt-text 'Bookmark' | cut -d' ' -f2)
+[ -z "$bm" ] && exit 1
+[ "$(printf "Browser\nClipboard" | dmenu -i -p "Copy or open in browser?")" = "Clipboard" ] && printf '%s' "$bm" | wl-copy && exit 0
+$BROWSER "$bm"

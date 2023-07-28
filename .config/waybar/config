@@ -4,6 +4,8 @@
     "height": 17,
 
     "modules-left": [
+        "custom/logo",
+        "custom/right-arrow"
     ],
     "modules-center": [
         "custom/left-arrow",
@@ -34,6 +36,10 @@
         "tray"
     ],
 
+    "custom/logo": {
+        "format": " ",
+        "tooltip": false
+    },
     "custom/left-arrow": {
         "format": "",
         "tooltip": false
