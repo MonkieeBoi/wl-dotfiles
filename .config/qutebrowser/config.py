@@ -2420,6 +2420,9 @@ config.unbind('<Shift-Escape>', 'passthrough')
 config.bind('A', 'fake-key A', mode='passthrough')
 config.bind('S', 'fake-key S', mode='passthrough')
 config.bind('D', 'fake-key D', mode='passthrough')
+config.bind('Z', 'fake-key Z', mode='passthrough')
+config.bind('X', 'fake-key X', mode='passthrough')
+config.bind('C', 'fake-key C', mode='passthrough')
 
 
 ## Bindings for prompt mode
