@@ -44,6 +44,7 @@ pipewire-alsa
 pipewire-audio
 pipewire-jack
 pipewire-pulse
+playerctl
 pulsemixer
 python-adblock
 python-pip
@@ -65,6 +66,7 @@ upower
 vifm
 vim
 wf-recorder
+wget
 when
 wireplumber
 wl-clipboard
