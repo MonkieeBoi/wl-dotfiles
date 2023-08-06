@@ -1,70 +1,72 @@
+@define-color nord00 #2e3440;
+@define-color nord01 #3b4252;
+@define-color nord02 #434c5e;
+@define-color nord03 #4c566a;
+@define-color nord04 #d8dee9;
+@define-color nord05 #e5e9f0;
+@define-color nord06 #eceff4;
+@define-color nord07 #8fbcbb;
+@define-color nord08 #88c0d0;
+@define-color nord09 #81a1c1;
+@define-color nord10 #5e81ac;
+@define-color nord11 #bf616a;
+@define-color nord12 #d08770;
+@define-color nord13 #ebcb8b;
+@define-color nord14 #a3be8c;
+@define-color nord15 #b48ead;
+
 * {
     font-size: 12px;
-    font-family: "JetBrains Mono Nerd Font";
+    font-family: "JetBrainsMono Nerd Font";
     min-height: 0;
 }
 
-window#waybar {
-    background: #2e3440;
-    color: #fff;
+#waybar {
+    color: @nord06;
+    background: @nord01;
 }
 
-#custom-right-arrow,
-#custom-left-arrow {
-    color: #4c566a;
-}
-#custom-right-arrow-alt,
-#custom-left-arrow-alt {
-    color: #2e3440;
-    background: #4c566a;
+#workspaces button {
+    margin: 2px 0;
+    padding: 0 3px;
 }
 
-#custom-logo {
-    background: #4c566a;
-    padding: 0 2px 0 6px;
+#workspaces button:hover {
+    color: @nord06;
+    background-color: @nord09;
 }
 
-#clock,
-#wireplumber,
-#memory,
-#cpu,
-#battery {
-    background: #4c566a;
-    padding: 0 8px;
+#workspaces button.active {
+    border-radius: 4px;
+    background-color: @nord03;
 }
 
-/*
-#wireplumber {
-    color: #81a1c1;
-}
-#memory {
-    color: #88c0d0;
-}
-#cpu {
-    color: #cba6f7;
-}
-#battery {
-    color: #aebe8c;
-}
-#network {
-    color: #ebcb8b;
-}
-*/
-
-#tray,
-#network {
-    background: #4c566a;
-    padding-right: 5px
+#workspaces button.urgent {
+    background-color: @nord11;
 }
 
-#network {
-    padding-left: 5px
+#tray {
+    margin: 2px 4px 2px 2px;
+    padding: 0 6px;
+    border-radius: 4px;
+    background-color: @nord03;
+}
+
+#battery, #cpu, #memory, #network, #wireplumber, #clock, #custom-logo {
+    margin: 2px 2px;
+    padding: 0 10px 0 7px;
+    background-color: @nord03;
+    border-radius: 4px;
+}
+
+#custom-logo, #network {
+    background-color: transparent;
 }
 
 #battery.charging.high {
-    color: #aebe8c;
+    color: @nord14;
 }
 
 #battery.discharging.low {
-    color: #BF616A;
+    color: @nord11;
 }

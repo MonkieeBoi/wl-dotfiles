@@ -1,60 +1,49 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 17,
-
-    "modules-left": [
-        "custom/logo",
-        "custom/right-arrow"
-    ],
-    "modules-center": [
-        "custom/left-arrow",
-        "clock#1",
-        "custom/left-arrow-alt",
-        "custom/left-arrow",
-        "clock#2",
-        "custom/right-arrow",
-        "custom/right-arrow-alt",
-        "clock#3",
-        "custom/right-arrow"
-    ],
-    "modules-right": [
-        "custom/left-arrow",
-        "wireplumber",
-        "custom/left-arrow-alt",
-        "custom/left-arrow",
-        "memory",
-        "custom/left-arrow-alt",
-        "custom/left-arrow",
-        "cpu",
-        "custom/left-arrow-alt",
-        "custom/left-arrow",
-        "battery",
-        "custom/left-arrow-alt",
-        "custom/left-arrow",
-        "network",
-        "tray"
-    ],
+    "height": 23,
+    "modules-left": ["custom/logo", "wlr/workspaces", "network"],
+    "modules-center": ["clock#1", "clock#2", "clock#3"],
+    "modules-right": ["wireplumber", "memory", "cpu", "battery", "tray"],
 
     "custom/logo": {
-        "format": " ",
+        "format": "",
         "tooltip": false
     },
-    "custom/left-arrow": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/left-arrow-alt": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/right-arrow": {
-        "format": "",
-        "tooltip": false
-    },
-    "custom/right-arrow-alt": {
-        "format": "",
-        "tooltip": false
+
+     "wlr/workspaces": {
+         "disable-scroll": true,
+         "on-click": "activate",
+         "sort-by-number": true,
+         "format": "{icon}",
+         "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
+         "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
+         "format-icons": {
+             "1": "<span size='8.4pt'>一</span>",
+             "2": "<span size='8.4pt'>二</span>",
+             "3": "<span size='8.4pt'>三</span>",
+             "4": "<span size='8.4pt'>四</span>",
+             "5": "<span size='8.4pt'>五</span>",
+             "6": "<span size='8.4pt'>六</span>",
+             "7": "<span size='8.4pt'>七</span>",
+             "8": "<span size='8.4pt'>八</span>",
+             "9": "<span size='8.4pt'>九</span>",
+         },
+         "persistent_workspaces": {
+             "1": [],
+             "2": [],
+             "3": [],
+             "4": [],
+             "5": [],
+         }
+     },
+
+    "network": {
+        "format": "󰖩",
+        "format-disconnected": "󰖪",
+        "format-disabled": "󰖪",
+        "tooltip-format": "󰖩 {essid} {ipaddr}",
+        "tooltip-format-disconnected": "󰖪",
     },
 
     "clock#1": {
@@ -83,39 +72,30 @@
             ""
         ]
     },
+
     "memory": {
         "interval": 30,
-        "format": " {}%"
+        "format": "{}% "
     },
+
     "cpu": {
         "interval": 30,
-        "format": "󰍛 {usage}%"
+        "format": "{usage}% 󰍛",
     },
+
     "battery": {
         "states": {
             "high": 100,
             "normal": 79,
             "low": 20,
         },
-        "format": "{icon} {capacity}%",
-        "format-icons": [
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
-        ]
+        "format": "{capacity}% {icon} ",
+        "format-icons": ["", "", "", "", ""]
     },
-    "network": {
-        "format": "󰖩 ",
-        "format-disconnected": "󰖪 ",
-        "format-disabled": "󰖪 ",
-        "tooltip-format": "󰖩 {essid} {ipaddr}",
-        "tooltip-format-disconnected": "󰖪"
-    },
+
     "tray": {
         "icon-size": 15,
-        "spacing": 7,
-        "show-passive-items": true
+        "spacing": 6
     }
 }
+
