@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro);
 
 :root {
   --color-bg: #2e3440;
@@ -8,7 +7,7 @@
   --color-link-hover: #8fbcbb;
   --color-link: #81a1c1;
 
-  --font-family: "Source Code Pro", monospace;
+  --font-family: "monospace";
 }
 
 * {
