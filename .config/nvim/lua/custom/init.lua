@@ -20,6 +20,8 @@ opt.shortmess:remove "I"
 -- don't go to previous/next line with h,l,left arrow and right arrow
 opt.whichwrap:remove "<>[]hl"
 
+opt.dictionary = "/usr/share/dict/british"
+
 -------------------------------------- autocmds ------------------------------------------
 
 autocmd("VimLeave", {

@@ -10,5 +10,5 @@ export XMODIFIERS='@im=fcitx'
 source "$HOME/.local/share/nord-tty"
 [[ -f ~/.bashrc ]] && . "$HOME/.bashrc"
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    Hyprland
+    exec dbus-run-session Hyprland
 fi

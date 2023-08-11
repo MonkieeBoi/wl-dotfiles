@@ -12,9 +12,7 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
+          require "custom.configs.null-ls" end, },
     },
     config = function()
       require "plugins.configs.lspconfig"
@@ -46,6 +44,15 @@ local plugins = {
   {
     "ThePrimeagen/vim-be-good",
     lazy = false,
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    build = "cd app && npm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
   },
 
   -- To make a plugin not be loaded
