@@ -3,12 +3,13 @@ file="$(xdg-user-dir PICTURES)/Screenshots/$(date +'Screenshot %y-%m-%d %X.png')
 hyprpicker -rz &
 picker_pid=$!
 case "$1" in
-        s) grim -g "$(slurp)" - | wl-copy;;
-        f) grim - | wl-copy;;
-        ss) grim -g "$(slurp)" "$file";;
-        fs) grim "$file";;
+        s) grim -g "$(slurp)" /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
+        f) grim /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
+        ss) grim -g "$(slurp)" "$file" && wl-copy < "$file";;
+        fs) grim "$file" && wl-copy < "$file";;
         ds) grim -g "$(slurp)" - | swappy -f - &;;
         df) grim - | swappy -f - &;;
 esac
 kill $picker_pid
 [ -f "$file" ] && notify-send -i "$file" "Screenshot saved"
+[ -f "/tmp/screenshot.png" ] && notify-send -i "/tmp/screenshot.png" "Screenshot copied" && rm "/tmp/screenshot.png"
