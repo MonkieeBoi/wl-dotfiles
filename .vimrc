@@ -31,4 +31,5 @@
     " let g:lightline = {'colorscheme': 'nord'}
     " set laststatus=2
     " colorscheme nord
+    set term=st-256color
     set t_Co=16
