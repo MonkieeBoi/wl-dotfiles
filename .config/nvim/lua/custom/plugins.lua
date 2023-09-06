@@ -38,7 +38,17 @@ local plugins = {
 
   {
     "vimwiki/vimwiki",
-    lazy = false,
+    event = "BufRead *.md",
+    keys = { "<leader>ww" },
+    init = function()
+        vim.g.vimwiki_list = {
+            {
+                path = "~/Documents/vimwiki/",
+                syntax = "markdown",
+                ext = ".md"
+            }
+        }
+    end,
   },
 
   {

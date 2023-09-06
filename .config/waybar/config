@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 23,
-    "modules-left": ["custom/logo", "wlr/workspaces", "network"],
+    "modules-left": ["custom/logo", "hyprland/workspaces", "network"],
     "modules-center": ["clock#1", "clock#2", "clock#3"],
     "modules-right": ["wireplumber", "memory", "cpu", "battery", "tray"],
 
@@ -11,7 +11,7 @@
         "tooltip": false
     },
 
-     "wlr/workspaces": {
+     "hyprland/workspaces": {
          "disable-scroll": true,
          "on-click": "activate",
          "sort-by-number": true,
@@ -30,11 +30,7 @@
              "9": "<span size='8.4pt'>九</span>",
          },
          "persistent_workspaces": {
-             "1": [],
-             "2": [],
-             "3": [],
-             "4": [],
-             "5": [],
+             "*": 5,
          }
      },
 
