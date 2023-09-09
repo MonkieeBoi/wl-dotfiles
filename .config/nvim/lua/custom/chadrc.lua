@@ -12,6 +12,11 @@ M.ui = {
   hl_add = highlights.add,
 
   transparency = true,
+  tabufline = {
+    overriden_modules = function(modules)
+      table.remove(modules, 4)
+    end,
+  },
 }
 
 M.plugins = "custom.plugins"
