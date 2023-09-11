@@ -2412,8 +2412,8 @@ config.bind(',c', 'spawn --userscript rebuild-qutebrowser-grease-styles.py', mod
 
 ## Bindings for passthrough mode
 # config.bind('<Shift-Escape>', 'mode-leave', mode='passthrough')
-config.bind(',p', 'mode-enter passthrough')
-config.bind(',p', 'mode-leave',  mode='passthrough')
+config.bind('<Alt-Escape>', 'mode-enter passthrough')
+config.bind('<Alt-Escape>', 'mode-leave',  mode='passthrough')
 config.unbind('<Shift-Escape>', 'passthrough')
 
 # Fixes some issues with tetr.io
