@@ -5,4 +5,4 @@ chosen=$(cut -d ';' -f1 ~/.local/share/icons/* | tofi -c ~/.config/tofi/vert | s
 [ -z "$chosen" ] && exit
 
 printf "$chosen" | wl-copy
-notify-send "'$chosen' copied to clipboard."
+notify-send "$chosen copied to clipboard."
