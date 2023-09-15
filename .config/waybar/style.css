@@ -23,8 +23,10 @@
 
 #waybar {
     color: @nord06;
-    background: @nord01;
+    background: @nord00;
 }
+
+/* --------- Workspaces --------- */
 
 #workspaces button {
     margin: 2px 0;
@@ -37,7 +39,7 @@
 }
 
 #workspaces button.active {
-    border-radius: 4px;
+    border-radius: 2px;
     background-color: @nord03;
 }
 
@@ -45,28 +47,43 @@
     background-color: @nord11;
 }
 
-#tray {
-    margin: 2px 4px 2px 2px;
+/* --------- Icons --------- */
+
+#tray, #wireplumber, #network {
     padding: 0 6px;
-    border-radius: 4px;
-    background-color: @nord03;
 }
 
-#battery, #cpu, #memory, #network, #wireplumber, #clock, #custom-logo {
+#icons {
+    margin: 2px;
+    margin-right: 4px;
+    background-color: @nord03;
+    border-radius: 4px;
+    padding: 0;
+}
+
+/* --------- General --------- */
+
+#battery, #cpu, #memory, #clock, #custom-logo, #window {
     margin: 2px 2px;
-    padding: 0 10px 0 7px;
+    padding: 0 8px 0 6px;
     background-color: @nord03;
     border-radius: 4px;
 }
 
-#custom-logo, #network {
+/* --------- Misc --------- */
+
+#window {
+    padding: 0;
+}
+
+#custom-logo, #window {
     background-color: transparent;
 }
 
-#battery.charging.high {
+#battery.charging.high, #network {
     color: @nord14;
 }
 
-#battery.discharging.low {
+#battery.discharging.low, #network.disconnected {
     color: @nord11;
 }

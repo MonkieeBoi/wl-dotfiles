@@ -2,13 +2,23 @@
     "layer": "top",
     "position": "top",
     "height": 23,
-    "modules-left": ["custom/logo", "hyprland/workspaces", "network"],
+    "modules-left": ["custom/logo", "hyprland/window"],
     "modules-center": ["clock#1", "clock#2", "clock#3"],
-    "modules-right": ["wireplumber", "memory", "cpu", "battery", "tray"],
+    "modules-right": ["memory", "cpu", "battery", "group/icons"],
 
     "custom/logo": {
         "format": "",
         "tooltip": false
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 50,
+        "rewrite": {
+            "/home/.+/(.*)": "$1",
+            "(?:.* \\| (.*)|([^\\|]*)) - (Discord)": "$1$2 — $3",
+            "(.*) - (qutebrowser)": "$1 — $2",
+        }
     },
 
      "hyprland/workspaces": {
@@ -28,6 +38,7 @@
              "7": "<span size='8.4pt'>七</span>",
              "8": "<span size='8.4pt'>八</span>",
              "9": "<span size='8.4pt'>九</span>",
+             "10": "<span size='8.4pt'>十</span>",
          },
          "persistent_workspaces": {
              "*": 5,
@@ -57,15 +68,16 @@
     },
 
     "wireplumber": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}",
         "format-muted": "󰝟",
         "scroll-step": 5,
         "on-click": "pactl set-sink-mute 0 toggle",
-        "on-click-right": "qpwgraph",
         "format-icons": [
             "",
             "",
-            ""
+            "",
+            "",
+            "",
         ]
     },
 
@@ -92,6 +104,15 @@
     "tray": {
         "icon-size": 15,
         "spacing": 6
+    },
+
+    "group/icons": {
+        "orientation": "horizontal",
+        "modules": [
+            "wireplumber",
+            "network",
+            "tray",
+        ]
     }
 }
 
