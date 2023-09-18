@@ -18,6 +18,10 @@ M.general = {
   }
 }
 
--- more keybinds!
+M.tabufline = {
+  n = {
+    ["<leader>x"] = { ":bd<CR>", "Delete buffer" },
+  },
+}
 
 return M

@@ -28,3 +28,13 @@ autocmd("VimLeave", {
   pattern = "*",
   command = "set guicursor=n:ver25-blinkon1",
 })
+
+autocmd({ "BufAdd", "BufEnter", "BufDelete" }, {
+  pattern = "*",
+  callback = function()
+    local new_showtabline = #vim.t.bufs > 1 and 2 or 0
+    if new_showtabline ~= vim.opt.showtabline then
+      vim.opt.showtabline = new_showtabline
+    end
+  end,
+})
