@@ -13,7 +13,8 @@ M.treesitter = {
     "markdown_inline",
     "bibtex",
     "latex",
-    "java"
+    "java",
+    "bash"
   },
   indent = {
     enable = true,
@@ -39,6 +40,7 @@ M.mason = {
     "pylint",
     "python-lsp-server",
     "jdtls",
+    "bash-language-server",
   },
 }
 

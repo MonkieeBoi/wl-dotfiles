@@ -55,9 +55,6 @@ shopt -s checkwinsize
 #     xterm-color|*-256color) color_prompt=yes;;
 # esac
 
-export PATH="$HOME/.local/bin:$PATH"
-export SUDO_ASKPASS="$HOME/.local/bin/tofi-pass"
-
 # Autocompletion for aliases
 _completion_loader git
 
