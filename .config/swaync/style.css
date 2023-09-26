@@ -1,0 +1,254 @@
+@define-color cc-bg                 alpha(#2e3440, 0.75);
+@define-color noti-border-color     alpha(#ffffff, 0.15);
+@define-color noti-bg               alpha(#2e3440, 1.0);
+@define-color noti-bg-lighter       alpha(#3b4252, 0.45);
+@define-color noti-bg-hover         alpha(#1b1b2b, 1.0);
+@define-color noti-bg-focus         alpha(#1b1b1b, 0.6);
+@define-color noti-close-bg         alpha(#ffffff, 0.1);
+@define-color noti-close-bg-hover   alpha(#ffffff, 0.15);
+@define-color text-color            alpha(#d8dee9, 1.0);
+@define-color text-color-disabled   alpha(#ffffff, 1.0);
+@define-color border-color          alpha(#3b4252, 1.0);
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-weight: bolder;
+}
+
+.control-center .notification-row:focus {
+    background: @cc-bg;
+}
+
+.control-center .notification-row:hover {
+    background: @noti-bg-lighter;
+}
+
+.notification-row {
+    outline: none;
+}
+
+.notification {
+    border-radius: 6px;
+    margin: 10px;
+    padding: 0;
+    border: 3px solid @border-color;
+    box-shadow: 0px 0px 3px @border-color;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.close-button {
+    background: @noti-close-bg;
+    color: @text-color;
+    text-shadow: none;
+    padding: 0;
+    border-radius: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    box-shadow: none;
+    border: none;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.close-button:hover {
+    box-shadow: none;
+    background: @noti-close-bg-hover;
+    transition: all 0.15s ease-in-out;
+    border: none;
+}
+
+.notification-default-action,
+.notification-action {
+    padding: 4px;
+    margin: 0;
+    box-shadow: none;
+    background: @noti-bg;
+    border: none;
+    color: @text-color;
+    transition: all 0.15s ease-in-out;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    -gtk-icon-effect: none;
+    background: @noti-bg-hover;
+}
+
+.notification-default-action {
+    border-radius: 3px;
+}
+
+.notification-default-action:not(:only-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.notification-action {
+    border-radius: 0;
+    border-top: none;
+    border-right: none;
+}
+
+.notification-action:first-child {
+    border-bottom-left-radius: 5px;
+    background: #1b1b2b;
+}
+
+.notification-action:last-child {
+    border-bottom-right-radius: 5px;
+    background: #1b1b2b;
+}
+
+.inline-reply {
+    margin-top: 8px;
+}
+
+.inline-reply-entry {
+    background: @noti-bg-lighter;
+    color: @text-color;
+    caret-color: @text-color;
+    border: 1px solid @noti-border-color;
+    border-radius: 6px;
+}
+
+.inline-reply-button {
+    margin-left: 4px;
+    background: @noti-bg;
+    border: 1px solid @noti-border-color;
+    border-radius: 6px;
+    color: @text-color;
+}
+
+.inline-reply-button:disabled {
+    background: initial;
+    color: @text-color-disabled;
+    border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+    background: @noti-bg-hover;
+}
+
+.body-image {
+    margin-top: 6px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.summary {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @text-color;
+    text-shadow: none;
+}
+
+.time {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @text-color;
+    text-shadow: none;
+    margin-right: 18px;
+}
+
+.body {
+    font-size: 15px;
+    font-weight: 400;
+    background: transparent;
+    color: @text-color;
+    text-shadow: none;
+}
+
+.control-center {
+    background: @cc-bg;
+    border: 2px solid @border-color;
+    border-radius: 6px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.blank-window {
+    background: alpha(black, 0.25);
+}
+
+.widget-title {
+    color: @text-color;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+.widget-dnd {
+    color: @text-color;
+    margin: 10px;
+    font-size: 1.1rem;
+}
+
+.widget-dnd > switch {
+    font-size: initial;
+    border-radius: 6px;
+    background: @noti-bg;
+    border: 1px solid @noti-border-color;
+    box-shadow: none;
+}
+
+.widget-dnd > switch:checked {
+    background: #5e81ac;
+}
+
+.widget-dnd > switch slider {
+    background: @noti-bg-hover;
+    border-radius: 6px;
+}
+
+.widget-buttons-grid {
+    font-size: x-large;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 6px;
+    background: @noti-bg-lighter;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    margin: 3px;
+    background: @cc-bg;
+    border-radius: 6px;
+    color: @text-color;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @noti-bg-hover;
+}
+
+.widget-volume {
+    background: @noti-bg-lighter;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 6px;
+    font-size: x-large;
+    color: @text-color;
+}
+
+.widget-backlight {
+    background: @noti-bg-lighter;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 6px;
+    font-size: x-large;
+    color: @text-color;
+}
