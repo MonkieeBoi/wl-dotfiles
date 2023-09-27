@@ -3,7 +3,6 @@
 @define-color noti-bg               alpha(#2e3440, 1.0);
 @define-color noti-bg-lighter       alpha(#3b4252, 0.45);
 @define-color noti-bg-hover         alpha(#1b1b2b, 1.0);
-@define-color noti-bg-focus         alpha(#1b1b1b, 0.6);
 @define-color noti-close-bg         alpha(#ffffff, 0.1);
 @define-color noti-close-bg-hover   alpha(#ffffff, 0.15);
 @define-color text-color            alpha(#d8dee9, 1.0);
@@ -73,14 +72,8 @@
     transition: all 0.15s ease-in-out;
 }
 
-.notification-default-action:hover,
-.notification-action:hover {
-    -gtk-icon-effect: none;
-    background: @noti-bg-hover;
-}
-
 .notification-default-action {
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 .notification-default-action:not(:only-child) {
@@ -128,10 +121,6 @@
     background: initial;
     color: @text-color-disabled;
     border: 1px solid transparent;
-}
-
-.inline-reply-button:hover {
-    background: @noti-bg-hover;
 }
 
 .body-image {
