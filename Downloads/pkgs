@@ -63,6 +63,8 @@ qutebrowser
 r
 realtime-privileges
 reflector
+ripgrep
+rubygems
 slurp
 sof-firmware
 steam
@@ -90,6 +92,7 @@ texlive-publishers
 thermald
 thunar
 thunderbird
+tmux
 ttf-jetbrains-mono-nerd
 tumbler
 unzip
