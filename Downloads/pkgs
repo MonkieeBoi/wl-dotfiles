@@ -9,11 +9,11 @@ discord
 dunst
 efibootmgr
 entr
-fcitx
-fcitx-anthy
-fcitx-configtool
-fcitx-qt5
-fcitx-qt6
+fcitx5-anthy
+fcitx5-configtool
+fcitx5-gtk
+fcitx5-nord
+fcitx5-qt
 ffmpegthumbnailer
 firefox
 foot
