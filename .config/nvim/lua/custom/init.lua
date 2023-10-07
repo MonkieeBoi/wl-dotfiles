@@ -38,3 +38,14 @@ autocmd({ "BufAdd", "BufEnter", "BufDelete" }, {
     end
   end,
 })
+
+-- Foot IME things
+autocmd("InsertEnter", {
+  pattern = "*",
+  command = "call chansend(v:stderr, \"\\e[?737769h\")",
+})
+
+autocmd("InsertLeave", {
+  pattern = "*",
+  command = "call chansend(v:stderr, \"\\e[?737769l\")",
+})
