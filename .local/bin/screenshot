@@ -7,7 +7,7 @@ case "$1" in
         f) grim /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
         ss) grim -g "$(slurp)" "$file" && wl-copy < "$file";;
         fs) grim "$file" && wl-copy < "$file";;
-        ds) grim -g "$(slurp)" - | swappy -f - &;;
+        ds) grim -g "$(slurp)" - | (swappy -f - &);;
         df) grim - | swappy -f - &;;
 esac
 kill $picker_pid
