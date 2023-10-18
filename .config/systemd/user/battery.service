@@ -3,10 +3,4 @@ Description=Battery notifications
 
 [Service]
 Type=simple
-#User=
-#Group=
 ExecStart=/home/monke/.local/bin/battery
-Restart=on-failure
-
-[Install]
-WantedBy=default.target

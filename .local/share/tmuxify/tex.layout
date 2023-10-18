@@ -1,0 +1,3 @@
+nvim 0* nvim *.tex
+entr 0 echo *.tex | entr -rcs 'pdflatex *.tex'
+pdf 0 zathura *.pdf

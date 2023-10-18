@@ -1,0 +1,62 @@
+#! /bin/bash
+# Slightly modified version of https://github.com/tonchis/tmuxify
+
+for file in "${PWD}/.tmuxify.layout" "${HOME}/.local/share/tmuxify/$1.layout"; do
+    test -f "${file}" && layout="${file}" && break
+done
+
+if [[ ! -f "${layout}" ]]; then
+    echo "Aborting. No layout file found."
+    exit 1
+fi
+
+session=${1:-$(basename "$PWD" | tr " ." -)}
+
+if ! tmux ls -F "#{session_name}" 2>/dev/null | grep -q "^$session$"; then
+    # shellcheck disable=SC2086
+    tmux $TMUX_OPTS new-session -s "$session" -d
+else
+    # shellcheck disable=SC2086
+    tmux $TMUX_OPTS attach -t "$session"
+    exit 0
+fi
+
+while read -r window pane command; do
+
+    [ -z "$window" ] || [ -z "$pane" ] || [ -z "$command" ] && continue
+
+    pane_number=${pane//[^0-9]*}
+    active=${pane//[^*]}
+
+    if [[ -n $active ]]; then
+        active_window=$window
+        active_pane=$pane_number
+    fi
+
+    if ! tmux list-windows -t "$session" -F "#{window_name}" | grep -q "^${window}$"; then
+        tmux new-window -a -t "$session" -n "$window" -c "$PWD"
+    fi
+
+    if ! tmux list-panes -t "$session":"$window" -F "#{pane_index}" | grep -q "^${pane_number}$"; then
+        tmux split-window -t "$session":"$window"
+    fi
+
+    tmux select-layout -t "$session":"$window" tiled > /dev/null
+
+    tmux send-keys -t "$session":"$window"."$pane_number" "$command" C-m
+done < "$layout"
+
+# The first window is never used. The specified window names in the layout create new windows.
+# Closing the first window will not renumber the existing ones. To fix that, set the following option
+#
+#     set-option -g renumber-windows on
+#
+
+tmux kill-window -t "$session":"$( tmux list-windows -t "$session" -F "#{window_index}" | head -n 1 )"
+
+tmux select-window -t "$session":"$active_window"
+
+tmux select-pane -t "$session":"$active_window"."$active_pane"
+
+# shellcheck disable=SC2086
+tmux $TMUX_OPTS attach-session -t "$session"

@@ -40,6 +40,7 @@ alias vi='nvim'
 alias tsm='transmission-remote'
 alias dvtm='dvtm -m ^w'
 alias c='when'
+alias t='tmuxify'
 alias onefetch='onefetch -t 2 7 7 4 4 7'
 
 # check the window size after each command and, if necessary,
