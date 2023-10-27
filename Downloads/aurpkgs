@@ -8,7 +8,6 @@ ps_mem
 qrcp
 simple-mtpfs
 swaylock-effects
-swaync
 tmux-bash-completion-git
 tofi
 tty-clock
@@ -17,6 +16,6 @@ vscodium-bin
 waybar-hyprland-git
 wev
 wine-lol-bin
-xwaylandvideobridge-cursor-mode-2-git
+xwaylandvideobridge-bin
 yay
 zoom

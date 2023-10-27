@@ -1,0 +1,8 @@
+#!/bin/sh
+while :
+do
+    dir=/sys/class/power_supply/BAT1/
+    [ "$(cat $dir/capacity)" -le 20 ] && [ "$(cat $dir/status)" = "Discharging" ] && notify-send -a 'Battery' "Battery Low"
+    [ "$(cat $dir/capacity)" -ge 80 ] && [ "$(cat $dir/status)" = "Charging" ] && notify-send -a 'Battery' "Battery High"
+    sleep 90
+done

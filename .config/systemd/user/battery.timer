@@ -1,9 +1,0 @@
-[Unit]
-Description=Check battery every 90s
-
-[Timer]
-OnActiveSec=0
-OnUnitActiveSec=90
-
-[Install]
-WantedBy=timers.target
