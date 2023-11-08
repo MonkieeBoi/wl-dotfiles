@@ -1,9 +1,11 @@
 auto-cpufreq
 catppuccin-mocha-grub-theme-git
 cava-git
+hyprland-git
 hyprpicker
 leagueoflegends-git
 nordic-theme
+obs-pipewire-audio-capture-bin
 ps_mem
 qrcp
 simple-mtpfs
@@ -14,7 +16,6 @@ tty-clock
 tty-share
 vscodium-bin
 waybar-hyprland-git
-wev
 wine-lol-bin
 xwaylandvideobridge-bin
 yay

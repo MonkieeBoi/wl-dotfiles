@@ -24,14 +24,11 @@ gradle
 grim
 grub
 gvfs
-hyprland
 imagemagick
 imv
 intel-ucode
 jdk-openjdk
 jdk8-openjdk
-jre-openjdk
-jre8-openjdk
 libsixel
 libva-intel-driver
 libvdpau-va-gl
@@ -61,7 +58,6 @@ python-pip
 qpwgraph
 qt5-wayland
 qutebrowser
-r
 realtime-privileges
 reflector
 ripgrep
@@ -102,8 +98,8 @@ unrar
 unzip
 upower
 v4l2loopback-dkms
-vifm
 vim
+wev
 wf-recorder
 wget
 when
