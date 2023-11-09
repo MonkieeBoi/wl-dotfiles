@@ -39,6 +39,6 @@ pacman -S - < ~/Downloads/pkgs
 
 **Audio Visualiser** - [CAVA](https://github.com/karlstav/cava)
 
-**Notifications** - [swaync](https://github.com/ErikReider/SwayNotificationCenter)
+**Notifications** - [dunst](https://dunst-project.org/)
 
 **Font** - [JetBrains Mono Nerd Font](https://www.nerdfonts.com/)
