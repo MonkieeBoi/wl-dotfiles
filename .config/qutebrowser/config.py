@@ -685,6 +685,8 @@ c.content.blocking.adblock.lists = [
         "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
         "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
         "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt",
+        "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2023.txt",
+        "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt"
 ]
 
 ## Enable the ad/host blocker
@@ -2331,6 +2333,7 @@ config.bind(',s', 'config-cycle statusbar.show in-mode never')
 config.bind(',t', 'config-cycle tabs.show always switching')
 config.bind(',r', 'hint --rapid')
 config.bind(',c', 'spawn --userscript rebuild-qutebrowser-grease-styles.py', mode='normal')
+config.bind(',b', 'config-cycle content.blocking.enabled true false')
 
 ## Bindings for caret mode
 # config.bind('$', 'move-to-end-of-line', mode='caret')
