@@ -26,7 +26,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export SUDO_ASKPASS="$HOME/.local/bin/tofi-pass"
 
 export NNN_FCOLORS="0B0B04060006060009060B06"
-export NNN_BMS="d:$HOME/Documents;D:$HOME/Downloads;v:$HOME/Videos;p:$HOME/Pictures;c:$HOME/Documents/Code/;C:$HOME/.config/"
+export NNN_BMS="d:$HOME/Documents;D:$HOME/Downloads;v:$HOME/Videos;p:$HOME/Pictures;c:$HOME/Documents/Code/;C:$HOME/.config/;l:$HOME/.local/"
 export NNN_PLUG='x:xdgdefault;p:getplugs;f:fzcd;m:nmount;e:suedit;w:wallpaper'
 export NNN_TRASH=1
 export NNN_OPTS='QR'
