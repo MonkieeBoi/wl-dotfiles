@@ -1,4 +1,4 @@
-export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share/"}
+export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME_HOME:="$HOME/.cache"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
@@ -26,7 +26,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export SUDO_ASKPASS="$HOME/.local/bin/tofi-pass"
 
 export NNN_FCOLORS="0B0B04060006060009060B06"
-export NNN_BMS="d:$HOME/Documents;D:$HOME/Downloads;v:$HOME/Videos;p:$HOME/Pictures;c:$HOME/Documents/Code/;C:$HOME/.config/;l:$HOME/.local/"
+export NNN_BMS="d:$HOME/Documents;D:$HOME/Downloads;v:$HOME/Videos;p:$HOME/Pictures;c:$HOME/Documents/Code;C:$HOME/.config;l:$HOME/.local"
 export NNN_PLUG='x:xdgdefault;p:getplugs;f:fzcd;m:nmount;e:suedit;w:wallpaper'
 export NNN_TRASH=1
 export NNN_OPTS='QR'

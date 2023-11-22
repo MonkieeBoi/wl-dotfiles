@@ -29,6 +29,7 @@ imv
 intel-ucode
 jdk-openjdk
 jdk8-openjdk
+jre8-openjdk
 libsixel
 libva-intel-driver
 libvdpau-va-gl
@@ -99,6 +100,7 @@ unzip
 upower
 v4l2loopback-dkms
 vim
+waybar
 wev
 wf-recorder
 wget
