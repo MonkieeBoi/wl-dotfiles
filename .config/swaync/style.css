@@ -10,7 +10,7 @@
 @define-color border-color          alpha(#3b4252, 1.0);
 
 * {
-    font-family: JetBrainsMono Nerd Font;
+    font-family: JetBrainsMono NF;
     font-weight: bolder;
 }
 
