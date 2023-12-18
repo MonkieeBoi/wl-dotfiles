@@ -54,11 +54,6 @@ local plugins = {
     },
 
     {
-        "ThePrimeagen/vim-be-good",
-        lazy = false,
-    },
-
-    {
         "NFrid/due.nvim",
         event = "BufRead *.md",
         config = function()
@@ -78,6 +73,17 @@ local plugins = {
         end,
     },
 
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            -- 'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+        init = function()
+            require("flutter-tools").setup{}
+        end
+    }
     -- To make a plugin not be loaded
     -- {
     --         "NvChad/nvim-colorizer.lua",

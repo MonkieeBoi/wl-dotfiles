@@ -38,4 +38,3 @@ source "$HOME/.local/share/nord-tty"
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec dbus-run-session Hyprland
 fi
-

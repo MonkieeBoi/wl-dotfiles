@@ -3,8 +3,10 @@ base
 base-devel
 bash-completion
 brightnessctl
+cgdb
 cmus
 cups
+dart
 discord
 dunst
 efibootmgr
@@ -20,6 +22,7 @@ foot
 fzf
 ghostscript
 git
+gitui
 gradle
 grim
 grub
@@ -28,6 +31,7 @@ imagemagick
 imv
 intel-ucode
 jdk-openjdk
+jdk17-openjdk
 jdk8-openjdk
 jre8-openjdk
 libsixel
@@ -36,6 +40,7 @@ libvdpau-va-gl
 linux
 linux-firmware
 linux-headers
+lynx
 man-db
 mpv-mpris
 neofetch
@@ -90,7 +95,6 @@ texlive-pstricks
 texlive-publishers
 thermald
 thunar
-thunderbird
 tmux
 trash-cli
 ttf-jetbrains-mono-nerd
