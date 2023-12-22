@@ -1,6 +1,7 @@
 #!/bin/sh
 file="$(xdg-user-dir PICTURES)/Screenshots/$(date +'Screenshot %y-%m-%d %X.png')"
 hyprpicker -rz &
+sleep 0.2
 picker_pid=$!
 case "$1" in
         s) grim -g "$(slurp)" /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
