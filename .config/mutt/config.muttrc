@@ -1,0 +1,7 @@
+# vim: filetype=neomuttrc
+source "$HOME/.config/mutt/nord.theme"
+
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+bind attach l view-pager
