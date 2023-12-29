@@ -9,3 +9,6 @@ bind attach l view-pager
 
 set sidebar_divider_char = ' ┃ '
 set sidebar_width = 25
+set wrap = 80
+set query_command = "echo && notmuch address from:%s"
+
