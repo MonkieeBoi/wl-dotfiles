@@ -1,5 +1,5 @@
 #!/bin/sh
-emote_dir=$HOME/Pictures/emotes/
+emote_dir=$HOME/Pictures/emotes
 
-img=$(ls "$emote_dir" | sed 's/.png$//g' | tofi)'.png'
-wl-copy < "$emote_dir"/"$img"
+img=$(find "$emote_dir" -type f -name '*.png' -printf "%f\n" | sed 's/.png$//g' | sort | tofi)'.png'
+wl-copy -t text/uri-list file://"$emote_dir"/"$img"
