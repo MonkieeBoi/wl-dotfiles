@@ -17,6 +17,9 @@ M.ui = {
             table.remove(modules, 4)
         end,
     },
+    statusline = {
+        separator_style = "block",
+    }
 }
 
 M.plugins = "custom.plugins"

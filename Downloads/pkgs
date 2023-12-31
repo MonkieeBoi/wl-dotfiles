@@ -3,6 +3,7 @@ base
 base-devel
 bash-completion
 brightnessctl
+btop
 cgdb
 cmus
 cups
@@ -16,10 +17,12 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-nord
 fcitx5-qt
+fcitx5-unikey
 ffmpegthumbnailer
 firefox
 foot
 fzf
+gamemode
 ghostscript
 git
 gitui
@@ -30,10 +33,13 @@ gvfs
 imagemagick
 imv
 intel-ucode
+isync
 jdk-openjdk
 jdk17-openjdk
 jdk8-openjdk
+jq
 jre8-openjdk
+lib32-gamemode
 libsixel
 libva-intel-driver
 libvdpau-va-gl
@@ -42,6 +48,7 @@ linux-firmware
 linux-headers
 lynx
 man-db
+mangohud
 mpv-mpris
 neofetch
 neovim
@@ -61,6 +68,7 @@ playerctl
 pulsemixer
 python-adblock
 python-pip
+python-pipx
 qpwgraph
 qt5-wayland
 qutebrowser
@@ -72,6 +80,7 @@ slurp
 sof-firmware
 sshfs
 steam
+steam-native-runtime
 swappy
 swaybg
 texlive-basic
