@@ -4,6 +4,7 @@ cava-git
 cyrus-sasl-xoauth2-git
 hyprland-git
 hyprpicker
+isync-git
 leagueoflegends-git
 mutt-wizard-git
 nordic-theme
@@ -17,6 +18,7 @@ tofi
 tty-clock
 vencord-desktop-bin
 vscodium-bin
+xdg-desktop-portal-hyprland-git
 xwaylandvideobridge-bin
 yay
 zoom

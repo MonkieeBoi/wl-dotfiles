@@ -1,6 +1,6 @@
 #!/bin/sh
-pretty=$(hyprctl getoption animations:enabled | awk 'NR==2{print $2}')
-if [ "$pretty" = 1 ] ; then
+pretty=$(hyprctl getoption general:gaps_in | awk 'NR==2{print $2}')
+if [ "$pretty" != 0 ] ; then
     hyprctl --batch "\
         keyword animations:enabled 0;\
         keyword decoration:blur:enabled 0;\

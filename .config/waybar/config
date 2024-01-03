@@ -85,12 +85,12 @@
 
     "memory": {
         "interval": 30,
-        "format": "{}% "
+        "format": " {}%"
     },
 
     "cpu": {
         "interval": 30,
-        "format": "{usage}% 󰍛",
+        "format": "󰍛 {usage}%",
     },
 
     "battery": {
@@ -99,7 +99,7 @@
             "normal": 79,
             "low": 20,
         },
-        "format": "{capacity}% {icon} ",
+        "format": "{icon}  {capacity}%",
         "format-icons": ["", "", "", "", ""]
     },
 

@@ -1,7 +1,3 @@
 #!/bin/sh
 animate=$(hyprctl getoption animations:enabled | awk 'NR==2{print $2}')
-if [ "$animate" = 1 ] ; then
-    hyprctl keyword animations:enabled 0
-    exit
-fi
-hyprctl keyword animations:enabled 1
+hyprctl keyword animations:enabled $(((animate + 1) % 2))

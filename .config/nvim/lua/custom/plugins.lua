@@ -74,6 +74,20 @@ local plugins = {
     },
 
     {
+        'tamton-aquib/keys.nvim',
+        lazy = false,
+        config = function()
+            require("keys").setup {
+                win_opts = {
+                    border = "rounded",
+                    row = 0,
+                    col = 400
+                }
+            }
+        end,
+    },
+
+    {
         'akinsho/flutter-tools.nvim',
         lazy = false,
         dependencies = {
