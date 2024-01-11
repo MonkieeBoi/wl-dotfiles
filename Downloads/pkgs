@@ -104,6 +104,7 @@ texlive-publishers
 thermald
 thunar
 tmux
+transmission-cli
 trash-cli
 ttf-jetbrains-mono-nerd
 tumbler
@@ -121,6 +122,7 @@ when
 wireplumber
 wl-clipboard
 words
+xdg-desktop-portal-hyprland
 xdg-user-dirs
 ydotool
 yt-dlp

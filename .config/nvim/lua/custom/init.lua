@@ -5,13 +5,9 @@ local autocmd = vim.api.nvim_create_autocmd
 -------------------------------------- options ------------------------------------------
 
 opt.clipboard = "unnamed"
-
--- Indenting
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
-
--- Numbers
 opt.relativenumber = true
 
 -- enable nvim intro
@@ -22,13 +18,17 @@ opt.whichwrap:remove "<>[]hl"
 
 opt.dictionary = "/usr/share/dict/british"
 
+opt.mouse = ""
+
 -------------------------------------- autocmds ------------------------------------------
 
+-- Reset cursor to line on exit
 autocmd("VimLeave", {
     pattern = "*",
     command = "set guicursor=n:ver25-blinkon1",
 })
 
+-- Hide tabufline if only one buffer 
 autocmd({ "BufAdd", "BufEnter", "BufDelete" }, {
     pattern = "*",
     callback = function()
@@ -57,6 +57,7 @@ for i = 1, 9, 1 do
     end)
 end
 
+-- Start keys.nvim because enable_on_startup won't work
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		require("keys").toggle()

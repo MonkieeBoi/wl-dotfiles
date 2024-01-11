@@ -40,7 +40,7 @@ local plugins = {
 
     {
         "vimwiki/vimwiki",
-        event = "BufRead *.md",
+        ft = "markdown",
         keys = { "<leader>ww" },
         init = function()
             vim.g.vimwiki_list = {
@@ -56,40 +56,38 @@ local plugins = {
     {
         "NFrid/due.nvim",
         event = "BufRead *.md",
-        config = function()
-            require("due_nvim").setup {
-                use_clock_time = true,
-                use_seconds = false,
-            }
-        end,
+        opts = {
+            use_clock_time = true,
+            use_seconds = false,
+        }
     },
 
     {
         "iamcco/markdown-preview.nvim",
-        ft = "markdown",
-        build = "cd app && npm install",
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
+        ft = { "markdown" },
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = function()
+            vim.fn["mkdp#util#install"]()
         end,
     },
 
     {
         'tamton-aquib/keys.nvim',
         lazy = false,
-        config = function()
-            require("keys").setup {
-                win_opts = {
-                    border = "rounded",
-                    row = 0,
-                    col = 400
-                }
+        opts = {
+            win_opts = {
+                border = "rounded",
+                row = 0,
+                col = 400,
+                title = "keys",
+                title_pos = "center",
             }
-        end,
+        }
     },
 
     {
         'akinsho/flutter-tools.nvim',
-        lazy = false,
+        event = "BufRead *.dart",
         dependencies = {
             'nvim-lua/plenary.nvim',
             -- 'stevearc/dressing.nvim', -- optional for vim.ui.select
@@ -98,6 +96,7 @@ local plugins = {
             require("flutter-tools").setup{}
         end
     }
+
     -- To make a plugin not be loaded
     -- {
     --         "NvChad/nvim-colorizer.lua",
