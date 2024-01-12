@@ -41,6 +41,7 @@ M.mason = {
         "python-lsp-server",
         "jdtls",
         "bash-language-server",
+        "shfmt"
     },
 }
 

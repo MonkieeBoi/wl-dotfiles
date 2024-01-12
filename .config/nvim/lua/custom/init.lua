@@ -9,6 +9,10 @@ opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.relativenumber = true
+opt.mouse = ""
+
+-- disable opening folds with h/l
+opt.foldopen:remove "hor"
 
 -- enable nvim intro
 opt.shortmess:remove "I"
@@ -16,9 +20,8 @@ opt.shortmess:remove "I"
 -- don't go to previous/next line with h,l,left arrow and right arrow
 opt.whichwrap:remove "<>[]hl"
 
+-- for dictionary autocompletion
 opt.dictionary = "/usr/share/dict/british"
-
-opt.mouse = ""
 
 -------------------------------------- autocmds ------------------------------------------
 

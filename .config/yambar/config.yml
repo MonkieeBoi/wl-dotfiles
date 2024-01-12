@@ -1,0 +1,308 @@
+# vim: fdm=indent
+.nord_colors:
+  0:  &nord0  2e3440ff
+  1:  &nord1  3b4252ff
+  2:  &nord2  434c5eff
+  3:  &nord3  4c566aff
+  4:  &nord4  d8dee9ff
+  5:  &nord5  e5e9f0ff
+  6:  &nord6  eceff4ff
+  7:  &nord7  8fbcbbff
+  8:  &nord8  88c0d0ff
+  9:  &nord9  81a1c1ff
+  10: &nord10 5e81acff
+  11: &nord11 bf616aff
+  12: &nord12 d08770ff
+  13: &nord13 ebcb8bff
+  14: &nord14 a3be8cff
+  15: &nord15 b48eadff
+
+.background-box-light: &bbl
+  background:
+    color: *nord3
+
+.background-box-dark: &bbd
+  background:
+    color: *nord1
+
+.left-arrow-light: &lal
+  content:
+    string:
+      text: ""
+      foreground: *nord3
+      deco:
+        background:
+          color: *nord1
+
+.left-arrow-light-dark: &lald
+  content:
+    string:
+      text: ""
+      foreground: *nord3
+      deco:
+        background:
+          color: *nord0
+
+.left-arrow-dark: &lad
+  content:
+    string:
+      text: ""
+      foreground: *nord1
+      deco:
+        background:
+          color: *nord3
+
+.right-arrow-light: &ral
+  content:
+    string:
+      text: ""
+      foreground: *nord3
+      deco:
+        background:
+          color: *nord1
+
+.right-arrow-light-dark: &rald
+  content:
+    string:
+      text: ""
+      foreground: *nord3
+      deco:
+        background:
+          color: *nord0
+
+.right-arrow-dark: &rad
+  content:
+    string:
+      text: ""
+      foreground: *nord1
+      deco:
+        background:
+          color: *nord3
+
+bar:
+  height: 16
+  location: top
+
+  foreground: ffffffff
+  background: *nord0
+
+  font: JetBrains Mono NF:size=12
+  font-shaping: full
+
+  left:
+    - label:
+        content: {string: {text: "  ", deco: {background: {color: *nord3}}}}
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord3
+            deco:
+              background:
+                color: *nord0
+    - foreign-toplevel:
+        content:
+          map:
+            conditions:
+              ~activated: {empty: {}}
+              activated:
+                string:
+                  max: 50
+                  text: " {title} "
+
+  center:
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - clock:
+        date-format: "󰃶 %A"
+        content:
+          - string:
+              text: " {date} "
+              deco: *bbl
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord3
+            deco:
+              background:
+                color: *nord0
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord3
+            deco:
+              background:
+                color: *nord0
+    - clock:
+        time-format: "󰅐 %r"
+        content:
+          string:
+            text: " {time} "
+            deco: *bbl
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - clock:
+        time-format: " %d.%m.%y"
+        content:
+          string:
+            text: " {time} "
+            deco: *bbl
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+
+  right:
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - mem:
+        poll-interval: 30000
+        content:
+          string:
+            text: "  {percent_used}% "
+            deco:
+              background:
+                color: *nord3
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - cpu:
+        poll-interval: 30000
+        content:
+          map:
+            conditions:
+              id < 0:
+                string:
+                  text: " 󰍛 {cpu}% "
+                  deco:
+                    background:
+                      color: *nord3
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - battery:
+        name: BAT1
+        poll-interval: 30000
+        content:
+            list:
+              spacing: 0
+              items:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord11}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord12}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord14}
+                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord14}
+                - string: {text: "{capacity}% ", deco: *bbl}
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - label:
+        content:
+          string:
+            text: ""
+            foreground: *nord0
+            deco:
+              background:
+                color: *nord3
+    - alsa:
+        card: default
+        mixer: Master
+        content:
+          map:
+            conditions:
+              ~muted:
+                ramp:
+                  tag: percent
+                  items:
+                    - string: {text: "  ", deco: {background: {color: *nord3}}}
+                    - string: {text: "  ", deco: {background: {color: *nord3}}}
+                    - string: {text: " 󰕾 ", deco: {background: {color: *nord3}}}
+                    - string: {text: "  ", deco: {background: {color: *nord3}}}
+                    - string: {text: "  ", deco: {background: {color: *nord3}}}
+              muted:
+                - string: {text: " 󰝟 ", deco: {background: {color: *nord3}}}
+    - network:
+        name: wlp2s0
+        poll-interval: 30000
+        content:
+          map:
+            conditions:
+              state == down:
+                string:
+                  text: " 󰖪  "
+                  deco: {background: {color: *nord3}}
+              state == up:
+                string:
+                  text: " 󰖩  "
+                  deco: {background: {color: *nord3}}

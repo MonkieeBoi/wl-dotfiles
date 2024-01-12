@@ -11,6 +11,12 @@ M.general = {
     n = {
         ["j"] = { "j", "Move down" },
         ["k"] = { "k", "Move up" },
+        ["<leader>fc"] = {
+            function()
+                require("conform").format()
+            end,
+            "formatting",
+        }
     },
     x = {
         ["j"] = { "j", "Move down" },
