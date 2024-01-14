@@ -242,23 +242,24 @@ bar:
         name: BAT1
         poll-interval: 30000
         content:
-            list:
-              spacing: 0
-              items:
-                - ramp:
-                    tag: capacity
-                    items:
-                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord11}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord12}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord14}
-                      - string: {text: "   ", deco: {background: {color: *nord3}}, foreground: *nord14}
-                - string: {text: "{capacity}% ", deco: *bbl}
+          ramp:
+            tag: capacity
+            items:
+              - map:
+                  conditions:
+                    state == charging:
+                      - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}}
+                    state != charging:
+                      - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}, foreground: *nord11}
+              - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}}
+              - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}}
+              - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}}
+              - map:
+                  conditions:
+                    state == charging:
+                      - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}, foreground: *nord14}
+                    state != charging:
+                      - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}}
     - label:
         content:
           string:

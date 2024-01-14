@@ -6,7 +6,7 @@ PS1="\[\e[1;36m\][\[\e[34m\]\u\[\e[36m\]@\[\e[37m\]\h \[\e[39m\]\W\[\e[36m\]]\[\
 set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
-bind '"\C-o":"cd \"$(find -type d 2>/dev/null | fzf)\"\n"'
+bind '"\C-o":"cd \"$(find . -type d -printf '\''%P\\n'\'' 2>/dev/null | fzf)\"\n"'
 bind '"\C-r":"cd \"$(find / -type d 2>/dev/null | fzf)\"\n"'
 
 # Infinite history

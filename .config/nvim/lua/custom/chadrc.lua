@@ -19,6 +19,9 @@ M.ui = {
     },
     statusline = {
         separator_style = "block",
+    },
+    cheatsheet = {
+        theme = "simple"
     }
 }
 

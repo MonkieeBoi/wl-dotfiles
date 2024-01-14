@@ -31,7 +31,8 @@ export NNN_PLUG='x:xdgdefault;p:getplugs;f:fzcd;m:nmount;e:suedit;w:wallpaper'
 export NNN_TRASH=1
 export NNN_OPTS='QR'
 
-export FZF_DEFAULT_COMMAND='find .'
+export FZF_DEFAULT_COMMAND='find . -type f -printf '\''%P\n'\'''
+export FZF_DEFAULT_OPTS='--height=20 --reverse --border=rounded --info=inline-right --color=16,fg+:blue,pointer:yellow'
 
 source "$HOME/.local/share/nord-tty"
 [[ -f ~/.bashrc ]] && . "$HOME/.bashrc"
