@@ -13,6 +13,9 @@ opt.mouse = ""
 
 -- disable opening folds with h/l
 opt.foldopen:remove "hor"
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevelstart = 99
 
 -- enable nvim intro
 opt.shortmess:remove "I"

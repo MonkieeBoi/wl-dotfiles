@@ -25,56 +25,38 @@
   background:
     color: *nord1
 
-.left-arrow-light: &lal
+.light-back-slope: &lbs
   content:
     string:
-      text: ""
-      foreground: *nord3
-      deco:
-        background:
-          color: *nord1
-
-.left-arrow-light-dark: &lald
-  content:
-    string:
-      text: ""
+      text: ""
       foreground: *nord3
       deco:
         background:
           color: *nord0
 
-.left-arrow-dark: &lad
+.dark-back-slope: &dbs
   content:
     string:
-      text: ""
-      foreground: *nord1
+      text: ""
+      foreground: *nord0
       deco:
         background:
           color: *nord3
 
-.right-arrow-light: &ral
+.light-slope: &ls
   content:
     string:
-      text: ""
-      foreground: *nord3
-      deco:
-        background:
-          color: *nord1
-
-.right-arrow-light-dark: &rald
-  content:
-    string:
-      text: ""
+      text: ""
       foreground: *nord3
       deco:
         background:
           color: *nord0
 
-.right-arrow-dark: &rad
+.dark-slope: &ds
   content:
     string:
-      text: ""
-      foreground: *nord1
+      text: ""
+      foreground: *nord0
       deco:
         background:
           color: *nord3
@@ -91,15 +73,13 @@ bar:
 
   left:
     - label:
-        content: {string: {text: "  ", deco: {background: {color: *nord3}}}}
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord3
-            deco:
-              background:
-                color: *nord0
+        content: 
+          string: 
+            text: "  "
+            deco: 
+              background: 
+                color: *nord3
+    - label: *lbs
     - foreign-toplevel:
         content:
           map:
@@ -111,82 +91,33 @@ bar:
                   text: " {title} "
 
   center:
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
+    - label: *dbs
     - clock:
         date-format: "󰃶 %A"
         content:
-          - string:
-              text: " {date} "
-              deco: *bbl
-    - label:
-        content:
           string:
-            text: ""
-            foreground: *nord3
-            deco:
-              background:
-                color: *nord0
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord3
-            deco:
-              background:
-                color: *nord0
+            text: " {date} "
+            deco: *bbl
+    - label: *lbs
+    - label: *dbs
     - clock:
         time-format: "󰅐 %r"
         content:
           string:
             text: " {time} "
             deco: *bbl
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
+    - label: *ds
+    - label: *ls
     - clock:
         time-format: " %d.%m.%y"
         content:
           string:
             text: " {time} "
             deco: *bbl
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
+    - label: *ds
 
   right:
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
+    - label: *ls
     - mem:
         poll-interval: 30000
         content:
@@ -195,22 +126,8 @@ bar:
             deco:
               background:
                 color: *nord3
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
+    - label: *ds
+    - label: *ls
     - cpu:
         poll-interval: 30000
         content:
@@ -222,22 +139,8 @@ bar:
                   deco:
                     background:
                       color: *nord3
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
+    - label: *ds
+    - label: *ls
     - battery:
         name: BAT1
         poll-interval: 30000
@@ -260,22 +163,8 @@ bar:
                       - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}, foreground: *nord14}
                     state != charging:
                       - string: {text: "   {capacity}% ", deco: {background: {color: *nord3}}}
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
-    - label:
-        content:
-          string:
-            text: ""
-            foreground: *nord0
-            deco:
-              background:
-                color: *nord3
+    - label: *ds
+    - label: *ls
     - alsa:
         card: default
         mixer: Master

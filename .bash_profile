@@ -32,7 +32,7 @@ export NNN_TRASH=1
 export NNN_OPTS='QR'
 
 export FZF_DEFAULT_COMMAND='find . -type f -printf '\''%P\n'\'''
-export FZF_DEFAULT_OPTS='--height=20 --reverse --border=rounded --info=inline-right --color=16,fg+:blue,pointer:yellow'
+export FZF_DEFAULT_OPTS='--height=20 --reverse --border=rounded --info=inline-right --color=16,fg+:white,pointer:yellow'
 
 source "$HOME/.local/share/nord-tty"
 [[ -f ~/.bashrc ]] && . "$HOME/.bashrc"
