@@ -4,18 +4,20 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -------------------------------------- options ------------------------------------------
 
+g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
+
 opt.clipboard = "unnamed"
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.relativenumber = true
 opt.mouse = ""
-
--- disable opening folds with h/l
-opt.foldopen:remove "hor"
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
+
+-- disable opening folds with h/l
+opt.foldopen:remove "hor"
 
 -- enable nvim intro
 opt.shortmess:remove "I"

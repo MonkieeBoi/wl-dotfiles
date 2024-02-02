@@ -43,6 +43,7 @@ alias c='when'
 alias t='tmuxify'
 alias n='nnn'
 alias onefetch='onefetch -t 2 7 7 4 4 7'
+alias lg='lazygit'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

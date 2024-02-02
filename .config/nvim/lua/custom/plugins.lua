@@ -15,13 +15,11 @@ local plugins = {
 
     {
         "stevearc/conform.nvim",
-        --  for users those who want auto-save conform + lazyloading!
-        -- event = "BufWritePre"
         config = function()
             require "custom.configs.conform"
         end,
     },
-    -- override plugin configs
+
     {
         "williamboman/mason.nvim",
         opts = overrides.mason,
@@ -30,6 +28,9 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = overrides.treesitter,
+        dependencies = {
+            "windwp/nvim-ts-autotag",
+        },
     },
 
     {
@@ -86,6 +87,7 @@ local plugins = {
 
     {
         'akinsho/flutter-tools.nvim',
+        enabled = false,
         event = "BufRead *.dart",
         dependencies = {
             'nvim-lua/plenary.nvim',
@@ -94,7 +96,24 @@ local plugins = {
         init = function()
             require("flutter-tools").setup{}
         end
-    }
+    },
+
+    {
+        'ThePrimeagen/vim-apm',
+        enabled = false,
+        keys = {
+            {
+                '<leader>apm',
+                function()
+                    require('vim-apm'):toggle_monitor()
+                end,
+                desc = "Toggle vim apm monitor"
+            }
+        },
+        init = function()
+            require('vim-apm'):setup{}
+        end
+    },
 
     -- To make a plugin not be loaded
     -- {
