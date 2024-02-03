@@ -15,6 +15,7 @@ opt.mouse = ""
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99
+opt.dictionary = "/usr/share/dict/british"
 
 -- disable opening folds with h/l
 opt.foldopen:remove "hor"
@@ -24,9 +25,6 @@ opt.shortmess:remove "I"
 
 -- don't go to previous/next line with h,l,left arrow and right arrow
 opt.whichwrap:remove "<>[]hl"
-
--- for dictionary autocompletion
-opt.dictionary = "/usr/share/dict/british"
 
 -------------------------------------- autocmds ------------------------------------------
 
@@ -70,4 +68,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		require("keys").toggle()
 	end,
+})
+
+-- Auto close when nvim-tree last window
+vim.api.nvim_create_autocmd("QuitPre", {
+    callback = function()
+        require('nvim-tree.api').tree.close()
+    end,
 })
