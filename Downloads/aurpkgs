@@ -2,6 +2,7 @@ auto-cpufreq
 catppuccin-mocha-grub-theme-git
 cava-git
 cyrus-sasl-xoauth2-git
+dotool
 hyprland-git
 hyprpicker
 isync-git
@@ -9,6 +10,7 @@ leagueoflegends-git
 mutt-wizard-git
 nordic-theme
 obs-pipewire-audio-capture-bin
+prismlauncher-qt5-bin
 ps_mem
 qrcp
 simple-mtpfs
@@ -18,7 +20,6 @@ tofi
 tty-clock
 vesktop-bin
 vscodium-bin
-xwaylandvideobridge-bin
 yambar-wayland
 yay
 zoom

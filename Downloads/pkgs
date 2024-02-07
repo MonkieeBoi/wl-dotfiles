@@ -5,6 +5,7 @@ bash-completion
 brightnessctl
 btop
 cgdb
+chafa
 cmus
 cups
 dart
@@ -25,7 +26,6 @@ fzf
 gamemode
 ghostscript
 git
-gitui
 gradle
 grim
 grub
@@ -118,13 +118,13 @@ waybar
 wev
 wf-recorder
 wget
-when
 wireplumber
 wl-clipboard
 words
+xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-user-dirs
-ydotool
+xwaylandvideobridge
 yt-dlp
 zathura
 zathura-pdf-mupdf

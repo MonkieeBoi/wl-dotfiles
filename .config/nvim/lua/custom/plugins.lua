@@ -3,14 +3,12 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
-    -- Override plugin definition options
-
     {
         "neovim/nvim-lspconfig",
         config = function()
             require "plugins.configs.lspconfig"
             require "custom.configs.lspconfig"
-        end, -- Override to setup mason-lspconfig
+        end,
     },
 
     {
@@ -72,26 +70,26 @@ local plugins = {
     },
 
     {
-        'tamton-aquib/keys.nvim',
-        lazy = false,
-        opts = {
-            win_opts = {
-                border = "rounded",
-                row = 0,
-                col = 400,
-                title = "keys",
-                title_pos = "center",
-            }
+        "andweeb/presence.nvim",
+        event = "VimEnter",
+        opts = {},
+    },
+
+    {
+        "sindrets/diffview.nvim",
+        keys = {
+            { "<leader>do", "<cmd>DiffviewOpen<cr>", desc = "Open diffview" },
+            { "<leader>dc", "<cmd>DiffviewClose<cr>", desc = "Close diffview" },
         }
     },
 
     {
-        'akinsho/flutter-tools.nvim',
+        "akinsho/flutter-tools.nvim",
         enabled = false,
         event = "BufRead *.dart",
         dependencies = {
-            'nvim-lua/plenary.nvim',
-            -- 'stevearc/dressing.nvim', -- optional for vim.ui.select
+            "nvim-lua/plenary.nvim",
+            -- "stevearc/dressing.nvim", -- optional for vim.ui.select
         },
         init = function()
             require("flutter-tools").setup{}
@@ -99,35 +97,21 @@ local plugins = {
     },
 
     {
-        'ThePrimeagen/vim-apm',
+        "ThePrimeagen/vim-apm",
         enabled = false,
         keys = {
             {
-                '<leader>apm',
+                "<leader>apm",
                 function()
-                    require('vim-apm'):toggle_monitor()
+                    require("vim-apm"):toggle_monitor()
                 end,
                 desc = "Toggle vim apm monitor"
             }
         },
         init = function()
-            require('vim-apm'):setup{}
+            require("vim-apm"):setup{}
         end
     },
-
-    -- To make a plugin not be loaded
-    -- {
-    --         "NvChad/nvim-colorizer.lua",
-    --         enabled = false
-    -- },
-
-    -- All NvChad plugins are lazy-loaded by default
-    -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-    -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-    -- {
-    --         "mg979/vim-visual-multi",
-    --         lazy = false,
-    -- }
 }
 
 return plugins

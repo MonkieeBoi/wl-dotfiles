@@ -39,11 +39,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vi='nvim'
 alias tsm='transmission-remote'
 alias dvtm='dvtm -m ^w'
-alias c='when'
 alias t='tmuxify'
 alias n='nnn'
 alias onefetch='onefetch -t 2 7 7 4 4 7'
-alias lg='lazygit'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

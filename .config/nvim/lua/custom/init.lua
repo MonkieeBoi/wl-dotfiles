@@ -63,13 +63,6 @@ for i = 1, 9, 1 do
     end)
 end
 
--- Start keys.nvim because enable_on_startup won't work
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		require("keys").toggle()
-	end,
-})
-
 -- Auto close when nvim-tree last window
 vim.api.nvim_create_autocmd("QuitPre", {
     callback = function()
