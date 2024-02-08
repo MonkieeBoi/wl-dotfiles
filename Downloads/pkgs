@@ -59,6 +59,7 @@ noto-fonts-emoji
 npm
 obs-studio
 pacman-contrib
+pcmanfm-gtk3
 pipewire-alsa
 pipewire-audio
 pipewire-jack
@@ -102,7 +103,6 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 thermald
-thunar
 tmux
 transmission-cli
 trash-cli
