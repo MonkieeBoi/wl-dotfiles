@@ -53,6 +53,7 @@ neofetch
 neovim
 networkmanager
 nnn
+notcurses
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -103,7 +104,6 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 thermald
-tmux
 transmission-cli
 trash-cli
 ttf-jetbrains-mono-nerd

@@ -8,6 +8,7 @@ hyprpicker
 isync-git
 leagueoflegends-git
 mutt-wizard-git
+ngrok
 nordic-theme
 nordzy-cursors
 obs-pipewire-audio-capture-bin
@@ -17,6 +18,7 @@ qrcp
 simple-mtpfs
 swaylock-effects-git
 tmux-bash-completion-git
+tmux-sixel
 tofi
 tty-clock
 vesktop-bin

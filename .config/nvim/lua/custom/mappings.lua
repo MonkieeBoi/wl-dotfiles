@@ -13,7 +13,7 @@ M.general = {
         ["k"] = { "k", "Move up" },
         ["<leader>fc"] = {
             function()
-                require("conform").format()
+                require("conform").format({ lsp_fallback = true })
             end,
             "formatting",
         }

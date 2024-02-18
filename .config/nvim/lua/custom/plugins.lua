@@ -70,16 +70,26 @@ local plugins = {
     },
 
     {
-        "andweeb/presence.nvim",
-        event = "VimEnter",
-        opts = {},
-    },
-
-    {
         "sindrets/diffview.nvim",
         keys = {
             { "<leader>do", "<cmd>DiffviewOpen<cr>", desc = "Open diffview" },
             { "<leader>dc", "<cmd>DiffviewClose<cr>", desc = "Close diffview" },
+        }
+    },
+
+    {
+        "jxm35/livecode.nvim",
+        cmd = { "LCStartSession", "LCJoin" },
+        opts = {}
+    },
+
+    {
+        "NvChad/nvim-colorizer.lua",
+        opts = {
+            user_default_options = {
+                names = false,
+                css = true,
+            }
         }
     },
 

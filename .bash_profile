@@ -27,7 +27,7 @@ export SUDO_ASKPASS="$HOME/.local/bin/tofi-pass"
 
 export NNN_FCOLORS="0B0B04060006060009060B06"
 export NNN_BMS="d:$HOME/Documents;D:$HOME/Downloads;v:$HOME/Videos;p:$HOME/Pictures;c:$HOME/Documents/Code;C:$HOME/.config;l:$HOME/.local;m:/run/media/$USER"
-export NNN_PLUG='x:xdgdefault;g:getplugs;f:fzcd;m:nmount;e:suedit;w:wallpaper;p:preview-tui'
+export NNN_PLUG='x:xdgdefault;g:getplugs;f:fzcd;m:nmount;e:suedit;w:wallpaper;p:preview-tui;q:!qrcp send "$nnn"'
 export NNN_PREVIEWIMGPROG='chafa'
 export NNN_TERMINAL='foot'
 export NNN_TRASH=1
