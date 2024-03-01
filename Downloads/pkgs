@@ -6,9 +6,11 @@ brightnessctl
 btop
 cgdb
 chafa
+cliphist
 cmus
 cups
 dart
+deno
 discord
 dunst
 efibootmgr
@@ -72,6 +74,8 @@ python-pip
 python-pipx
 qpwgraph
 qt5-wayland
+qt5ct
+qt6ct
 qutebrowser
 realtime-privileges
 reflector
