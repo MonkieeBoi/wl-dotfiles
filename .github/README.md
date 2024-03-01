@@ -1,7 +1,7 @@
 # Screenshots
 
-![](./assets/screenshot.png)
 ![](./assets/screenshot1.png)
+![](./assets/screenshot2.png)
 
 # Installation (for me not you)
 ```
