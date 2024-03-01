@@ -61,12 +61,20 @@ local plugins = {
     },
 
     {
-        "iamcco/markdown-preview.nvim",
-        ft = { "markdown" },
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        build = function()
-            vim.fn["mkdp#util#install"]()
+        "toppair/peek.nvim",
+        cmd = { "PeekOpen" },
+        build = "deno task --quiet build:fast",
+        config = function()
+            require("peek").setup({
+                app = "qutebrowser"
+            })
+            vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+            vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
         end,
+        keys = {
+            { "<leader>po", "<cmd>PeekOpen<cr>", desc = "Open peek" },
+            { "<leader>pc", "<cmd>PeekClose<cr>", desc = "Close peek" },
+        }
     },
 
     {
@@ -91,6 +99,21 @@ local plugins = {
                 css = true,
             }
         }
+    },
+
+    {
+        "kawre/leetcode.nvim",
+        build = ":TSUpdate html",
+        lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim", -- required by telescope
+            "MunifTanjim/nui.nvim",
+        },
+        opts = {
+            arg = "leetcode.nvim",
+            lang = "c"
+        },
     },
 
     {

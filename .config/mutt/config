@@ -7,6 +7,10 @@ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract 
 
 bind attach l view-pager
 
+macro index,pager gn "<change-folder>=News<enter>" "go to news"
+macro index,pager Mn ";<save-message>=News<enter>" "move mail to news"
+macro index,pager Cn ";<copy-message>=News<enter>" "copy mail to news"
+
 set sidebar_divider_char = ' ┃ '
 set sidebar_width = 25
 set wrap = 80
