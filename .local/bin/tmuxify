@@ -1,7 +1,7 @@
-#! /bin/bash
+#!/bin/bash
 # Slightly modified version of https://github.com/tonchis/tmuxify
 
-for file in "${PWD}/.tmuxify.layout" "${HOME}/.local/share/tmuxify/$1.layout"; do
+for file in "${PWD}/.tmuxify.layout" "${XDG_DATA_HOME}/tmuxify/$1.layout"; do
     test -f "${file}" && layout="${file}" && break
 done
 
@@ -22,11 +22,12 @@ else
 fi
 
 while read -r window pane command; do
-
     [ -z "$window" ] || [ -z "$pane" ] || [ -z "$command" ] && continue
 
     pane_number=${pane//[^0-9]*}
     active=${pane//[^*]}
+    [ -z "${pane//[^#]}" ] && run="C-m" || run=
+    [ -z "${pane//[^-]}" ] && split="-h" || split="-v"
 
     if [[ -n $active ]]; then
         active_window=$window
@@ -38,12 +39,10 @@ while read -r window pane command; do
     fi
 
     if ! tmux list-panes -t "$session":"$window" -F "#{pane_index}" | grep -q "^${pane_number}$"; then
-        tmux split-window -t "$session":"$window"
+        tmux split-window "$split" -t "$session":"$window"
     fi
 
-    tmux select-layout -t "$session":"$window" tiled > /dev/null
-
-    tmux send-keys -t "$session":"$window"."$pane_number" "$command" C-m
+    tmux send-keys -t "$session":"$window"."$pane_number" "$command" "$run"
 done < "$layout"
 
 # The first window is never used. The specified window names in the layout create new windows.
@@ -52,7 +51,7 @@ done < "$layout"
 #     set-option -g renumber-windows on
 #
 
-tmux kill-window -t "$session":"$( tmux list-windows -t "$session" -F "#{window_index}" | head -n 1 )"
+tmux kill-window -t "$session":"$(tmux list-windows -t "$session" -F "#{window_index}" | head -n 1)"
 
 tmux select-window -t "$session":"$active_window"
 

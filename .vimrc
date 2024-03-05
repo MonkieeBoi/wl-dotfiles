@@ -3,7 +3,7 @@
     set encoding=utf-8
     set nu rnu
     set is
-    set nohls
+    set hls
     syntax on
     set nocompatible
     set ignorecase smartcase
