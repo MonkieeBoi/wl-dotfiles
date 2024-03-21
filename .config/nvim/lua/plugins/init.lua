@@ -1,20 +1,17 @@
-local overrides = require "custom.configs.overrides"
-
----@type NvPluginSpec[]
-local plugins = {
-
+local overrides = require "configs.overrides"
+return {
     {
-        "neovim/nvim-lspconfig",
+        "stevearc/conform.nvim",
         config = function()
-            require "plugins.configs.lspconfig"
-            require "custom.configs.lspconfig"
+            require "configs.conform"
         end,
     },
 
     {
-        "stevearc/conform.nvim",
+        "neovim/nvim-lspconfig",
         config = function()
-            require "custom.configs.conform"
+            require "nvchad.configs.lspconfig".defaults()
+            require "configs.lspconfig"
         end,
     },
 
@@ -72,7 +69,7 @@ local plugins = {
             vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
         end,
         keys = {
-            { "<leader>po", "<cmd>PeekOpen<cr>", desc = "Open peek" },
+            { "<leader>po", "<cmd>PeekOpen<cr>",  desc = "Open peek" },
             { "<leader>pc", "<cmd>PeekClose<cr>", desc = "Close peek" },
         }
     },
@@ -80,7 +77,7 @@ local plugins = {
     {
         "sindrets/diffview.nvim",
         keys = {
-            { "<leader>do", "<cmd>DiffviewOpen<cr>", desc = "Open diffview" },
+            { "<leader>do", "<cmd>DiffviewOpen<cr>",  desc = "Open diffview" },
             { "<leader>dc", "<cmd>DiffviewClose<cr>", desc = "Close diffview" },
         }
     },
@@ -115,36 +112,4 @@ local plugins = {
             lang = "c"
         },
     },
-
-    {
-        "akinsho/flutter-tools.nvim",
-        enabled = false,
-        event = "BufRead *.dart",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            -- "stevearc/dressing.nvim", -- optional for vim.ui.select
-        },
-        init = function()
-            require("flutter-tools").setup{}
-        end
-    },
-
-    {
-        "ThePrimeagen/vim-apm",
-        enabled = false,
-        keys = {
-            {
-                "<leader>apm",
-                function()
-                    require("vim-apm"):toggle_monitor()
-                end,
-                desc = "Toggle vim apm monitor"
-            }
-        },
-        init = function()
-            require("vim-apm"):setup{}
-        end
-    },
 }
-
-return plugins

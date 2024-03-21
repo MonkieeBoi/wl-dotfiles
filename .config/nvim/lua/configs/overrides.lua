@@ -14,7 +14,8 @@ M.treesitter = {
         "bibtex",
         "latex",
         "java",
-        "bash"
+        "bash",
+        "typst"
     },
     indent = {
         enable = true,
@@ -44,7 +45,8 @@ M.mason = {
         "python-lsp-server",
         "jdtls",
         "bash-language-server",
-        "shfmt"
+        "shfmt",
+        "typst-lsp"
     },
 }
 

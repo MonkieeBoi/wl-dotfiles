@@ -1,32 +1,4 @@
-local opt = vim.opt
-local g = vim.g
 local autocmd = vim.api.nvim_create_autocmd
-
--------------------------------------- options ------------------------------------------
-
-g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
-
-opt.clipboard = "unnamed"
-opt.shiftwidth = 4
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.relativenumber = true
-opt.mouse = ""
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldlevelstart = 99
-opt.dictionary = "/usr/share/dict/british"
-
--- disable opening folds with h/l
-opt.foldopen:remove "hor"
-
--- enable nvim intro
-opt.shortmess:remove "I"
-
--- don't go to previous/next line with h,l,left arrow and right arrow
-opt.whichwrap:remove "<>[]hl"
-
--------------------------------------- autocmds ------------------------------------------
 
 -- Reset cursor to line on exit
 autocmd("VimLeave", {
