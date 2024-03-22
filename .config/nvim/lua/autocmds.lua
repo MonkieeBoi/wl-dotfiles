@@ -28,15 +28,8 @@ autocmd("InsertLeave", {
     command = "call chansend(v:stderr, \"\\e[?737769l\")",
 })
 
--- Goto tab using A-number
-for i = 1, 9, 1 do
-    vim.keymap.set("n", string.format("<A-%s>", i), function()
-        vim.api.nvim_set_current_buf(vim.t.bufs[i])
-    end)
-end
-
 -- Auto close when nvim-tree last window
-vim.api.nvim_create_autocmd("QuitPre", {
+autocmd("QuitPre", {
     callback = function()
         require('nvim-tree.api').tree.close()
     end,
