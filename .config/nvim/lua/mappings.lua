@@ -9,7 +9,7 @@ map("v", "<C-j>",
     { desc = "Move selection down", silent = true }
 )
 map("v", "<C-k>",
-    ":md>m '<-<C-r>=max([2,1+v:count])<CR><CR>gv=gv",
+    ":m '<-<C-r>=max([2,1+v:count])<CR><CR>gv=gv",
     { desc = "Move selection up", silent = true }
 )
 

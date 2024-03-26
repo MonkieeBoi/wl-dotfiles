@@ -59,18 +59,21 @@ return {
 
     {
         "toppair/peek.nvim",
-        cmd = { "PeekOpen" },
         build = "deno task --quiet build:fast",
-        config = function()
-            require("peek").setup({
-                app = "qutebrowser"
-            })
-            vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-            vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-        end,
+        opts = { app = "qutebrowser" },
         keys = {
-            { "<leader>po", "<cmd>PeekOpen<cr>",  desc = "Open peek" },
-            { "<leader>pc", "<cmd>PeekClose<cr>", desc = "Close peek" },
+            {
+                "<leader>pp",
+                function ()
+                    local peek = require("peek")
+                    if peek.is_open() then
+                        peek.close()
+                    else
+                        peek.open()
+                    end
+                end,
+                desc = "Toggle peek"
+            },
         }
     },
 
@@ -104,7 +107,7 @@ return {
         lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
         dependencies = {
             "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim", -- required by telescope
+            "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
         },
         opts = {

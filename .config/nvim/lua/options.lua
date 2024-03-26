@@ -16,3 +16,6 @@ opt.dictionary = "/usr/share/dict/british"
 
 -- disable opening folds with h/l
 opt.foldopen:remove "hor"
+--
+-- don't go to previous/next line with h,l,left arrow and right arrow
+opt.whichwrap:remove "<>[]hl"
