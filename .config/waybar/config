@@ -56,16 +56,16 @@
     },
 
     "clock#1": {
-        "format": "{:󰃶 %A}",
+        "format": "󰃶 {:%A}",
         "tooltip": false
     },
     "clock#2": {
         "interval": 1,
-        "format": "{:󰅐 %r}",
+        "format": "󰅐 {:%r}",
         "tooltip": false
     },
     "clock#3": {
-        "format": "{: %d.%m.%y}",
+        "format": " {:%d.%m.%y}",
         "tooltip": false
     },
 

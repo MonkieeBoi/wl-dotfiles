@@ -1,3 +1,3 @@
 nvim 0* nvim *.typ
 comp 0 typst watch *.typ
-comp 1 nohup evince *.pdf > /dev/null 2>&1 &
+comp 1 zathura *.pdf

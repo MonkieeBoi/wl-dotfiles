@@ -15,6 +15,11 @@
    *  0 places directly in the corner
    */ --uc-status-panel-spacing: 12px;
 
+  /*  Top margin for the Page Action Buttons
+   *  inside the URL Bar. This might need
+   *  customisation depending on your setup!
+   */ --uc-page-action-margin: 7px;
+
 }
 
 
@@ -33,21 +38,24 @@
  +---+---+---+---+---+---+---*/
 
 
+/*  Position of the Personal Toolbar
+ *  possible values:
+ *  0 – toolbar on top
+ *  4 – toolbar on bottom
+ */
 :root {
-
-  /*  Position of the Personal Toolbar
-   *  possible values:
-   *  0 – toolbar on top
-   *  4 – toolbar on bottom
-   */ --uc-toolbar-position: 0;
-
-  /*  Darken the Personal Toolbar by X amount
-   *  where X = 1 means pure black
-   *  and X = 0 means no darkening at all
-   */ --uc-darken-toolbar: .2;
-
+  --uc-toolbar-position: 0;
 }
 
+/*  Darken the Personal Toolbar by X amount
+ *  where X = 1 means pure black
+ *  and X = 0 means no darkening at all
+ */
+@media (prefers-color-scheme: dark) { :root {
+  --uc-darken-toolbar: 0.2;
+}} @media (prefers-color-scheme: light) { :root {
+  --uc-darken-toolbar: 0;
+}}
 
 
 
@@ -75,6 +83,8 @@
 
 
 /* Disable the Navigation Buttons */
+/* #back-button,
+#forward-button { display: none !important; } */
 
 /* Disables the Tracking Protection Shield */
 /* #tracking-protection-icon-container { display: none !important; } */
@@ -85,12 +95,21 @@
   /* Hides encryption AND permission items */
   /* #identity-box { display: none !important } */
 
-/* Hide everything BUT the zoom indicator within the URL Bar */
-#page-action-buttons > :not(#urlbar-zoom-button):not(#star-button-box) { display: none !important; }
+/* Adjust margin of the urlbar buttons. */
+.urlbar-page-action > image { margin-top: var(--uc-page-action-margin) !important; }
+
+/* Hide Container Tab labels inside the URL bar */
+#userContext-icons { display: none !important; }
 
 
 /* Hide the »Go«-arrow in the URL Bar */
 #urlbar-go-button { display: none !important; }
+
+/* Hides the Extensions Menu Icon */
+/* #unified-extensions-button { display: none !important; } */
+
+
+#alltabs-button { margin-top: 5px !important; }
 
 
 

@@ -3,7 +3,9 @@ catppuccin-mocha-grub-theme-git
 cava-git
 cyrus-sasl-xoauth2-git
 dotool
+hyprcursor-git
 hyprland-git
+hyprlang-git
 hyprpicker
 isync-git
 leagueoflegends-git
@@ -22,6 +24,7 @@ tmux-sixel
 tofi-git
 tty-clock
 vesktop-bin
+wl-screenrec
 yambar-wayland
 yay
 zoom

@@ -11,8 +11,7 @@ local servers = {
     "pylsp",
     "texlab",
     "jdtls",
-    "bashls",
-    "typst_lsp"
+    "bashls"
 }
 
 for _, lsp in ipairs(servers) do
@@ -22,3 +21,12 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
+
+lspconfig.typst_lsp.setup {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    settings = {
+        exportPdf = "never"
+    }
+}
