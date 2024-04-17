@@ -54,6 +54,7 @@ return {
         opts = {
             use_clock_time = true,
             use_seconds = false,
+            prescript = ''
         }
     },
 
@@ -114,5 +115,21 @@ return {
             arg = "leetcode.nvim",
             lang = "c"
         },
+    },
+
+    {
+        'SuperBo/fugit2.nvim',
+        opts = {
+            height = "80%"
+        },
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'nvim-tree/nvim-web-devicons',
+            'nvim-lua/plenary.nvim',
+        },
+        cmd = { 'Fugit2', 'Fugit2Graph' },
+        keys = {
+            { '<leader>gg', mode = 'n', '<cmd>Fugit2<cr>' }
+        }
     },
 }

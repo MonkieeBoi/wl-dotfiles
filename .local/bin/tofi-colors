@@ -1,0 +1,2 @@
+#!/bin/sh
+tofi -c ~/.config/tofi/vert --prompt-text "Color:" < "$XDG_DATA_HOME"/colors | cut -d' ' -f 2 | wl-copy

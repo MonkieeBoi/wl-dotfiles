@@ -19,9 +19,6 @@ M.treesitter = {
     },
     indent = {
         enable = true,
-        -- disable = {
-        --   "python"
-        -- },
     },
     autotag = {
         enable = true,

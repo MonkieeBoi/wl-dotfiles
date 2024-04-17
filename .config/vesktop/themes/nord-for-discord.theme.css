@@ -1,0 +1,135 @@
+@import url('https://clearvision.github.io/ClearVision-v6/main.css');
+@import url('https://gibbu.github.io/BetterDiscord-Themes/AdjustableServerWidth/base.css');
+@import url('https://gibbu.github.io/BetterDiscord-Themes/RadialStatus/base.css');
+:root {
+  --main-color: #81A1C1;
+  --hover-color: #2e3440;
+  --success-color: #a3be8c;
+  --danger-color: #bf616a;
+  --url-color: var(--main-color);
+  --background-image: none;
+  --background-shading: 30%;
+  --background-position: center;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+  --background-attachment: fixed;
+  --background-brightness: 100%;
+  --background-contrast: 100%;
+  --background-saturation: 100%;
+  --background-grayscale: 0%;
+  --background-invert: 0%;
+  --background-blur: 0px;
+  --background-overlay: rgb(46, 52, 64, 1);
+  --user-popout-image: var(--background-image);
+  --user-popout-position: center;
+  --user-popout-size: cover;
+  --user-popout-repeat: no-repeat;
+  --user-popout-attachment: fixed;
+  --user-popout-brightness: 100%;
+  --user-popout-contrast: 100%;
+  --user-popout-saturation: 100%;
+  --user-popout-grayscale: 0%;
+  --user-popout-invert: 0%;
+  --user-popout-blur: 3px;
+  --user-modal-image: var(--background-image);
+  --user-modal-position: center;
+  --user-modal-size: cover;
+  --user-modal-repeat: no-repeat;
+  --user-modal-attachment: fixed;
+  --user-modal-brightness: 100%;
+  --user-modal-contrast: 100%;
+  --user-modal-saturation: 100%;
+  --user-modal-grayscale: 0%;
+  --user-modal-invert: 0%;
+  --user-modal-blur: 0px;
+  --home-icon: url('https://clearvision.gitlab.io/icons/discord.svg');
+  --home-position: center;
+  --home-size: 40px;
+  --channel-unread: #d8dee9;
+  --channel-color: rgba(216,222,233,0.64);
+  --muted-color: rgba(216,222,233,0.25);
+  --online-color: #a3be8c;
+  --idle-color: #ebcb8b;
+  --dnd-color: #bf616a;
+  --streaming-color: #b48ead;
+  --offline-color: #4c566a;
+  --code-font: 'JetBrainsMono Nerd Font';
+  --backdrop-overlay: rgba(0,0,0,0.8);
+  --backdrop-image: var(--background-image);
+  --backdrop-position: var(--background-position);
+  --backdrop-size: var(--background-size);
+  --backdrop-repeat: var(--background-repeat);
+  --backdrop-attachment: var(--background-attachment);
+  --backdrop-brightness: var(--background-brightness);
+  --backdrop-contrast: var(--background-contrast);
+  --backdrop-saturation: var(--background-saturation);
+  --backdrop-invert: var(--background-invert);
+  --backdrop-grayscale: var(--background-grayscale);
+  --backdrop-sepia: var(--background-sepia);
+  --backdrop-blur: var(--background-blur);
+  --bd-blue: var(--main-color);
+  --bd-blue-hover: var(--hover-color);
+  --bd-blue-active: var(--hover-color);
+  --channels-width: 240px;
+  --members-width: 240px;
+  --server-icon-size: 40px;
+  --server-icon-spacing: 8px;
+  --server-container-padding: 16px;
+  --rs-small-spacing: 1px;
+  --rs-large-spacing: 3px;
+  --rs-width: 2.5px;
+  --rs-avatar-shape: 50%;
+  --rs-online-color: #a3be8c;
+  --rs-idle-color: #ebcb8b;
+  --rs-dnd-color: #bf616a;
+  --rs-offline-color: #4c566a;
+  --rs-streaming-color: #b48ead;
+  --rs-invisible-color: #747f8d;
+  --iconColor:#d8dee9;
+}
+.typeWindows-1za-n7>.winButton-iRh8-Z{ 
+    display: none;
+}
+.typeWindows-1za-n7 {
+    height: 0px;
+    padding: 0px;
+}
+.scrollerSpacer__9cd32 {
+    height: 15px;
+}
+.name__02dbd {
+    font-size: 16px;
+}
+.privateChannels__93473 .channel_c21703 .interactive_a868bc .name__02dbd {
+    font-size: 16px;
+}
+
+.container_ca50b9::before, .container_ca50b9::after{
+    display: none;
+}
+
+.theme-dark .container_ca50b9 {
+    background-color: rgba(0,0,0,0.1);
+    margin-bottom: 0;
+}
+
+.standardSidebarView__1129a .sidebar__9e3e2 .side_b4b3f6 .item__48dda {
+    color: var(--interactive-normal);
+}
+
+.channelTextArea__56a36 .scrollableContainer__33e06 {
+    background-color: var(--hover-color);
+}
+
+.wrapper__7bcde.modeUnread_f74c03 .link__95dc0 .linkTop_eaa673 .name__8d1ec {
+    text-shadow: none;
+    color: #fff;
+}
+
+.wrapper__7bcde.modeUnread_f74c03 .link__95dc0 .linkTop_eaa673 .icon_eff5d4 {
+    filter: none;
+}
+
+.unread__48cf4 {
+    display: block;
+}
