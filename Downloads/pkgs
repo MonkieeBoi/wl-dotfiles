@@ -9,7 +9,6 @@ chafa
 cliphist
 cmus
 cups
-deno
 discord
 dunst
 efibootmgr
@@ -113,6 +112,7 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 thermald
+tmux
 transmission-cli
 trash-cli
 ttf-jetbrains-mono-nerd

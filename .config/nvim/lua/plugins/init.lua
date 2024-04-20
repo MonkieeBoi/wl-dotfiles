@@ -59,23 +59,11 @@ return {
     },
 
     {
-        "toppair/peek.nvim",
-        build = "deno task --quiet build:fast",
-        opts = { app = "qutebrowser" },
-        keys = {
-            {
-                "<leader>pp",
-                function ()
-                    local peek = require("peek")
-                    if peek.is_open() then
-                        peek.close()
-                    else
-                        peek.open()
-                    end
-                end,
-                desc = "Toggle peek"
-            },
-        }
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+        keys = {{ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "MarkdownPreview toggle"}}
     },
 
     {
@@ -129,7 +117,7 @@ return {
         },
         cmd = { 'Fugit2', 'Fugit2Graph' },
         keys = {
-            { '<leader>gg', mode = 'n', '<cmd>Fugit2<cr>' }
+            { 'gz', '<cmd>Fugit2<cr>' }
         }
     },
 }
