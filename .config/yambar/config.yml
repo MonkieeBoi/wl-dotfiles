@@ -183,16 +183,19 @@ bar:
               muted:
                 - string: {text: " 󰝟 ", deco: {background: {color: *nord3}}}
     - network:
-        name: wlp2s0
         poll-interval: 30000
         content:
           map:
+            default: {empty: {}}
             conditions:
-              state == down:
-                string:
-                  text: " 󰖪  "
-                  deco: {background: {color: *nord3}}
-              state == up:
-                string:
-                  text: " 󰖩  "
-                  deco: {background: {color: *nord3}}
+              name == wlp2s0:
+                map:
+                  conditions:
+                    state == down:
+                      string:
+                        text: " 󰖪  "
+                        deco: {background: {color: *nord3}}
+                    state == up:
+                      string:
+                        text: " 󰖩  "
+                        deco: {background: {color: *nord3}}
