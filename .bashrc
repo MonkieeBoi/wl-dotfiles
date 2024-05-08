@@ -1,21 +1,20 @@
-# PS1="[\u@\h \W]\$ "
-PS1="\[\e[1;36m\][\[\e[34m\]\u\[\e[36m\]@\[\e[37m\]\h \[\e[39m\]\W\[\e[36m\]]\[\e[0m\]\$ "
+# Prompt
+PS1="\[\e[1;30;44m\] \W \[\e[m\e[34m\]\[\e[m\] "
+[ "$TERM" = "linux" ] &&
+    PS1="\[\e[1;36m\][\[\e[34m\]\u\[\e[36m\]@\[\e[37m\]\h \[\e[39m\]\W\[\e[36m\]]\[\e[m\]\$ "
 
 # Bindings
-
-set -o vi
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'
+# set -o vi
+# bind -m vi-command 'Control-l: clear-screen'
+# bind -m vi-insert 'Control-l: clear-screen'
+# shellcheck disable=SC2016
 bind '"\C-o":"cd \"$(find . -type d -printf '\''%P\\n'\'' 2>/dev/null | fzf --preview '\''ls -A {}'\'')\"\n"'
-bind '"\C-r":"cd \"$(find / -type d 2>/dev/null | fzf --preview '\''ls -A {}'\'')\"\n"'
 
 # Infinite history
-
 HISTSIZE=
 HISTFILESIZE=
 
 # Colors
-
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
@@ -28,7 +27,6 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # Aliases
-
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vi='nvim'
@@ -41,19 +39,10 @@ alias onefetch='onefetch -t 2 7 7 4 4 7'
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-# shopt -s globstar
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-# case "$TERM" in
-#     xterm-color|*-256color) color_prompt=yes;;
-# esac
-
 # Autocompletion for aliases
 _completion_loader git
-
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main config
+
 n () {
     # Block nesting of nnn in subshells
     [ "${NNNLVL:-0}" -eq 0 ] || {

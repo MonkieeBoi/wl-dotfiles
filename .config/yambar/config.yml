@@ -122,7 +122,7 @@ bar:
         poll-interval: 30000
         content:
           string:
-            text: "  {percent_used}% "
+            text: "  {percent_used}% "
             deco:
               background:
                 color: *nord3

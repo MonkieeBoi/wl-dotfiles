@@ -13,6 +13,7 @@ discord
 dunst
 efibootmgr
 entr
+fastfetch
 fcitx5-anthy
 fcitx5-configtool
 fcitx5-gtk
@@ -49,6 +50,7 @@ libvdpau-va-gl
 linux
 linux-firmware
 linux-headers
+lxqt-policykit
 lynx
 man-db
 mangohud
@@ -139,3 +141,4 @@ xwaylandvideobridge
 yt-dlp
 zathura
 zathura-pdf-poppler
+zip

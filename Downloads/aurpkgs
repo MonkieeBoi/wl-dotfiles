@@ -1,6 +1,7 @@
 auto-cpufreq
 catppuccin-mocha-grub-theme-git
 cava-git
+clipse
 cyrus-sasl-xoauth2-git
 dotool
 hyprcursor-git
@@ -21,8 +22,8 @@ swaylock-effects-git
 tmux-bash-completion-git
 tofi-git
 tty-clock
-vesktop-bin
+vesktop
 wl-screenrec
-yambar-wayland
+yambar-git
 yay
 zoom

@@ -26,7 +26,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export SUDO_ASKPASS="$HOME/.local/bin/tofi-pass"
 
 export NNN_FCOLORS="0B0B04060006060009060B06"
-export NNN_BMS="d:$HOME/Documents;D:$HOME/Downloads;v:$HOME/Videos;p:$HOME/Pictures;c:$HOME/Documents/Code;C:$HOME/.config;l:$HOME/.local;m:/run/media/$USER"
 export NNN_PREVIEWIMGPROG='chafa'
 export NNN_TERMINAL='foot'
 export NNN_TRASH=1
@@ -42,6 +41,16 @@ export NNN_PLUG=\
 'p:preview-tui;'\
 'q:!qrcp send "$nnn";'\
 'c:!wl-copy -t text/uri-list file://$(pwd)/$nnn*'
+export NNN_BMS="\
+d:$HOME/Documents;\
+D:$HOME/Downloads;\
+v:$HOME/Videos;\
+p:$HOME/Pictures;\
+c:$HOME/Documents/Code;\
+C:$HOME/.config;\
+l:$HOME/.local;\
+m:/run/media/$USER\
+M:$HOME/.config/nnn/mounts"
 
 export FZF_DEFAULT_COMMAND='find . -type f -printf '\''%P\n'\'''
 export FZF_DEFAULT_OPTS='--height=20 --reverse --border=rounded --info=inline-right --color=16,fg+:white,pointer:yellow'

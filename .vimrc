@@ -23,6 +23,11 @@
     set expandtab
     set autoindent
 
+" Netrw
+
+    nnoremap <C-n> :Lex<cr>
+    let g:netrw_winsize = 20
+
 " Splits
 
     set splitbelow splitright

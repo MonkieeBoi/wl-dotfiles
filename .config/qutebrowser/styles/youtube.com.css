@@ -1,42 +1,46 @@
 :root {
     --bg: #2e3340;
     --bg-light: #3b4252;
-    --bg-lighter: #434c5e; 
+    --bg-lighter: #434c5e;
     --bg-lightest: #4c556a;
     --bg-transparent: #2e3340f1;
     --accent: #5e81ac;
     --accent-light: #81a1c1;
-    --accent-lighter: #88c0d0;    
+    --accent-lighter: #88c0d0;
     --accent-lightest: #8fbcbb;
     --text-color: #d8dee9;
     --green: #a3be8c;
     --red: #bf616a;
 }
 
+html[dark] {
+    --yt-spec-base-background: var(--bg);
+}
+
 body {
     background-color: var(--bg-light);
 }
-    
+
 body::-webkit-scrollbar {
   display: none;
 }
-    
+
 #guide-inner-content.ytd-app::-webkit-scrollbar {
   display: none;
-} 
+}
 
 yt-tooltip-renderer {
     color: var(--text-colour);
 }
-    
+
 #player-container {
     background-color: #252930;
 }
-    
+
 ytd-masthead[desktop-mic-background] #voice-search-button.ytd-masthead {
     background-color: var(--bg)
 }
-    
+
 #container.ytd-masthead {
     background-color: var(--bg);
 }
@@ -49,7 +53,7 @@ tp-yt-paper-button.ytd-subscribe-button-renderer[subscribed] {
     color: var(--text-color);
     background-color: var(--bg-light);
 }
-    
+
 tp-yt-paper-button.ytd-subscribe-button-renderer {
     background-color: var(--accent);
     color: var(--text-color);
@@ -66,7 +70,7 @@ ytd-subscription-notification-toggle-button-renderer #button.ytd-subscription-no
 #container.ytd-searchbox {
     background-color: var(--bg);
     color: var(--text-color);
-    
+
 }
 
 #search-icon-legacy.ytd-searchbox {
@@ -324,7 +328,7 @@ yt-live-chat-header-renderer {
 }
 
 yt-live-chat-banner-manager.yt-live-chat-item-list-renderer {
-     display: none; 
+     display: none;
 }
 
 #menu.yt-live-chat-text-message-renderer {
@@ -370,7 +374,7 @@ ytd-mini-guide-entry-renderer {
 }
 
 ytd-searchbox[has-focus] #container.ytd-searchbox {
-    
+
     box-shadow: none;
 }
 
@@ -475,7 +479,7 @@ ytd-sentiment-bar-renderer[activated] #like-bar.ytd-sentiment-bar-renderer {
 
 #sections.ytd-multi-page-menu-renderer > .ytd-multi-page-menu-renderer:not(:last-child), ytd-multi-page-menu-renderer[menu-style="multi-page-menu-style-type-notifications"] #sections.ytd-multi-page-menu-renderer > .ytd-multi-page-menu-renderer {
     background-color: var(--bg);
-    
+
 }
 
 .more-button.ytd-comment-renderer, .less-button.ytd-comment-renderer {
@@ -500,7 +504,7 @@ yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpo
 }
 
 .iv-card-message {
-    
+
     color: var(--text-color);
 }
 
@@ -518,7 +522,7 @@ yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpo
 }
 
 #container.ytd-playlist-panel-renderer, .header.ytd-playlist-panel-renderer, .playlist-items.ytd-playlist-panel-renderer {
-    
+
     background-color: var(--bg)
 }
 
@@ -575,7 +579,7 @@ ytd-button-renderer[disabled][is-paper-button] a.ytd-button-renderer {
     background: var(--red)
 }
 
-.ytp-live-badge::before { 
+.ytp-live-badge::before {
     background: var(--bg-lightest);
 }
 
@@ -671,7 +675,7 @@ html:not(.style-scope) {
 
 .not-found-search__field,.not-found-search__search-button:hover, .not-found-search__search-button {
     background: var(--bg);
-    
+
     box-shadow: none;
 }
 
@@ -726,13 +730,13 @@ yt-icon.yt-options-renderer {
 
 #bar.yt-copy-link-renderer {
     background: var(--bg);
-    
+
 }
 
 .scroll-button.yt-third-party-share-target-section-renderer {
     background: var(--bg-light);
     color: var(--text-color);
-    box-shadow: none;   
+    box-shadow: none;
 }
 
 #close-button.ytd-unified-share-panel-renderer {
@@ -794,7 +798,7 @@ ytd-thumbnail-overlay-toggle-button-renderer {
     display: inline-block;
     visibility: hidden;
     height: 10px;
-}   
+}
 
 ytd-settings-sidebar-renderer, ytd-app {
     background: var(--bg);
@@ -887,5 +891,9 @@ ytd-thumbnail-overlay-endorsement-renderer {
 }
 
 #details-container.ytd-channel-about-metadata-renderer table.ytd-channel-about-metadata-renderer, .deemphasize.yt-formatted-string {
-    color: var(--text-color);   
+    color: var(--text-color);
 }
+ytd-engagement-panel-section-list-renderer[dialog] #content.ytd-engagement-panel-section-list-renderer  {
+    background: var(--bg)
+}
+
