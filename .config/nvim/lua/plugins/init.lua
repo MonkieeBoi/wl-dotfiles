@@ -106,18 +106,53 @@ return {
     },
 
     {
-        'SuperBo/fugit2.nvim',
+        "SuperBo/fugit2.nvim",
         opts = {
             height = "80%"
         },
         dependencies = {
-            'MunifTanjim/nui.nvim',
-            'nvim-tree/nvim-web-devicons',
-            'nvim-lua/plenary.nvim',
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "nvim-lua/plenary.nvim",
         },
-        cmd = { 'Fugit2', 'Fugit2Graph' },
+        cmd = { "Fugit2", "Fugit2Graph" },
         keys = {
-            { 'gz', '<cmd>Fugit2<cr>' }
+            { "gz", "<cmd>Fugit2<cr>" }
         }
     },
+
+    {
+        "michaelb/sniprun",
+        branch = "master",
+        build = "sh install.sh",
+        opts = {
+            display = {
+                "Terminal"
+            }
+        },
+        cmd = { "SnipRun" },
+        keys = {
+            { "<leader>ss", "<cmd>SnipRun<cr>" }
+        }
+    },
+
+    {
+        "ejrichards/baredot.nvim",
+        opts = {
+            git_dir = "~/.dotfiles"
+        },
+        lazy = false
+    },
+
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+        opts = {}
+    },
+
+    {
+        "numToStr/Comment.nvim",
+        enabled = false
+    }
 }

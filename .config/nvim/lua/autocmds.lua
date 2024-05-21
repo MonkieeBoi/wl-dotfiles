@@ -34,3 +34,11 @@ autocmd("QuitPre", {
         require('nvim-tree.api').tree.close()
     end,
 })
+
+-- /* C commentstring */
+autocmd("FileType", {
+    pattern = "c",
+    callback = function ()
+        vim.opt_local["commentstring"] = "// %s"
+    end
+})

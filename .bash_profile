@@ -9,6 +9,13 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export WINEPREFIX="$XDG_DATA_HOME"/wine
 export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
+export CGDB_DIR="$XDG_CONFIG_HOME"/cgdb
+export PKG_CACHE_PATH="$XDG_CACHE_HOME"/pkg-cache
+export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 
 export EDITOR="nvim"
 export TERMINAL="foot"
@@ -29,7 +36,9 @@ export NNN_FCOLORS="0B0B04060006060009060B06"
 export NNN_PREVIEWIMGPROG='chafa'
 export NNN_TERMINAL='foot'
 export NNN_TRASH=1
-export NNN_OPTS='QRa'
+export NNN_OPTS='QR'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_SSHFS='sshfs -o reconnect'
 # shellcheck disable=SC2016
 export NNN_PLUG=\
 'x:xdgdefault;'\
@@ -46,6 +55,7 @@ d:$HOME/Documents;\
 D:$HOME/Downloads;\
 v:$HOME/Videos;\
 p:$HOME/Pictures;\
+s:$HOME/Pictures/Screenshots;\
 c:$HOME/Documents/Code;\
 C:$HOME/.config;\
 l:$HOME/.local;\

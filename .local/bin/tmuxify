@@ -23,6 +23,7 @@ fi
 
 while read -r window pane command; do
     [ -z "$window" ] || [ -z "$pane" ] || [ -z "$command" ] && continue
+    [[ "$window" == \#* ]] && continue
 
     pane_number=${pane//[^0-9]*}
     active=${pane//[^*]}

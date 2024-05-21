@@ -6,7 +6,6 @@ brightnessctl
 btop
 cgdb
 chafa
-cliphist
 cmus
 cups
 discord
@@ -30,6 +29,7 @@ git
 grim
 grub
 gvfs
+hyprlock
 imagemagick
 imv
 intel-media-driver
@@ -64,8 +64,8 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 obs-studio
-obsidian
 pacman-contrib
+pass-otp
 pcmanfm-gtk3
 pinta
 pipewire-alsa
@@ -114,6 +114,7 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 thermald
+tldr
 tmux
 transmission-cli
 trash-cli

@@ -1,4 +1,17 @@
 #!/bin/sh
+select_window () {
+    hyprctl clients -j \
+        | jq -r ".[] | select(.workspace.id | IN(\
+            $(hyprctl -j monitors \
+                | jq 'map(.activeWorkspace.id) | join(",")' \
+                | tr -d \")))" \
+        | jq -r ".at,.size" \
+        | jq -s "add" \
+        | jq '_nwise(4)' \
+        | jq -r '"\(.[0]),\(.[1]) \(.[2])x\(.[3])"'\
+        | slurp
+}
+
 file="$(xdg-user-dir PICTURES)/Screenshots/$(date +'Screenshot %y-%m-%d %X.png')"
 hyprpicker -rz &
 sleep 0.2
@@ -6,10 +19,13 @@ picker_pid=$!
 case "$1" in
         s) grim -g "$(slurp)" /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
         f) grim /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
+        w) grim -g "$(select_window)" /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
         ss) grim -g "$(slurp)" "$file" && wl-copy < "$file";;
-        fs) grim "$file" && wl-copy < "$file";;
+        sf) grim "$file" && wl-copy < "$file";;
+        sw) grim -g "$(select_window)" "$file" && wl-copy < "$file";;
         ds) grim -g "$(slurp)" - | (swappy -f - &);;
         df) grim - | swappy -f - &;;
+        dw) grim -g "$(select_window)" - | (swappy -f - &);;
 esac
 kill $picker_pid
 [ -f "$file" ] && notify-send -i "$file" "Screenshot saved"

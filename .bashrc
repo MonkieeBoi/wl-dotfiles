@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Prompt
 PS1="\[\e[1;30;44m\] \W \[\e[m\e[34m\]\[\e[m\] "
 [ "$TERM" = "linux" ] &&
@@ -5,10 +8,12 @@ PS1="\[\e[1;30;44m\] \W \[\e[m\e[34m\]\[\e[m\] "
 
 # Bindings
 # set -o vi
-# bind -m vi-command 'Control-l: clear-screen'
 # bind -m vi-insert 'Control-l: clear-screen'
 # shellcheck disable=SC2016
 bind '"\C-o":"cd \"$(find . -type d -printf '\''%P\\n'\'' 2>/dev/null | fzf --preview '\''ls -A {}'\'')\"\n"'
+
+# Disable C-s
+stty -ixon
 
 # Infinite history
 HISTSIZE=
