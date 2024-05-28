@@ -33,19 +33,36 @@ return {
         opts = overrides.nvimtree,
     },
 
+    -- {
+    --     "vimwiki/vimwiki",
+    --     ft = "markdown",
+    --     keys = { "<leader>ww" },
+    --     init = function()
+    --         vim.g.vimwiki_list = {
+    --             {
+    --                 path = "~/Documents/Wiki/",
+    --                 syntax = "markdown",
+    --                 ext = ".md",
+    --             },
+    --         }
+    --     end,
+    -- },
+
     {
-        "vimwiki/vimwiki",
-        ft = "markdown",
-        keys = { "<leader>ww" },
-        init = function()
-            vim.g.vimwiki_list = {
-                {
-                    path = "~/Documents/vimwiki/",
-                    syntax = "markdown",
-                    ext = ".md",
-                },
-            }
-        end,
+        "serenevoid/kiwi.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
+        opts = {
+            {
+                name = "notes",
+                path = os.getenv("HOME") .. "/Documents/Wiki"
+            },
+        },
+        keys = {
+            { "<leader>ww", function() require("kiwi").open_wiki_index() end, desc = "Open Wiki index" },
+            { "T", function() require("kiwi").todo.toggle() end, desc = "Toggle Markdown Task" }
+        },
     },
 
     {
@@ -68,10 +85,7 @@ return {
 
     {
         "sindrets/diffview.nvim",
-        keys = {
-            { "<leader>do", "<cmd>DiffviewOpen<cr>",  desc = "Diffview open" },
-            { "<leader>dc", "<cmd>DiffviewClose<cr>", desc = "Diffview close" },
-        }
+        keys = {{ "<leader>dv", "<cmd>DiffviewOpen<cr>",  desc = "Diffview open" }}
     },
 
     {
@@ -99,48 +113,24 @@ return {
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
         },
-        opts = {
-            arg = "leetcode.nvim",
-            lang = "c"
-        },
+        opts = { arg = "leetcode.nvim", lang = "c" },
     },
 
     {
         "SuperBo/fugit2.nvim",
-        opts = {
-            height = "80%"
-        },
+        opts = { height = "80%" },
         dependencies = {
             "MunifTanjim/nui.nvim",
             "nvim-tree/nvim-web-devicons",
             "nvim-lua/plenary.nvim",
         },
         cmd = { "Fugit2", "Fugit2Graph" },
-        keys = {
-            { "gz", "<cmd>Fugit2<cr>" }
-        }
-    },
-
-    {
-        "michaelb/sniprun",
-        branch = "master",
-        build = "sh install.sh",
-        opts = {
-            display = {
-                "Terminal"
-            }
-        },
-        cmd = { "SnipRun" },
-        keys = {
-            { "<leader>ss", "<cmd>SnipRun<cr>" }
-        }
+        keys = {{ "gz", "<cmd>Fugit2<cr>" }}
     },
 
     {
         "ejrichards/baredot.nvim",
-        opts = {
-            git_dir = "~/.dotfiles"
-        },
+        opts = { git_dir = "~/.dotfiles" },
         lazy = false
     },
 
@@ -154,5 +144,19 @@ return {
     {
         "numToStr/Comment.nvim",
         enabled = false
-    }
+    },
+
+    {
+        "NStefan002/screenkey.nvim",
+        cmd = "Screenkey",
+        lazy = false,
+        version = "*",
+        opts = {
+            win_opts = {
+                width = 30,
+                border = "rounded",
+            }
+        },
+        keys = {{ "<leader>sk", "<cmd>Screenkey<cr>", desc = "Screenkey toggle" }}
+    },
 }

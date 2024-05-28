@@ -53,6 +53,7 @@ linux-headers
 lxqt-policykit
 lynx
 man-db
+man-pages
 mangohud
 mpv-mpris
 neofetch
@@ -92,7 +93,6 @@ sof-firmware
 sshfs
 steam
 steam-native-runtime
-swappy
 swaybg
 texlive-basic
 texlive-bibtexextra
@@ -127,7 +127,6 @@ urlscan
 v4l2loopback-dkms
 valgrind
 vim
-vnstat
 waybar
 wev
 wf-recorder

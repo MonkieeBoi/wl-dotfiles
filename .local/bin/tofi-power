@@ -6,5 +6,5 @@ case "$(printf "Shutdown\nRestart\nLogout\nSuspend\nLock" | tofi \
         Restart) exec systemctl reboot;;
         Logout) kill -HUP "$XDG_SESSION_PID";;
         Suspend) exec systemctl suspend;;
-        Lock) exec swaylock
+        Lock) exec hyprlock
 esac
