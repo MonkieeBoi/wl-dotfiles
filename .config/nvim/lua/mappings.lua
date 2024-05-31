@@ -17,6 +17,8 @@ map("n", "<leader>fc",
     { desc = "format with conform" }
 )
 
+map({ "n", "t" }, "<C-n>", "<cmd>NnnExplorer<CR>", { desc = "Open nnn explorer" })
+
 -- Goto tab using A-number
 for i = 1, 9, 1 do
     vim.keymap.set("n", string.format("<A-%s>", i), function()
@@ -29,7 +31,7 @@ map("n", "<leader>tc",
     function ()
         local orig = vim.opt.qftf
         vim.opt.qftf = "v:lua.require'configs.misc'.qftf"
-        vim.cmd("lv/^#/%|lop")
+        vim.cmd("lv/^#/%|vert lop|hor winc =|nmap <silent> <buffer> <cr> <cr>:lcl<cr>")
         vim.opt.qftf = orig
     end,
     { desc = "Markdown TOC" }

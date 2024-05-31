@@ -30,7 +30,20 @@ return {
 
     {
         "nvim-tree/nvim-tree.lua",
+        enabled = false,
         opts = overrides.nvimtree,
+    },
+
+    {
+        "luukvbaal/nnn.nvim",
+        cmd = { "NnnExplorer", "NnnPicker" },
+        opts = {
+            explorer = {
+                width = 30
+            },
+            auto_close = true,
+            quitcd = "cd"
+        }
     },
 
     -- {

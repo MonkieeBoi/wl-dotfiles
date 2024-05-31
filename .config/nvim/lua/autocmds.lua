@@ -29,11 +29,11 @@ autocmd("InsertLeave", {
 })
 
 -- Auto close when nvim-tree last window
-autocmd("QuitPre", {
-    callback = function()
-        require('nvim-tree.api').tree.close()
-    end,
-})
+-- autocmd("QuitPre", {
+--     callback = function()
+--         require('nvim-tree.api').tree.close()
+--     end,
+-- })
 
 -- /* C commentstring */
 autocmd("FileType", {
