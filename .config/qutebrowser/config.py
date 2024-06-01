@@ -89,7 +89,7 @@ c.editor.command = ['foot', 'nvim', '{file}']
 # Filename of the file to be written to. If not contained in any
 # argument, the   standard output of the command is read instead.
 # Type: ShellCommand
-c.fileselect.folder.command = ['foot', 'nnn', '-p', '-']
+c.fileselect.folder.command = ['foot', 'nnn', '-p', '{}']
 
 # Handler for selecting file(s) in forms. If `external`, then the
 # commands specified by `fileselect.single_file.command` and
@@ -108,7 +108,7 @@ c.fileselect.handler = 'external'
 # contained in any argument, the   standard output of the command is
 # read instead.
 # Type: ShellCommand
-c.fileselect.multiple_files.command = ['foot', 'nnn', '-p', '-']
+c.fileselect.multiple_files.command = ['foot', 'nnn', '-p', '{}']
 
 # Command (and arguments) to use for selecting a single file in forms.
 # The command should write the selected file path to the specified file
@@ -116,7 +116,7 @@ c.fileselect.multiple_files.command = ['foot', 'nnn', '-p', '-']
 # the file to be written to. If not contained in any argument, the
 # standard output of the command is read instead.
 # Type: ShellCommand
-c.fileselect.single_file.command = ['foot', 'nnn', '-p', '-']
+c.fileselect.single_file.command = ['foot', 'nnn', '-p', '{}']
 
 # When a hint can be automatically followed without pressing Enter.
 # Type: String
