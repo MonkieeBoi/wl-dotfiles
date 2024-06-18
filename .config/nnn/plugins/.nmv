@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# use https://github.com/itchyny/mmv for batch renaming
+
+# shellcheck disable=SC1090,SC1091
+. "$(dirname "$0")"/.nnn-plugin-helper
+
+NNN_INCLUDE_HIDDEN="${NNN_INCLUDE_HIDDEN:-0}"
+RECURSIVE="${RECURSIVE:-0}"
+
+if nnn_use_selection "Rename"; then
+    # shellcheck disable=SC2154
+    arr=$(tr '\0' '\n' < "$selection")
+else
+    findcmd="find . ! -name ."
+
+    if [ "$RECURSIVE" -eq 0 ]; then
+        findcmd="$findcmd -prune"
+    fi
+
+    if [ "$NNN_INCLUDE_HIDDEN" -eq 0 ]; then
+        findcmd="$findcmd ! -name \".*\""
+    fi
+
+    if [ -z "$NNN_LIST" ]; then
+        findcmd="$findcmd -print"
+    else
+        findcmd="$findcmd -printf "'"'"$NNN_LIST/%P\n"'"'
+    fi
+
+    arr=$(eval "$findcmd" | sort)
+fi
+
+items=()
+while IFS='' read -r line; do
+    if [ -n "$NNN_LIST" ]; then
+        line=$(readlink "$line" || printf "%s" "$line")
+    fi
+
+    items+=("${line#./}");
+done < <(printf "%s\n" "$arr")
+
+mmv "${items[@]}"
+
+exit $?
+

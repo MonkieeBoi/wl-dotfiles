@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+# Set the selected image as wallpaper using swaybg.
+if [ -n "$1" ]; then
+    if [ "$(file --mime-type "$1" | awk '{print $NF}' | awk -F '/' '{print $1}')" = "image" ]; then
+        if type swaybg >/dev/null 2>&1; then
+            printf "#!/bin/sh\nswaybg -m fill -i %s &" "$(pwd)/$1" > "$HOME"/.swaybg
+            pkill swaybg
+            nohup "$HOME"/.swaybg > /dev/null 2>&1 &
+        else
+            printf "swaybg missing"
+            read -r _
+        fi
+    fi
+fi
