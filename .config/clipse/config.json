@@ -1,0 +1,6 @@
+{
+    "historyFile": "clipboard_history.json",
+    "maxHistory": 100,
+    "themeFile": "nord.json",
+    "tempDir": "tmp_files"
+}
