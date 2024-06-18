@@ -4,12 +4,8 @@ cava-git
 clipse
 cyrus-sasl-xoauth2-git
 dotool
-hyprcursor-git
-hyprland-git
-hyprlang-git
 hyprpicker
-isync-git
-mutt-wizard-git
+mmv-go
 ngrok
 nordic-theme
 nordzy-cursors
@@ -26,4 +22,3 @@ vesktop
 wl-screenrec
 yambar-git
 yay
-zoom

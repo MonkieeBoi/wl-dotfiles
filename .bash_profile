@@ -29,7 +29,7 @@ export XMODIFIERS='@im=fcitx'
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$CARGO_HOME/bin:$PATH"
 export SUDO_ASKPASS="$HOME/.local/bin/tofi-pass"
 
 export NNN_FCOLORS="0B0B04060006060009060B06"
@@ -59,7 +59,7 @@ s:$HOME/Pictures/Screenshots;\
 c:$HOME/Documents/Code;\
 C:$HOME/.config;\
 l:$HOME/.local;\
-m:/run/media/$USER\
+m:/run/media/$USER;\
 M:$HOME/.config/nnn/mounts"
 
 export FZF_DEFAULT_COMMAND='find . -type f -printf '\''%P\n'\'''

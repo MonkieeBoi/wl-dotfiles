@@ -34,7 +34,7 @@ yt-tooltip-renderer {
 }
 
 #player-container {
-    background-color: #252930;
+    background-color: var(--bg);
 }
 
 ytd-masthead[desktop-mic-background] #voice-search-button.ytd-masthead {

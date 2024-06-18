@@ -29,6 +29,9 @@ git
 grim
 grub
 gvfs
+hyprcursor
+hyprland
+hyprlang
 hyprlock
 imagemagick
 imv
@@ -39,6 +42,7 @@ jdk17-openjdk
 jdk8-openjdk
 jemalloc
 jq
+jre21-openjdk
 jre8-openjdk
 keyd
 lib32-gamemode
@@ -57,6 +61,7 @@ man-pages
 mangohud
 mpv-mpris
 neofetch
+neomutt
 neovim
 networkmanager
 nnn
@@ -140,5 +145,5 @@ xdg-user-dirs
 xwaylandvideobridge
 yt-dlp
 zathura
-zathura-pdf-poppler
+zathura-pdf-mupdf
 zip

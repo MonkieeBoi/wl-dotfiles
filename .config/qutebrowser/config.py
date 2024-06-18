@@ -62,6 +62,14 @@ c.content.blocking.method = 'both'
 # Type: Bool
 c.content.fullscreen.window = True
 
+## Display PDF files via PDF.js in the browser without showing a download
+## prompt. Note that the files can still be downloaded by clicking the
+## download button in the pdf.js viewer. With this set to `false`, the
+## `:prompt-open-download --pdfjs` command (bound to `<Ctrl-p>` by
+## default) can be used in the download prompt.
+## Type: Bool
+c.content.pdfjs = False
+
 # Where to show the downloaded files.
 # Type: VerticalPosition
 # Valid values:

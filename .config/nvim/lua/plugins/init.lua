@@ -155,11 +155,6 @@ return {
     },
 
     {
-        "numToStr/Comment.nvim",
-        enabled = false
-    },
-
-    {
         "NStefan002/screenkey.nvim",
         cmd = "Screenkey",
         lazy = false,
@@ -171,5 +166,11 @@ return {
             }
         },
         keys = {{ "<leader>sk", "<cmd>Screenkey<cr>", desc = "Screenkey toggle" }}
+    },
+
+    {
+        "folke/ts-comments.nvim",
+        opts = {},
+        event = "VeryLazy",
     },
 }
