@@ -1,0 +1,17 @@
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+# vim:fileencoding=utf-8:foldmethod=marker
+[manager]
+preview_hovered = { bold = true }
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "blue", bg = "black" }
+
+# Permissions
+permissions_t = { fg = "blue" }
+permissions_r = { fg = "blue" }
+permissions_w = { fg = "blue" }
+permissions_x = { fg = "blue" }
+permissions_s = { fg = "blue" }

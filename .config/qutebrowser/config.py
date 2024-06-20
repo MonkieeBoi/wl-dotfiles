@@ -307,3 +307,5 @@ config.bind('S', 'fake-key S', mode='passthrough')
 config.bind('D', 'fake-key D', mode='passthrough')
 
 config.source('nord-qutebrowser.py')
+
+c.content.local_content_can_access_remote_urls = True
