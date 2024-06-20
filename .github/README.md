@@ -27,7 +27,7 @@ pacman -S - < ~/Downloads/pkgs
 
 **Menus** - [tofi](https://github.com/philj56/tofi)
 
-**File Manager** - [vifm](https://vifm.info/)
+**File Manager** - [nnn](https://github.com/jarun/nnn)
 
 **Browser** - [qutebrowser](https://qutebrowser.org/)
 
@@ -36,8 +36,6 @@ pacman -S - < ~/Downloads/pkgs
 **Wallpaper setter** - [swaybg](https://github.com/swaywm/swaybg)
 
 **Screenshots** - [grim](https://sr.ht/~emersion/grim/) + [slurp](https://github.com/emersion/slurp)
-
-**Audio Visualiser** - [CAVA](https://github.com/karlstav/cava)
 
 **Notifications** - [dunst](https://dunst-project.org/)
 
