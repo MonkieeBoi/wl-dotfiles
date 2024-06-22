@@ -1,0 +1,4 @@
+[org/gnome/desktop/interface]
+cursor-theme='Nordzy-cursors'
+gtk-theme='Nordic'
+icon-theme='Nordic-bluish'

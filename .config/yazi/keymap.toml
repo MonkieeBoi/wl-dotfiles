@@ -135,6 +135,7 @@ keymap = [
     { on = [ "b", "p" ],       run = "cd ~/Pictures/",              desc = "Cd to Pictures" },
     { on = [ "b", "v" ],       run = "cd ~/Videos/",                desc = "Cd to Videos" },
     { on = [ "b", "s" ],       run = "cd ~/Pictures/Screenshots/",  desc = "Cd to Screenshots" },
+    { on = [ "b", "l" ],       run = "cd ~/.local",                 desc = "Cd to .local" },
     { on = [ "b", "<Space>" ], run = "cd --interactive",            desc = "Cd interactively" },
 
     # Help
