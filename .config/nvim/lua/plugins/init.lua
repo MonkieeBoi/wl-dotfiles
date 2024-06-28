@@ -129,16 +129,26 @@ return {
         opts = { arg = "leetcode.nvim", lang = "c" },
     },
 
+    -- {
+    --     "SuperBo/fugit2.nvim",
+    --     opts = { height = "80%" },
+    --     dependencies = {
+    --         "MunifTanjim/nui.nvim",
+    --         "nvim-tree/nvim-web-devicons",
+    --         "nvim-lua/plenary.nvim",
+    --     },
+    --     cmd = { "Fugit2", "Fugit2Graph" },
+    --     keys = {{ "gz", "<cmd>Fugit2<cr>" }}
+    -- },
+
     {
-        "SuperBo/fugit2.nvim",
-        opts = { height = "80%" },
+        "NeogitOrg/neogit",
         dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-tree/nvim-web-devicons",
             "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
         },
-        cmd = { "Fugit2", "Fugit2Graph" },
-        keys = {{ "gz", "<cmd>Fugit2<cr>" }}
+        config = true,
+        keys = {{ "gz", function() require("neogit").open({ kind = "auto"}) end }}
     },
 
     {

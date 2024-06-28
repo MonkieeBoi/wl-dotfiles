@@ -19,6 +19,7 @@ M.treesitter = {
 }
 
 M.mason = {
+    PATH = "append",
     ensure_installed = {
         "lua-language-server",
         "stylua",

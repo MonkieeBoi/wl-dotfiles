@@ -48,6 +48,7 @@ export NNN_PLUG=\
 'e:suedit;'\
 'w:wallpaper;'\
 'p:preview-tui;'\
+'d:dragdrop;'\
 'q:!qrcp send "$nnn";'\
 'c:!wl-copy -t text/uri-list file://$(pwd)/$nnn*'
 export NNN_BMS="\
