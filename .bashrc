@@ -34,6 +34,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # Aliases
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias nit='git --git-dir=$HOME/.nix-config/ --work-tree=/etc/nixos'
 alias vi='nvim'
 alias tsm='transmission-remote'
 alias dvtm='dvtm -m ^w'
