@@ -11,7 +11,8 @@ local servers = {
     "pylsp",
     "texlab",
     "jdtls",
-    "bashls"
+    "bashls",
+    "rust_analyzer"
 }
 
 for _, lsp in ipairs(servers) do

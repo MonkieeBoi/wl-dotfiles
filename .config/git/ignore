@@ -1,2 +1,5 @@
 .tmuxify.layout
 Session.vim
+shell.nix
+default.nix
+.envrc

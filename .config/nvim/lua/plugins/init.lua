@@ -97,6 +97,52 @@ return {
     },
 
     {
+        "jakewvincent/mkdnflow.nvim",
+        ft = { "markdown" },
+        opts = {
+            modules = {
+                tables   = true,
+                lists    = true,
+                conceal  = true,
+                maps     = true,
+                bib      = false,
+                buffers  = false,
+                cursor   = false,
+                folds    = false,
+                foldtext = false,
+                links    = false,
+                paths    = false,
+                yaml     = false,
+                cmp      = false
+            },
+            links = {
+                conceal = true,
+            },
+            mappings = {
+                MkdnEnter                    = {"i", "<CR>"},
+                MkdnTab                      = false,
+                MkdnSTab                     = false,
+                MkdnNextLink                 = false,
+                MkdnPrevLink                 = false,
+                MkdnNextHeading              = false,
+                MkdnPrevHeading              = false,
+                MkdnGoBack                   = false,
+                MkdnGoForward                = false,
+                MkdnCreateLink               = false,
+                MkdnCreateLinkFromClipboard  = false,
+                MkdnFollowLink               = false,
+                MkdnDestroyLink              = false,
+                MkdnTagSpan                  = false,
+                MkdnMoveSource               = false,
+                MkdnYankAnchorLink           = false,
+                MkdnYankFileAnchorLink       = false,
+                MkdnFoldSection              = false,
+                MkdnUnfoldSection            = false,
+            }
+        }
+    },
+
+    {
         "sindrets/diffview.nvim",
         keys = {{ "<leader>dv", "<cmd>DiffviewOpen<cr>",  desc = "Diffview open" }}
     },

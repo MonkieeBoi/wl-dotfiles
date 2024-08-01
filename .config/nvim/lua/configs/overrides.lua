@@ -8,7 +8,8 @@ M.treesitter = {
         "bibtex",
         "latex",
         "java",
-        "typst"
+        "typst",
+        "rust"
     },
     indent = {
         enable = true,
@@ -37,7 +38,8 @@ M.mason = {
         "jdtls",
         "bash-language-server",
         "shfmt",
-        "typst-lsp"
+        "typst-lsp",
+        "rust-analyzer"
     },
 }
 
