@@ -242,7 +242,7 @@ c.tabs.mode_on_change = 'restore'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'switching'
+c.tabs.show = 'multiple'
 
 # Duration (in milliseconds) to show the tab bar before hiding it when
 # tabs.show is set to 'switching'.
@@ -291,7 +291,7 @@ c.url.start_pages = ['~/.config/qutebrowser/startpage/index.html']
 config.bind(',m', 'spawn mpv {url}')
 config.bind(',M', 'hint links spawn mpv {hint-url}')
 config.bind(',s', 'config-cycle statusbar.show in-mode never')
-config.bind(',t', 'config-cycle tabs.show always switching')
+config.bind(',t', 'config-cycle tabs.show always multiple switching')
 config.bind(',r', 'hint --rapid')
 config.bind(',c', 'spawn --userscript rebuild-qutebrowser-grease-styles.py', mode='normal')
 config.bind(',b', 'config-cycle content.blocking.enabled true false')

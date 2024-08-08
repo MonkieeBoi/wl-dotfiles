@@ -6,6 +6,12 @@ PS1="\[\e[1;30;44m\] \W \[\e[m\e[34m\]\[\e[m\] "
 [ "$TERM" = "linux" ] &&
     PS1="\[\e[1;36m\][\[\e[34m\]\u\[\e[36m\]@\[\e[37m\]\h \[\e[39m\]\W\[\e[36m\]]\[\e[m\]\$ "
 
+if [[ -n "$IN_NIX_SHELL" ]]; then
+    PS1="${PS1//4m/5m}"
+    bind "set vi-ins-mode-string \"\1\e[1;37;100m\2 INS \1\e[90;45m\2\1\e[0m\2\""
+    bind "set vi-cmd-mode-string \"\1\e[1;30;47m\2 NOR \1\e[37;45m\2\1\e[0m\2\""
+fi
+
 # Bindings
 # set -o vi
 # bind -m vi-insert 'Control-l: clear-screen'
