@@ -42,6 +42,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias nit='git --git-dir=$HOME/.nix-config/ --work-tree=/etc/nixos'
 alias vi='nvim'
+alias py='python'
 alias tsm='transmission-remote'
 alias dvtm='dvtm -m ^w'
 alias t='tmuxify'

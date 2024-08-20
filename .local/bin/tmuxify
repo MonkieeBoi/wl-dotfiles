@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Slightly modified version of https://github.com/tonchis/tmuxify
 
 for file in "${PWD}/.tmuxify.layout" "${XDG_DATA_HOME}/tmuxify/$1.layout"; do
