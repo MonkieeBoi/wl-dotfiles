@@ -10,9 +10,9 @@ local servers = {
     "clangd",
     "pylsp",
     "texlab",
-    "jdtls",
     "bashls",
-    "rust_analyzer"
+    "rust_analyzer",
+    "sqls"
 }
 
 for _, lsp in ipairs(servers) do
@@ -29,5 +29,18 @@ lspconfig.typst_lsp.setup {
     capabilities = capabilities,
     settings = {
         exportPdf = "never"
+    }
+}
+
+lspconfig.jdtls.setup {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    settings = {
+        java = {
+            autobuild = {
+                enabled = false
+            }
+        }
     }
 }

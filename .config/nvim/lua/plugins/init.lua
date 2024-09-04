@@ -74,7 +74,7 @@ return {
         },
         keys = {
             { "<leader>ww", function() require("kiwi").open_wiki_index() end, desc = "Open Wiki index" },
-            { "T", function() require("kiwi").todo.toggle() end, desc = "Toggle Markdown Task" }
+            { "<C-Space>", function() require("kiwi").todo.toggle() end, desc = "Toggle Markdown Task" }
         },
     },
 
@@ -120,6 +120,7 @@ return {
             },
             mappings = {
                 MkdnEnter                    = {"i", "<CR>"},
+                MkdnToggleToDo               = false,
                 MkdnTab                      = false,
                 MkdnSTab                     = false,
                 MkdnNextLink                 = false,

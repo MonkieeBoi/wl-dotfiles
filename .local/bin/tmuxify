@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Slightly modified version of https://github.com/tonchis/tmuxify
 
-for file in "${PWD}/.tmuxify.layout" "${XDG_DATA_HOME}/tmuxify/$1.layout"; do
+for file in "${PWD}/.tmuxify.layout" "${XDG_DATA_HOME:="$HOME/.local/share"}/tmuxify/$1.layout"; do
     test -f "${file}" && layout="${file}" && break
 done
 

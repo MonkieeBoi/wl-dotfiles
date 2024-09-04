@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+readarray -t templates < <(find ~/Templates/ -maxdepth 1 -mindepth 1 -printf "%f\n")
+
+for i in "${!templates[@]}"
+do
+    printf '% 3d  %s\n' "$i" "${templates[$i]}"
+done
+
+printf 'Select template to copy: '
+read -r selection
+template="${templates[$selection]}"
+
+printf "\nCopying from %s:\n\n" "$template"
+find ~/Templates/"$template" -mindepth 1 -printf "%P\n"
+
+cp -a ~/Templates/"$template"/. .
