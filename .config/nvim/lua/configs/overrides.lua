@@ -21,26 +21,6 @@ M.treesitter = {
 
 M.mason = {
     PATH = "append",
-    ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "css-lsp",
-        "html-lsp",
-        "typescript-language-server",
-        "deno",
-        "prettier",
-        "clangd",
-        "clang-format",
-        "shellcheck",
-        "texlab",
-        "pylint",
-        "python-lsp-server",
-        "jdtls",
-        "bash-language-server",
-        "shfmt",
-        "typst-lsp",
-        "rust-analyzer"
-    },
 }
 
 -- git support in nvimtree

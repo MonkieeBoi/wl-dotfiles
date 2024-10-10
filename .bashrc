@@ -16,7 +16,7 @@ fi
 # set -o vi
 # bind -m vi-insert 'Control-l: clear-screen'
 # shellcheck disable=SC2016
-bind '"\C-o":"cd \"$(find . -type d -printf '\''%P\\n'\'' 2>/dev/null | fzf --preview '\''ls -A {}'\'')\"\n"'
+bind '"\C-o":"cd \"$(find . -type d ! -path '\''*.git*'\'' -printf '\''%P\\n'\'' 2>/dev/null | fzf --preview '\''ls -A {}'\'')\"\n"'
 
 # Disable C-s
 stty -ixon
@@ -77,4 +77,8 @@ n () {
 
 if type direnv >/dev/null 2>&1; then
     eval "$(direnv hook bash)"
+fi
+
+if type zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init bash)"
 fi

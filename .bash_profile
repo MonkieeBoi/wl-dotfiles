@@ -51,6 +51,7 @@ export NNN_PLUG=\
 'e:suedit;'\
 'w:swaybg;'\
 'p:preview-tui;'\
+'z:autojump;'\
 'd:dragdrop;'\
 'q:!qrcp send "$nnn";'\
 'c:!wl-copy -t text/uri-list file://$(pwd)/$nnn*'

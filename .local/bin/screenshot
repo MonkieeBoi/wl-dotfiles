@@ -13,20 +13,25 @@ select_window () {
 }
 
 file="$(xdg-user-dir PICTURES)/Screenshots/$(date +'Screenshot %y-%m-%d %X.png')"
+tmp="/tmp/screenshot.png"
 hyprpicker -rz &
 sleep 0.2
 picker_pid=$!
 case "$1" in
-        s) grim -g "$(slurp)" /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
-        f) grim /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
-        w) grim -g "$(select_window)" /tmp/screenshot.png && wl-copy < /tmp/screenshot.png;;
+        s) grim -g "$(slurp)" "$tmp" && wl-copy < "$tmp";;
+        f) grim "$tmp" && wl-copy < "$tmp";;
+        w) grim -g "$(select_window)" "$tmp" && wl-copy < "$tmp";;
         ss) grim -g "$(slurp)" "$file" && wl-copy < "$file";;
         sf) grim "$file" && wl-copy < "$file";;
         sw) grim -g "$(select_window)" "$file" && wl-copy < "$file";;
         ds) grim -g "$(slurp)" - | (satty -f - --output-filename "$file" &);;
         df) grim - | satty --fullscreen -f - --output-filename "$file" &;;
         dw) grim -g "$(select_window)" - | (satty -f - --output-filename "$file" &);;
+        di) grim -g "$(select_window)" - | (satty -f - --output-filename "$file" &);;
+        is) grim -g "$(slurp)" "$tmp" && kill "$picker_pid" && exec imv "$tmp";;
+        if) grim "$tmp" && kill "$picker_pid" && exec imv "$tmp";;
+        iw) grim -g "$(select_window)" "$tmp" && kill "$picker_pid" && exec imv "$tmp";;
 esac
-kill $picker_pid
+kill "$picker_pid"
 [ -f "$file" ] && notify-send -i "$file" "Screenshot saved"
-[ -f "/tmp/screenshot.png" ] && notify-send -i "/tmp/screenshot.png" "Screenshot copied" && rm "/tmp/screenshot.png"
+[ -f "$tmp" ] && notify-send -i "$tmp" "Screenshot copied" && rm "$tmp"

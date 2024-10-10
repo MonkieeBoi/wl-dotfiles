@@ -97,50 +97,9 @@ return {
     },
 
     {
-        "jakewvincent/mkdnflow.nvim",
-        ft = { "markdown" },
-        opts = {
-            modules = {
-                tables   = true,
-                lists    = true,
-                conceal  = true,
-                maps     = true,
-                bib      = false,
-                buffers  = false,
-                cursor   = false,
-                folds    = false,
-                foldtext = false,
-                links    = false,
-                paths    = false,
-                yaml     = false,
-                cmp      = false
-            },
-            links = {
-                conceal = true,
-            },
-            mappings = {
-                MkdnEnter                    = {"i", "<CR>"},
-                MkdnToggleToDo               = false,
-                MkdnTab                      = false,
-                MkdnSTab                     = false,
-                MkdnNextLink                 = false,
-                MkdnPrevLink                 = false,
-                MkdnNextHeading              = false,
-                MkdnPrevHeading              = false,
-                MkdnGoBack                   = false,
-                MkdnGoForward                = false,
-                MkdnCreateLink               = false,
-                MkdnCreateLinkFromClipboard  = false,
-                MkdnFollowLink               = false,
-                MkdnDestroyLink              = false,
-                MkdnTagSpan                  = false,
-                MkdnMoveSource               = false,
-                MkdnYankAnchorLink           = false,
-                MkdnYankFileAnchorLink       = false,
-                MkdnFoldSection              = false,
-                MkdnUnfoldSection            = false,
-            }
-        }
+        "SCJangra/table-nvim",
+        ft = "markdown",
+        opts = {},
     },
 
     {
@@ -188,18 +147,6 @@ return {
                 css = true,
             }
         }
-    },
-
-    {
-        "kawre/leetcode.nvim",
-        build = ":TSUpdate html",
-        lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-        },
-        opts = { arg = "leetcode.nvim", lang = "c" },
     },
 
     -- {
@@ -255,5 +202,33 @@ return {
         "folke/ts-comments.nvim",
         opts = {},
         event = "VeryLazy",
+    },
+
+    {
+        "hat0uma/csvview.nvim",
+        cmd = "CsvViewToggle",
+        opts = {
+            view = {
+                spacing = 0
+            }
+        }
+    },
+
+    {
+        'Wansmer/treesj',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        opts = {
+            use_default_keymaps = false,
+            max_join_length = 200
+        },
+        keys = {
+            {
+                "<leader>sj",
+                function()
+                    require('treesj').toggle({ split = { recursive = true } })
+                end,
+                desc = "Treesj toggle",
+            },
+        },
     },
 }

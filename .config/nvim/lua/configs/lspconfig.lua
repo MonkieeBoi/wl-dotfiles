@@ -6,13 +6,14 @@ local lspconfig = require "lspconfig"
 local servers = {
     "html",
     "cssls",
-    "tsserver",
+    "ts_ls",
     "clangd",
     "pylsp",
     "texlab",
     "bashls",
     "rust_analyzer",
-    "sqls"
+    "sqls",
+    "nil_ls"
 }
 
 for _, lsp in ipairs(servers) do

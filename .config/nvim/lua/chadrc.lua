@@ -3,6 +3,15 @@ local M = {}
 local highlights = require "highlights"
 
 M.ui = {
+    tabufline = {
+        order = { "treeOffset", "buffers", "tabs" }
+    },
+    statusline = {
+        separator_style = "block",
+    },
+}
+
+M.base46 = {
     theme = "nord",
     theme_toggle = { "nord", "nord" },
 
@@ -10,12 +19,10 @@ M.ui = {
     hl_add = highlights.add,
 
     transparency = true,
-    tabufline = {
-        order = { "treeOffset", "buffers", "tabs" }
-    },
-    statusline = {
-        separator_style = "block",
-    },
+}
+
+M.colorify = {
+    mode = "fg"
 }
 
 return M

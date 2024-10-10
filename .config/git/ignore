@@ -4,3 +4,4 @@ shell.nix
 default.nix
 .envrc
 .direnv
+compile_flags.txt
