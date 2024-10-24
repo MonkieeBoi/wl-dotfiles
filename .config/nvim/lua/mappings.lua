@@ -10,6 +10,10 @@ map("v", "<S-Tab>", "<gv", { desc = "indent back" })
 
 map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Delete buffer" })
 map("n", "<leader>ga", "<cmd>Gitsigns stage_hunk<CR>")
+map("n", "<leader>ls",
+    "<cmd>Telescope lsp_document_symbols<CR>",
+    { desc = "Telescope Document symbols" }
+)
 map("n", "<leader>fc",
     function()
         require("conform").format()

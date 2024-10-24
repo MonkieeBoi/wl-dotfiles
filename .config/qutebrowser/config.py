@@ -294,6 +294,8 @@ config.bind(',s', 'config-cycle statusbar.show in-mode never')
 config.bind(',t', 'config-cycle tabs.show always multiple switching')
 config.bind(',r', 'hint --rapid')
 config.bind(',c', 'spawn --userscript rebuild-qutebrowser-grease-styles.py', mode='normal')
+config.bind(',p', 'spawn --userscript localhost')
+config.bind(',j', 'spawn --userscript jp-search')
 config.bind(',b', 'config-cycle content.blocking.enabled true false')
 
 # Bindings for passthrough mode

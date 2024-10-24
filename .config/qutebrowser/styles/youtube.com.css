@@ -897,3 +897,7 @@ ytd-engagement-panel-section-list-renderer[dialog] #content.ytd-engagement-panel
     background: var(--bg)
 }
 
+#background.ytd-masthead {
+    display: none;
+}
+

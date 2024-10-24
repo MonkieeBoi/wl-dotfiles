@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Inspired by https://blog.sidhartharya.com/posts/a-quicker-way-to-reach-localhost-with-qutebrowser/
+
+if ! type tofi >/dev/null 2>&1; then
+    exit
+fi
+
+PORT=$(tofi --require-match false --prompt-text "Port:")
+if [ -z "$PORT" ] && [ -f /tmp/qutebrowser-localhost-port ];
+then
+    PORT=$(< /tmp/qutebrowser-localhost-port)
+fi
+PORT=${PORT:-8000}
+printf "%s\n" "open localhost:$PORT" >> "$QUTE_FIFO"
+printf "%s" "$PORT" > /tmp/qutebrowser-localhost-port

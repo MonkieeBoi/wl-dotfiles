@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+printf "%s\n" "open -t https://jpdb.io/search?q=${QUTE_SELECTED_TEXT// /+}" >> "$QUTE_FIFO"

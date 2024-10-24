@@ -185,17 +185,13 @@ return {
     },
 
     {
-        "NStefan002/screenkey.nvim",
-        cmd = "Screenkey",
-        lazy = false,
-        version = "*",
+        "nvchad/showkeys",
+        cmd = "ShowkeysToggle",
         opts = {
-            win_opts = {
-                width = 30,
-                border = "rounded",
-            }
+            maxkeys = 5,
+            show_count = true
         },
-        keys = {{ "<leader>sk", "<cmd>Screenkey<cr>", desc = "Screenkey toggle" }}
+        keys = {{ "<leader>sk", "<cmd>ShowkeysToggle<cr>", desc = "Showkeys toggle" }}
     },
 
     {

@@ -14,7 +14,7 @@ o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldlevelstart = 99
 -- o.conceallevel = 2
-o.dictionary = "/usr/share/dict/british"
+o.dictionary = vim.env.WORDLIST or "/usr/share/dict/british"
 o.list = true
 opt.listchars:append({ trail = "•" })
 
