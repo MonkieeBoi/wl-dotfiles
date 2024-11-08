@@ -13,7 +13,7 @@
     set wildmode=longest,list,full
     filetype plugin on
     set omnifunc=syntaxcomplete#Complete
-    set dictionary+=/usr/share/dict/british
+    set dictionary+=$WORDLIST,/usr/share/dict/british
 
 " Tabs
 

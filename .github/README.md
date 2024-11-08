@@ -15,7 +15,7 @@ pacman -S - < ~/Downloads/pkgs
 ```
 
 # What I Use
-**Operating System** - [Arch Linux](https://archlinux.org/)
+**Operating System** - [Arch Linux](https://archlinux.org/) / [NixOS](https://nixos.org/)
 
 **Color Scheme** - [Nord](https://www.nordtheme.com/)
 

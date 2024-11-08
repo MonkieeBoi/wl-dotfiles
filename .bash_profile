@@ -17,6 +17,8 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 
 export EDITOR="nvim"
 export TERMINAL="foot"
