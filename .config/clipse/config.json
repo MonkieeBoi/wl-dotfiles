@@ -2,5 +2,11 @@
     "historyFile": "clipboard_history.json",
     "maxHistory": 100,
     "themeFile": "nord.json",
-    "tempDir": "tmp_files"
+    "tempDir": "tmp_files",
+    "imageDisplay": {
+        "type": "sixel",
+        "scaleX": 15,
+        "scaleY": 11,
+        "heightCut": 2
+    }
 }

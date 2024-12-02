@@ -81,4 +81,9 @@ fi
 
 if type zoxide >/dev/null 2>&1; then
     eval "$(zoxide init bash)"
+    zt () {
+        # shellcheck disable=SC2068
+        z $@
+        t
+    }
 fi

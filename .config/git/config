@@ -1,0 +1,3 @@
+[alias]
+	l = log --oneline --graph --decorate
+	s = status

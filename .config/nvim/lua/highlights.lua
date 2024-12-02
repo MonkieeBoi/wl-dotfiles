@@ -16,6 +16,12 @@ M.override = {
 ---@type HLTable
 M.add = {
     NvimTreeOpenedFolderName = { fg = "green", bold = true },
+    RenderMarkdownH1Bg = { fg = "cyan", bold = true },
+    RenderMarkdownH2Bg = { fg = "blue", bold = true },
+    RenderMarkdownH3Bg = { fg = "purple", bold = true },
+    RenderMarkdownH4Bg = { fg = "green", bold = true },
+    RenderMarkdownH5Bg = { fg = "sun", bold = true },
+    RenderMarkdownH6Bg = { fg = "white", bold = true },
 }
 
 return M

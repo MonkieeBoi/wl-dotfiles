@@ -60,6 +60,7 @@ export NNN_PLUG=\
 export NNN_BMS="\
 d:$HOME/Documents;\
 D:$HOME/Downloads;\
+t:$HOME/Downloads/.torrent;\
 v:$HOME/Videos;\
 p:$HOME/Pictures;\
 s:$HOME/Pictures/Screenshots;\
@@ -74,6 +75,6 @@ export FZF_DEFAULT_OPTS='--height=20 --reverse --border=rounded --info=inline-ri
 
 source "$HOME/.local/share/nord-tty"
 [[ -f ~/.bashrc ]] && . "$HOME/.bashrc"
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && type Hyprland >/dev/null 2>&1; then
     exec dbus-run-session Hyprland
 fi

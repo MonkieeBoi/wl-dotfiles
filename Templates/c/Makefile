@@ -1,7 +1,12 @@
 CC=gcc
-CFLAGS=-g -Wall -Wextra -Iinclude -fsanitize=address
+CFLAGS=-Wall -Wextra -Iinclude
+DCFLAGS=-g -fsanitize=address
 LIBS=
 TARGET=main
+
+ifeq (${DEBUG}, 1)
+    CFLAGS += $(DCFLAGS)
+endif
 
 SRC = src
 OBJ = build
