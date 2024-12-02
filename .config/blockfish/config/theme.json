@@ -1,0 +1,24 @@
+{
+    "bg": "#2e3440",
+    "matrix": {
+        "bg": "#3b4252",
+        "alt": "#434c5e"
+    },
+    "text": {
+        "primary": "#ffffff",
+        "secondary": "#d8dee9",
+        "good": "#a3be8c",
+        "bad": "#bf616a"
+    },
+    "mino": {
+        "G1": "#d5d7e2",
+        "G2": "#9395a0",
+        "Z": "#bf616a",
+        "L": "#d08770",
+        "O": "#ebcb8b",
+        "S": "#a3be8c",
+        "I": "#81a1c1",
+        "J": "#5e81ac",
+        "T": "#b48ead"
+    }
+}
