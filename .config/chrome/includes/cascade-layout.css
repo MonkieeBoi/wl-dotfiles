@@ -28,6 +28,7 @@
 
 
 /* remove "padding" left and right from tabs */
+#toolbar-menubar,
 .titlebar-spacer { display: none !important; }
 
 /* fix Shield Icon padding */

@@ -48,6 +48,7 @@ alias dvtm='dvtm -m ^w'
 alias t='tmuxify'
 alias onefetch='onefetch -t 2 7 7 4 4 7'
 alias bo='boilerplate'
+alias g='git'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

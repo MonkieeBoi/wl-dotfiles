@@ -19,6 +19,7 @@ M.base46 = {
     hl_add = highlights.add,
 
     transparency = true,
+    integrations = { "neogit" },
 }
 
 M.colorify = {

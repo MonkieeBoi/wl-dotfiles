@@ -5,6 +5,16 @@ return {
         config = function()
             require "configs.conform"
         end,
+        keys = {
+            { "<leader>fc",
+                function() require("conform").format({
+                    async = true,
+                    lsp_fallback = true,
+                }) end,
+                mode = { "n", "v" },
+                desc = "format with conform"
+            }
+        },
     },
 
     {
@@ -34,31 +44,16 @@ return {
         opts = overrides.nvimtree,
     },
 
-    {
-        "luukvbaal/nnn.nvim",
-        cmd = { "NnnExplorer", "NnnPicker" },
-        opts = {
-            explorer = {
-                width = 30
-            },
-            auto_close = true,
-            quitcd = "cd"
-        }
-    },
-
     -- {
-    --     "vimwiki/vimwiki",
-    --     ft = "markdown",
-    --     keys = { "<leader>ww" },
-    --     init = function()
-    --         vim.g.vimwiki_list = {
-    --             {
-    --                 path = "~/Documents/Wiki/",
-    --                 syntax = "markdown",
-    --                 ext = ".md",
-    --             },
-    --         }
-    --     end,
+    --     "luukvbaal/nnn.nvim",
+    --     cmd = { "NnnExplorer", "NnnPicker" },
+    --     opts = {
+    --         explorer = {
+    --             width = 30
+    --         },
+    --         auto_close = true,
+    --         quitcd = "cd"
+    --     }
     -- },
 
     {
@@ -149,18 +144,6 @@ return {
         }
     },
 
-    -- {
-    --     "SuperBo/fugit2.nvim",
-    --     opts = { height = "80%" },
-    --     dependencies = {
-    --         "MunifTanjim/nui.nvim",
-    --         "nvim-tree/nvim-web-devicons",
-    --         "nvim-lua/plenary.nvim",
-    --     },
-    --     cmd = { "Fugit2", "Fugit2Graph" },
-    --     keys = {{ "gz", "<cmd>Fugit2<cr>" }}
-    -- },
-
     {
         "NeogitOrg/neogit",
         dependencies = {
@@ -226,5 +209,35 @@ return {
                 desc = "Treesj toggle",
             },
         },
+    },
+
+    {
+        "laytan/cloak.nvim",
+        event = "BufRead .env",
+        opts = {}
+    },
+
+    {
+        "telescope-undo.nvim",
+        keys = { "<leader>fu", },
+    },
+
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            bigfile = { enabled = true },
+            quickfile = { enabled = true },
+            input = { enabled = true },
+        },
+        keys = {
+            { "<leader>rf", function() Snacks.rename.rename_file() end, desc = "Rename File" },
+        },
+    },
+
+    {
+        "aznhe21/actions-preview.nvim",
+        opts = {},
     },
 }
