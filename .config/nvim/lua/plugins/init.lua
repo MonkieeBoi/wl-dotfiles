@@ -238,6 +238,13 @@ return {
 
     {
         "aznhe21/actions-preview.nvim",
-        opts = {},
+        config = function()
+            vim.keymap.set(
+                { "n", "v" },
+                "<leader>ca",
+                require("actions-preview").code_actions,
+                { desc = "LSP code action" })
+        end,
+        keys = { "<leader>ca", mode = { "n", "v" }},
     },
 }
