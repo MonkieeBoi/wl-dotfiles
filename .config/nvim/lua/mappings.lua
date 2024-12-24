@@ -9,11 +9,17 @@ map("v", "<Tab>", ">gv", { desc = "indent forward" })
 map("v", "<S-Tab>", "<gv", { desc = "indent back" })
 
 map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Delete buffer" })
-map({ "n", "v" }, "<leader>ga", "<cmd>Gitsigns stage_hunk<CR>")
+map("n", "<leader>gd", "<cmd>Gitsigns toggle_deleted <CR>", { desc = "Gitsigns toggle deleted" })
 map("n", "<leader>ls",
     "<cmd>Telescope lsp_document_symbols<CR>",
     { desc = "Telescope Document symbols" }
 )
+
+map({ "n", "v" }, "<leader>re", ":ret<CR>", { desc = "retab" })
+map({ "n", "v" }, "<leader>ga", "<cmd>Gitsigns stage_hunk<CR>")
+map({ "n", "v" }, "<leader>fm", function()
+  require("conform").format { async = true, lsp_fallback = true }
+end, { desc = "general format file" })
 
 -- Goto tab using A-number
 for i = 1, 9, 1 do
