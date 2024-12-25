@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+# edited "dragdrop" plugin by 0xACE to use blobdrop
+
+selection=${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection}
+resp=f
+if ! type blobdrop >/dev/null 2>&1; then
+    printf "blobdrop not installed"
+    exit
+fi
+
+add_file() {
+    printf '%s\0' "$@" >> "$selection"
+}
+
+if [ -s "$selection" ]; then
+    printf "Drop file (r). Drag selection (s), Drag current directory (d) or drag current file (f) [default=f]: "
+    read -r resp
+else
+    printf "Drop file (r). Drag current directory (d) or drag current file (f) [default=f]: "
+    read -r resp
+    if [ "$resp" = "s" ]; then
+        resp=f
+    fi
+fi
+
+if [ "$resp" = "s" ]; then
+    printf "%s\n" "$(tr '\0' '\n' <"$selection")" | blobdrop &
+elif [ "$resp" = "d" ]; then
+    blobdrop "$PWD/"* &
+elif [ "$resp" = "r" ]; then
+    true >"$selection"
+    blobdrop -k | while read -r f; do
+        if printf "%s" "$f" | grep '^\(https\?\|ftps\?\|s\?ftp\):\/\/'; then
+            curl -LJO "$f"
+            add_file "$PWD/$(basename "$f")"
+        elif [ -e "$f" ]; then
+            add_file "$f"
+        fi
+    done &
+else
+    if [ -n "$1" ] && [ -e "$1" ]; then
+        blobdrop "$1" &
+    fi
+fi

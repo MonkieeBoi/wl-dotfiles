@@ -54,7 +54,7 @@ export NNN_PLUG=\
 'w:swaybg;'\
 'p:preview-tui;'\
 'z:autojump;'\
-'d:dragdrop;'\
+'d:blobdrop;'\
 'q:!qrcp send "$nnn";'\
 'c:!wl-copy -t text/uri-list file://$(pwd)/$nnn*'
 export NNN_BMS="\
