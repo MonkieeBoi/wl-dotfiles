@@ -23,3 +23,6 @@ opt.foldopen:remove "hor"
 
 -- don't go to previous/next line with h,l,left arrow and right arrow
 opt.whichwrap:remove "<>[]hl"
+
+-- snipmate snippets
+g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/snippets/snipmate"
