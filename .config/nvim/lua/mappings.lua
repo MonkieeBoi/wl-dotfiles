@@ -8,6 +8,7 @@ map("i", "<C-f>", "<C-k>", { desc = "digraph insert" })
 map("v", "<Tab>", ">gv", { desc = "indent forward" })
 map("v", "<S-Tab>", "<gv", { desc = "indent back" })
 
+map({ "n", "t" }, "<C-n>", "<cmd>NnnExplorer<CR>", { desc = "Open nnn explorer" })
 map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Delete buffer" })
 map("n", "<leader>gd", "<cmd>Gitsigns toggle_deleted <CR>", { desc = "Gitsigns toggle deleted" })
 map("n", "<leader>ls",

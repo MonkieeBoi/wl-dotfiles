@@ -34,17 +34,17 @@ return {
         opts = overrides.nvimtree,
     },
 
-    -- {
-    --     "luukvbaal/nnn.nvim",
-    --     cmd = { "NnnExplorer", "NnnPicker" },
-    --     opts = {
-    --         explorer = {
-    --             width = 30
-    --         },
-    --         auto_close = true,
-    --         quitcd = "cd"
-    --     }
-    -- },
+    {
+        "luukvbaal/nnn.nvim",
+        cmd = { "NnnExplorer", "NnnPicker" },
+        opts = {
+            explorer = {
+                width = 30
+            },
+            auto_close = true,
+            quitcd = "cd"
+        }
+    },
 
     {
         "serenevoid/kiwi.nvim",
