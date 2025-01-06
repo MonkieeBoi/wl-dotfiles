@@ -9,6 +9,11 @@ M.ui = {
     statusline = {
         separator_style = "block",
     },
+    cmp = {
+        format_colors = {
+            tailwind = true
+        }
+    }
 }
 
 M.base46 = {
