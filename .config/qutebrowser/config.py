@@ -296,6 +296,7 @@ config.bind(',r', 'hint --rapid')
 config.bind(',c', 'spawn --userscript rebuild-qutebrowser-grease-styles.py', mode='normal')
 config.bind(',p', 'spawn --userscript localhost')
 config.bind(',j', 'spawn --userscript jp-search')
+config.bind(',l', 'spawn --userscript leetcode-daily')
 config.bind(',b', 'config-cycle content.blocking.enabled true false')
 
 # Bindings for passthrough mode

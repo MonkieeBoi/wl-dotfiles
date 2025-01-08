@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+read -r -d '' query << EOM
+{
+    "query":"query questionOfToday {res: activeDailyCodingChallengeQuestion { link }}",
+    "variables":[]
+}
+EOM
+qot=$(curl \
+    --header 'Content-Type: application/json' \
+    --header 'Accept: application/json' \
+    --data "$query" \
+    https://leetcode.com/graphql/ |\
+    jq -r '.data.res.link'
+)
+printf "%s\n" "open https://leetcode.com$qot" >> "$QUTE_FIFO"
