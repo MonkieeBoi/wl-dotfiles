@@ -245,4 +245,12 @@ return {
         ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
         opts = {},
     },
+
+    {
+        "HakonHarnes/img-clip.nvim",
+        opts = {},
+        keys = {
+            { "<leader>pi", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+        },
+    },
 }

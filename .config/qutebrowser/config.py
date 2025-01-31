@@ -42,7 +42,8 @@ c.content.blocking.adblock.lists = [
         "https://raw.githubusercontent.com/bogachenko/fuckfuckadblock/master/fuckfuckadblock.txt"
 ]
 
-config.set('content.blocking.enabled', False, 'monkeytype.com')
+config.set('content.blocking.enabled', False, 'https://monkeytype.com/*')
+config.set('content.blocking.enabled', False, 'https://www.twitch.tv/*')
 
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the

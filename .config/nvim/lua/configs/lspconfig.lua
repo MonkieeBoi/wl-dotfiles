@@ -16,6 +16,7 @@ local servers = {
     "nixd",
     "tinymist",
     "tailwindcss",
+    "gopls",
 }
 
 -- on_attach wrapper to delete <leader>ca mapping
