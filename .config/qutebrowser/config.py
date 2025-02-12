@@ -44,6 +44,7 @@ c.content.blocking.adblock.lists = [
 
 config.set('content.blocking.enabled', False, 'https://monkeytype.com/*')
 config.set('content.blocking.enabled', False, 'https://www.twitch.tv/*')
+config.set('content.blocking.enabled', False, 'https://neetcode.io/*')
 
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the

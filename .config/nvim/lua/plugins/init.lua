@@ -141,7 +141,10 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope.nvim",
         },
-        config = true,
+        opts = {
+            auto_close_console = false,
+            graph_style = "unicode"
+        },
         keys = {{ "gz", function() require("neogit").open({ kind = "auto"}) end }}
     },
 
