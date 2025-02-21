@@ -35,6 +35,24 @@ return {
     },
 
     {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            {
+                "L3MON4D3/LuaSnip",
+                config = function(_, opts)
+                    -- load default luasnip config (Broken?)
+                    -- require("plugins.configs.others").luasnip(opts)
+
+                    local luasnip = require "luasnip"
+                    luasnip.filetype_extend("javascriptreact", { "html" })
+                    luasnip.filetype_extend("typescriptreact", { "html" })
+                    require("luasnip/loaders/from_vscode").lazy_load()
+                end,
+            },
+        },
+    },
+
+    {
         "luukvbaal/nnn.nvim",
         cmd = { "NnnExplorer", "NnnPicker" },
         opts = {

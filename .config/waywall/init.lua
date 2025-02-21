@@ -82,12 +82,11 @@ end
 config.actions = {
     -- Resolutions
     ["Shift-B"]          = resolutions.thin,
-    ["Ctrl-N"]          = resolutions.eye,
+    ["Ctrl-N"]           = resolutions.eye,
     ["Shift-G"]          = resolutions.wide,
 
     -- Ninjabrain Bot
-    ["Ctrl-G"]           = helpers.ingame_only(helpers.toggle_floating),
-    ["Ctrl-Shift-H"]     = helpers.toggle_floating,
+    ["Ctrl-G"]           = helpers.toggle_floating,
     ["Ctrl-Shift-Alt-H"] = exec_ninb,
 }
 
