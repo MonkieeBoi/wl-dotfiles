@@ -5,6 +5,8 @@ local map = vim.keymap.set
 map("i", "<C-c>", "<Esc>")
 map("i", "<C-f>", "<C-k>", { desc = "digraph insert" })
 
+map("v", ">", ">gv", { desc = "indent forward" })
+map("v", "<", "<gv", { desc = "indent back" })
 map("v", "<Tab>", ">gv", { desc = "indent forward" })
 map("v", "<S-Tab>", "<gv", { desc = "indent back" })
 

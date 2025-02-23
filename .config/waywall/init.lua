@@ -76,7 +76,7 @@ local resolutions = {
 }
 
 local exec_ninb = function()
-    waywall.exec("ninjabrain")
+    waywall.exec("ninb")
 end
 
 config.actions = {
