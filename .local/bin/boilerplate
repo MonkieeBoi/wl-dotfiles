@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
-readarray -t templates < <(find ~/Templates/ -maxdepth 1 -mindepth 1 -printf "%f\n")
+template_dir=${XDG_TEMPLATES_DIR:="$HOME/Templates"}
+readarray -t templates < <(find "$template_dir" -maxdepth 1 -mindepth 1 -printf "%f\n")
 
 for i in "${!templates[@]}"
 do
@@ -12,6 +12,6 @@ read -r selection
 template="${templates[$selection]}"
 
 printf "\nCopying from %s:\n\n" "$template"
-find ~/Templates/"$template" -mindepth 1 -printf "%P\n"
+find "${template_dir}/${template}" -mindepth 1 -printf "%P\n"
 
-cp -a ~/Templates/"$template"/. .
+cp -a "${template_dir}/${template}/." .
