@@ -3,5 +3,6 @@ Session.vim
 shell.nix
 default.nix
 .envrc
+.env
 .direnv
 compile_flags.txt

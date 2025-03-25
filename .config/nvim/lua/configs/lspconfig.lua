@@ -8,7 +8,6 @@ local servers = {
     "cssls",
     "ts_ls",
     "clangd",
-    "pylsp",
     "texlab",
     "bashls",
     "rust_analyzer",
@@ -42,6 +41,19 @@ lspconfig.jdtls.setup {
             autobuild = {
                 enabled = false
             }
+        }
+    }
+}
+
+lspconfig.pylsp.setup {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+    settings = {
+        pylsp = {
+            flake8 = { enabled = true },
+            pydocstpyle = { enabled = true },
+            pylint = { enabled = true },
         }
     }
 }

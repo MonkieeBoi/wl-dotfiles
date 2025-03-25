@@ -45,7 +45,8 @@ c.content.blocking.adblock.lists = [
 disable_content_block_sites = [
     "https://monkeytype.com/*",
     "https://www.twitch.tv/*",
-    "https://neetcode.io/*"
+    "https://neetcode.io/*",
+    "https://playscrabble.com/*"
 ]
 
 for site in disable_content_block_sites:
@@ -319,3 +320,16 @@ config.bind('D', 'fake-key D', mode='passthrough')
 config.source('nord-qutebrowser.py')
 
 c.content.local_content_can_access_remote_urls = True
+
+c.aliases["pcs"] = ("open -t https://docs.google.com/spreadsheets/d/1ajQ4a8wveWkrDhYLwuayFPbPwfCjzaPjgw0Ud879TyA/edit?gid=204342814#gid=204342814"
+                    ";; open -t https://docs.google.com/spreadsheets/d/1yrxC-L_XymrLFry74bxOqHiddt9grVMZlEUXma5Nv0c/edit?gid=0#gid=0"
+                    ";; open -t https://docs.google.com/document/d/1bl-1Ovmq3jJyKVkBIslCbqWIf4c0AjzumVNlv78wN3M/edit?tab=t.0#heading=h.z9m52ookq2wm"
+                    ";; open -t https://docs.google.com/document/d/1Py2PMJUjsv0yMtrnJxU1agmHjmwMnLF-OOQUBOvyW2Q/edit?tab=t.0"
+                    ";; open -t https://docs.google.com/spreadsheets/d/1JgruIyzVoAxPJuFzHNoSCvPEmGr8jng_TW8aQHg5pPo/edit?gid=193516263#gid=193516263"
+                    ";; open -t https://docs.google.com/spreadsheets/d/1A628KBDghIeRcQJbaXNntjMkK3jY4d7gC_geUoGn1ds/edit?gid=370331158#gid=370331158"
+                    ";; open -t https://docs.google.com/spreadsheets/d/1Y0Nx3U8dOQXldabC7MgeK4DcjficX0QQtMTnW7H3Xzk/edit?gid=1066086924#gid=1066086924"
+                    ";; open -t https://docs.google.com/document/d/14nNamhwm5EGNuZm-Yaqia_W-67Kr4kWpTN28QWiVT3U/edit?tab=t.0#heading=h.z3hg94crfao6"
+                    ";; open -t https://docs.google.com/spreadsheets/d/1juWWa0L7MSlaL2CQdPn_0up5GyfDN5wo3SpZwvE3oj8/edit?gid=1880854599#gid=1880854599"
+                    ";; open -t https://docs.google.com/document/d/17gHXMPeoGSb0sIzZYYOn49bSjzMtXfPLEDyhUhZiEsg/edit?tab=t.0#heading=h.po3wesa9apl4"
+                    ";; open -t https://docs.google.com/spreadsheets/d/1G3rf5nyQujenBa9RIfIgWObtA4WTST1_DZ5EfP2Bs6M/edit?gid=0#gid=0"
+                    ";; open -t https://wirelyre.github.io/tetra-tools/pc-solver.html")

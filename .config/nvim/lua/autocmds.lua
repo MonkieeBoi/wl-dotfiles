@@ -28,6 +28,22 @@ autocmd("InsertLeave", {
     command = "call chansend(v:stderr, \"\\e[?737769l\")",
 })
 
+-- Markdown lists
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.formatoptions:append("r")
+        vim.opt_local.formatoptions:append("o")
+        vim.opt_local.comments = {
+            "b:- [ ]",
+            "b:- [x]",
+            "b:*",
+            "b:-",
+            "b:+",
+        }
+    end,
+})
+
 -- Auto close when nvim-tree last window
 -- autocmd("QuitPre", {
 --     callback = function()
