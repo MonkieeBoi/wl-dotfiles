@@ -1,3 +1,0 @@
-#!/bin/sh
-swallow=$(hyprctl getoption misc:enable_swallow | awk 'NR==1{print $2}')
-hyprctl keyword misc:enable_swallow $(((swallow + 1) % 2))
