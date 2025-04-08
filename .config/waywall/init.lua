@@ -21,6 +21,8 @@ local config = {
     },
     theme = {
         background = "#2e3440ff",
+        ninb_anchor = "bottomright",
+        ninb_opacity = 0.7
     },
     shaders = {
         ["pie_chart"] = {

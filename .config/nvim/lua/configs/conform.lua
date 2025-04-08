@@ -9,7 +9,9 @@ local options = {
         html = { "prettier" },
 
         sh = { "shfmt" },
-        c = { "clang_format" }
+        c = { "clang_format" },
+
+        nix = { "nixfmt" }
     },
 }
 

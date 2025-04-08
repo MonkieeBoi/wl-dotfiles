@@ -116,6 +116,11 @@
     --color-diff-blob-addition-num-bg: var(--nord14) !important;
     --color-diff-blob-addition-line-bg: var(--nord14) !important;
     --color-diff-blob-comment-button-bg: var(--nord10) !important;
+
+    --contribution-default-bgColor-1: var(--nord7) !important;
+    --contribution-default-bgColor-2: var(--nord8) !important;
+    --contribution-default-bgColor-3: var(--nord9) !important;
+    --contribution-default-bgColor-4: var(--nord10) !important;
 }
 /* Global styles */
 ::placeholder {
