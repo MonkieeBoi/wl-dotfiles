@@ -1,4 +1,4 @@
-local nv_on_attach = require("nvchad.configs.lspconfig").on_attach
+local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
@@ -17,12 +17,6 @@ local servers = {
     "tailwindcss",
     "gopls",
 }
-
--- on_attach wrapper to delete <leader>ca mapping
-local on_attach = function(client, bufnr)
-    nv_on_attach(client, bufnr)
-    vim.keymap.del({ "n", "v" }, "<leader>ca", { buffer = bufnr })
-end
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
