@@ -901,3 +901,6 @@ ytd-engagement-panel-section-list-renderer[dialog] #content.ytd-engagement-panel
     display: none;
 }
 
+#frosted-glass {
+    display: none;
+}
