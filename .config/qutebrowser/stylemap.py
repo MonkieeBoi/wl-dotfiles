@@ -4,4 +4,5 @@ styles = {
     'youtube.com.css': ['https://www.youtube.com/*'],
     'jpdb.io.css': ['https://jpdb.io/*'],
     'fumenities.css': ['https://hsterts.github.io/Fumenities/'],
+    'pcf.css': ['https://wirelyre.github.io/tetra-tools/pc-solver.html*'],
 }
