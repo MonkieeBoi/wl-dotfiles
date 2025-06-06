@@ -1,0 +1,4 @@
+Config(
+  prefix: ":c",
+  shell: None,
+)

@@ -73,7 +73,7 @@
             a.style.display = "block";
           },
         );
-      } else if (value == "All") {
+      } else {
         document.querySelectorAll("#solutions > a").forEach(function (a) {
           a.style.display = "block";
         });
@@ -134,5 +134,18 @@
     });
 
     observer.observe(targetNode, config);
+
+    document.onkeydown = (event) => {
+      if (event.shiftKey && event.key == "Escape") {
+        selectSave("All");
+        return;
+      }
+      if (!event.altKey || !pieces.includes(event.key.toUpperCase())) {
+        return;
+      }
+      selectSave(event.key.toUpperCase());
+      event.preventDefault();
+      event.stopPropagation();
+    };
   });
 })();

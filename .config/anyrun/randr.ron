@@ -1,0 +1,4 @@
+Config(
+  prefix: ":r",
+  max_entries: 8,
+)

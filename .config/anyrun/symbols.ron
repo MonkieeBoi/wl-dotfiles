@@ -1,0 +1,8 @@
+Config(
+  prefix: ":s",
+  symbols: {
+    "shrug": "¯\\_(ツ)_/¯",
+    "sob": "😭"
+  },
+  max_entries: 8,
+)

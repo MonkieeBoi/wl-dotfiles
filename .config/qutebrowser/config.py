@@ -311,6 +311,7 @@ config.bind(',b', 'config-cycle content.blocking.enabled true false')
 config.bind('<Alt-Escape>', 'mode-enter passthrough')
 config.bind('<Alt-Escape>', 'mode-leave',  mode='passthrough')
 config.unbind('<Shift-Escape>', 'passthrough')
+config.unbind('<Ctrl-v>', 'normal')
 
 # Fixes some issues with tetr.io
 config.bind('A', 'fake-key A', mode='passthrough')

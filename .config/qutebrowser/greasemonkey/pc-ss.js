@@ -40,7 +40,7 @@ function importImage(blob) {
       ctx.getImageData(0, 0, this.width, this.height).data,
     );
 
-    filledMinos = 0;
+    let filledMinos = 0;
     for (let row = 0; row < numrows; row++) {
       for (let col = 0; col < numcols; col++) {
         let minoPixelsR = [];
@@ -69,20 +69,21 @@ function importImage(blob) {
           median(minoPixelsG),
           median(minoPixelsB),
         );
-        fil = filled(...hsv);
-        cell = (numrows - 1 - row) * numcols + col;
+        let fil = filled(...hsv);
+        let cell = (numrows - 1 - row) * numcols + col;
         if (fil) {
           filledMinos += 1;
         }
         document.getElementById(`cell${cell}`).checked = fil;
       }
     }
-    cells = numrows * numcols;
+    let cells = numrows * numcols;
     if (filledMinos % 4 == 2) {
       for (let cell = cells - numcols; cell < cells; cell++) {
         document.getElementById(`cell${cell}`).checked = true;
       }
     }
+    document.getElementById("queue").focus();
   };
 
   var URLObj = window.URL || window.webkitURL;
