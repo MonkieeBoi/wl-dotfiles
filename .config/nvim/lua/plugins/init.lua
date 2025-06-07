@@ -153,17 +153,35 @@ return {
         }
     },
 
+    -- {
+    --     "NeogitOrg/neogit",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-telescope/telescope.nvim",
+    --     },
+    --     opts = {
+    --         auto_close_console = false,
+    --         graph_style = "unicode"
+    --     },
+    --     keys = {{ "gz", function() require("neogit").open({ kind = "auto"}) end }}
+    -- },
+
     {
-        "NeogitOrg/neogit",
+        "kdheepak/lazygit.nvim",
+        lazy = true,
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim",
         },
-        opts = {
-            auto_close_console = false,
-            graph_style = "unicode"
-        },
-        keys = {{ "gz", function() require("neogit").open({ kind = "auto"}) end }}
+        keys = {
+            { "gz", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+        }
     },
 
     {
@@ -250,14 +268,16 @@ return {
 
     {
         "aznhe21/actions-preview.nvim",
-        config = function()
-            vim.keymap.set(
-                { "n", "v" },
-                "<leader>ca",
-                require("actions-preview").code_actions,
-                { desc = "LSP code action" })
-        end,
-        keys = { "<leader>ca", mode = { "n", "v" }},
+        keys = {
+            {
+                "gra",
+                function ()
+                    require("actions-preview").code_actions()
+                end,
+                mode = { "n", "v" },
+                desc = "LSP code action",
+            },
+        },
     },
 
     {
