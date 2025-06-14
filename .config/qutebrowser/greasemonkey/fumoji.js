@@ -1,0 +1,67 @@
+// ==UserScript==
+// @name         Fumenities Emoji Export
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Emoji Export
+// @author       MonkeyBoy
+// @match        https://hsterts.github.io/Fumenities*
+// @grant        none
+// @license      MIT
+// ==/UserScript==
+
+(function () {
+  "use strict";
+
+  // Constants
+  let emoji_map = {
+    "I": "📘",
+    "J": "🟦",
+    "L": "🟧",
+    "O": "🟨",
+    "S": "🟩",
+    "T": "🟪",
+    "Z": "🟥",
+    "X": "⬜",
+    "_": "⬛",
+    "\n": "                                ",
+  };
+
+  window.addEventListener("load", function () {
+    const { decoder } = require("tetris-fumen");
+
+    const fumen_export = (event) => {
+      let field = decoder.decode(
+        document.getElementById("boardOutput").value,
+      )[0].field.str();
+      field = field.replace(/\n__________$/, "");
+
+      if (!event.shiftKey) {
+        for (const [mino, emoji] of Object.entries(emoji_map)) {
+          field = field.replaceAll(mino, emoji);
+        }
+      }
+      field = field.replaceAll("\n", emoji_map["\n"]);
+
+      navigator.clipboard.writeText(field);
+    };
+
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip");
+
+    const tooltipText = document.createElement("span");
+    tooltipText.textContent = "Export the first page as a field of emojis";
+    tooltipText.classList.add("tooltiptext");
+
+    const button = document.createElement("button");
+    button.classList.add("fumen-option");
+    button.onclick = fumen_export;
+    button.innerHTML = "<b>Export Emoji</b>";
+
+    tooltip.appendChild(button);
+    tooltip.appendChild(tooltipText);
+
+    document.querySelector(".import-export").appendChild(
+      tooltip,
+    );
+  });
+})();
