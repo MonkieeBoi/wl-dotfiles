@@ -292,6 +292,10 @@ c.url.searchengines = {
         "yt":      "https://www.youtube.com/results?search_query={}"
 }
 
+## Font family for standard fonts.
+## Type: FontFamily
+c.fonts.web.family.standard = 'Noto Color Emoji'
+
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
 c.url.start_pages = ['~/.config/qutebrowser/startpage/index.html']

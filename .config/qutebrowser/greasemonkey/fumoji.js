@@ -23,7 +23,7 @@
     "Z": "🟥",
     "X": "⬜",
     "_": "⬛",
-    "\n": "                                ",
+    "\n": "                                       ",
   };
 
   window.addEventListener("load", function () {
@@ -32,15 +32,24 @@
     const fumen_export = (event) => {
       let field = decoder.decode(
         document.getElementById("boardOutput").value,
-      )[0].field.str();
-      field = field.replace(/\n__________$/, "");
+      )[0].field.str({ garbage: false });
 
+      if (event.ctrlKey) {
+        let height = (field.match(/$/gm) || []).length;
+        while ((field.match(/_$/gm) || []).length == height) {
+          field = field.replaceAll(/_$/gm, "");
+        }
+        while ((field.match(/^_/gm) || []).length == height) {
+          field = field.replaceAll(/^_/gm, "");
+        }
+      }
       if (!event.shiftKey) {
         for (const [mino, emoji] of Object.entries(emoji_map)) {
           field = field.replaceAll(mino, emoji);
         }
+      } else {
+        field = field.replaceAll("\n", emoji_map["\n"]);
       }
-      field = field.replaceAll("\n", emoji_map["\n"]);
 
       navigator.clipboard.writeText(field);
     };
