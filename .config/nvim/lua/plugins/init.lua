@@ -7,6 +7,8 @@ return {
         end,
     },
 
+    { import = "nvchad.blink.lazyspec" },
+
     {
         "neovim/nvim-lspconfig",
         config = function()

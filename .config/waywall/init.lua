@@ -78,7 +78,7 @@ local resolutions = {
 }
 
 local exec_ninb = function()
-    waywall.exec("ninb")
+    waywall.exec('ninbr')
 end
 
 config.actions = {

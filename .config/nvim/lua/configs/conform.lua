@@ -13,6 +13,12 @@ local options = {
 
         nix = { "nixfmt" }
     },
+
+    formatters = {
+        deno_fmt = {
+            append_args = {"--indent-width", "4"}
+        }
+    }
 }
 
 require("conform").setup(options)

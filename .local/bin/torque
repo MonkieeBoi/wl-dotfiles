@@ -24,14 +24,14 @@ get_torrents() {
     t=("${t[@]//     None/0 MB}")
 
     for((i=${k:=0};i<(j=j>${#t[@]}?${#t[@]}:j);i++));{ t_print "${t[i]/n\/a/0}";}
-    status "[s]tart [p]ause [r]emove [o]pen [j/k] [q]uit scroll ($j/${#t[@]})"$'\e[H'
+    status "[s]tart [p]ause [r]emove [i]nfo [o]pen [j/k] [q]uit scroll ($j/${#t[@]})"$'\e[H'
 }
 
 t_print() {
     IFS=" %" read -r num perc have unit _ up down ratio stat name <<< "$1"
     have=${have%.*}
 
-    ((size=perc!=0?${have/.*}*100/perc:0,c=perc==100?33271340:31000000))
+    ((size=perc!=0?${have/.*}*100/perc:0,c=perc==100?34271340:31000000))
 
     printf '\e[K\e[2m%s\e[m \e[1m\e[%s%b%s\e[m\n' \
            "$num:" "${c:0:2}m" "\\u${c:2:4}\\${c:6}" "$name"
@@ -41,15 +41,18 @@ t_print() {
 
 prompt() {
     send() { transmission-remote "$@" >/dev/null; }
+    page() { transmission-remote "$@" | less; }
     status $'\e[B\e[?25h'
 
     case "$1" in
         s) read -rp "start torrent: #";  send -t "$REPLY" -s ;;
         p) read -rp "pause torrent: #";  send -t "$REPLY" -S ;;
         r) read -rp "remove torrent: #"; send -t "$REPLY" -rad; k=0 ;;
+        i) read -rp "info: #";           page -t "$REPLY" -i;;
         o) read -rp "load magnet: ";     send -a "$REPLY"; k=0 ;;
         j) ((j==${#t[@]}))||((k=k>=j?k:++k,j=j<${#t[@]}?++j:j)) ;;
         k) ((k==0))||((k=k<=j?k>0?--k:0:j,j=j>0?--j:j)) ;;
+        g) k=0 ;;
         q) exit 0 ;;
     esac
 
