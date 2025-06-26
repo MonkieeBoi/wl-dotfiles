@@ -26,11 +26,17 @@
         "\n": "                                       ",
     };
 
-    function rotateField(field) {
+    function rotateField(field, clockwise) {
         const field_arr = field.split("\n").map((row) => row.split(""));
         const rows = field_arr.length;
         if (rows == 0) return "";
         const cols = field_arr[0].length;
+        if (clockwise) {
+            return Array.from(
+                { length: cols },
+                (_, j) => field_arr.map((row) => row[j]).reverse().join(""),
+            ).join("\n");
+        }
         let res_arr = [];
         for (let j = cols - 1; j >= 0; j--) {
             let row = "";
@@ -51,9 +57,8 @@
             )[0].field.str({ garbage: false });
 
             if (event.altKey) {
-                field = rotateField(field);
-            }
-            if (event.ctrlKey) {
+                field = rotateField(field, event.ctrlKey);
+            } else if (event.ctrlKey) {
                 let height = (field.match(/$/gm) || []).length;
                 while ((field.match(/_$/gm) || []).length == height) {
                     field = field.replaceAll(/_$/gm, "");
