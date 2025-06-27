@@ -14,7 +14,7 @@
 
     // Constants
     let emoji_map = {
-        "I": "📘",
+        "I": "🩻",
         "J": "🟦",
         "L": "🟧",
         "O": "🟨",
@@ -52,6 +52,10 @@
         const { decoder } = require("tetris-fumen");
 
         const fumen_export = (event) => {
+            if (event.altKey && event.shiftKey && event.ctrlKey) {
+                emoji_map[prompt("Key:", "I")] = prompt("Val:", "🩻");
+                return;
+            }
             let field = decoder.decode(
                 document.getElementById("boardOutput").value,
             )[0].field.str({ garbage: false });
