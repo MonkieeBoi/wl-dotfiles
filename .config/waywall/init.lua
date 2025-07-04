@@ -49,46 +49,57 @@ local config = {
 -- )
 
 -- F3 Entity Count
-helpers.res_mirror(
-    {
-        src = {x = 0,       y = 36,     w = 49,     h = 9},
-        dst = {x = 550,     y = 200,    w = 196,    h = 36},
-        color_key  = {
-            input  = "#dddddd",
-            output = "#ffffff",
-        },
+helpers.res_mirror({
+    src = { x = 0, y = 36, w = 49, h = 9 },
+    dst = { x = 550, y = 200, w = 196, h = 36 },
+    color_key = {
+        input = "#dddddd",
+        output = "#ffffff",
     },
-    350, 900
-)
+}, 350, 900)
 
 -- Thin pie numbers
-helpers.res_mirror(
-    {
-        src = {x = 257,     y = 679,    w = 84,     h = 42},
-        dst = {x = 1150,    y = 650,    w = 504,    h = 252},
-        shader = "pie_chart",
-    },
-    350, 900
-)
+helpers.res_mirror({
+    src = { x = 257, y = 679, w = 84, h = 42 },
+    dst = { x = 1150, y = 650, w = 504, h = 252 },
+    shader = "pie_chart",
+}, 350, 900)
+
+local ingame_override = false
+
+local function ingame_only(func)
+    return function()
+        if ingame_override then
+            return func()
+        else
+            return helpers.ingame_only(func)()
+        end
+    end
+end
+
+local function toggle_ingame_override()
+    ingame_override = not ingame_override
+end
 
 local resolutions = {
-    thin            = helpers.ingame_only(helpers.toggle_res(350, 900)),
-    eye             = helpers.toggle_res(1920, 16384, 0.1),
-    wide            = helpers.ingame_only(helpers.toggle_res(1920, 320)),
+    thin = ingame_only(helpers.toggle_res(350, 900)),
+    eye = helpers.toggle_res(1920, 16384, 0.1),
+    wide = ingame_only(helpers.toggle_res(1920, 320)),
 }
 
 local exec_ninb = function()
-    waywall.exec('ninbr')
+    waywall.exec("ninbr")
 end
 
 config.actions = {
     -- Resolutions
-    ["Shift-B"]          = resolutions.thin,
-    ["Ctrl-N"]           = resolutions.eye,
-    ["Shift-G"]          = resolutions.wide,
+    ["Shift-B"] = resolutions.thin,
+    ["Ctrl-N"] = resolutions.eye,
+    ["Shift-G"] = resolutions.wide,
+    ["Ctrl-H"] = toggle_ingame_override,
 
     -- Ninjabrain Bot
-    ["Ctrl-G"]           = helpers.toggle_floating,
+    ["Ctrl-G"] = helpers.toggle_floating,
     ["Ctrl-Shift-Alt-H"] = exec_ninb,
 }
 

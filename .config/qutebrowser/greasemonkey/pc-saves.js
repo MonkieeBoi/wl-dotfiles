@@ -43,6 +43,7 @@
   GM_addStyle(`#select-O { background-color: ${colors[6]}; }`);
 
   window.addEventListener("load", function () {
+    document.querySelector('input[name="physics"][value="TETRIO"]').checked = true;
     // Add save selection
     var label = document.createElement("label");
     label.id = "label-save";
