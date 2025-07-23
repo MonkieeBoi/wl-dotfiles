@@ -6,3 +6,4 @@ default.nix
 .env
 .direnv
 compile_flags.txt
+.venv

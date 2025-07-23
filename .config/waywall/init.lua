@@ -81,10 +81,17 @@ local function toggle_ingame_override()
     ingame_override = not ingame_override
 end
 
+local function pcal(func)
+    return function ()
+        local status, _ = pcall(func)
+        return status
+    end
+end
+
 local resolutions = {
-    thin = ingame_only(helpers.toggle_res(350, 900)),
-    eye = helpers.toggle_res(1920, 16384, 0.1),
-    wide = ingame_only(helpers.toggle_res(1920, 320)),
+    thin = pcal(ingame_only(helpers.toggle_res(350, 900))),
+    eye = pcal(helpers.toggle_res(1920, 16384, 0.1)),
+    wide = pcal(ingame_only(helpers.toggle_res(1920, 320))),
 }
 
 local exec_ninb = function()

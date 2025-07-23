@@ -14,7 +14,7 @@
 
     // Constants
     let emoji_map = {
-        "I": "🩻",
+        "I": "📘",
         "J": "🟦",
         "L": "🟧",
         "O": "🟨",
@@ -48,6 +48,13 @@
         return res_arr.join("\n");
     }
 
+    function boxed(string) {
+        let mid = "─".repeat(string.split("\n")[0].length);
+        string = string.replaceAll(/^/gm, "│");
+        string = string.replaceAll(/$/gm, "│");
+        return `┌${mid}┐\n${string}\n└${mid}┘`;
+    }
+
     window.addEventListener("load", function () {
         const { decoder } = require("tetris-fumen");
 
@@ -76,7 +83,9 @@
                     field = field.replaceAll(mino, emoji);
                 }
             } else {
+                field = boxed(field);
                 field = field.replaceAll("\n", emoji_map["\n"]);
+                field = field.replaceAll("_", " ");
             }
 
             navigator.clipboard.writeText(field);
