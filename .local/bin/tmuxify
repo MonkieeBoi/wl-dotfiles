@@ -6,8 +6,7 @@ for file in "${PWD}/.tmuxify.layout" "${XDG_DATA_HOME:="$HOME/.local/share"}/tmu
 done
 
 if [[ ! -f "${layout}" ]]; then
-    echo "Aborting. No layout file found."
-    exit 1
+    exec tmux
 fi
 
 session=${1:-$(basename "$PWD" | tr " ." -)}
