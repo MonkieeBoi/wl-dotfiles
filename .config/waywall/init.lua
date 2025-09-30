@@ -108,6 +108,9 @@ config.actions = {
     -- Ninjabrain Bot
     ["Ctrl-G"] = helpers.toggle_floating,
     ["Ctrl-Shift-Alt-H"] = exec_ninb,
+
+    -- Disable narrator
+    ["*-Ctrl-B"] = function() end,
 }
 
 return config
