@@ -282,14 +282,15 @@ c.url.default_page = '~/.config/qutebrowser/startpage/index.html'
 # qutebrowser`.
 # Type: Dict
 c.url.searchengines = {
-        'DEFAULT': 'https://google.com/search?hl=en&q={}',
-        "au":      "https://aur.archlinux.org/packages/?K={}",
-        "aw":      "https://wiki.archlinux.org/?search={}",
-        "dd":      "https://duckduckgo.com?q={}",
-        "gh":      "https://github.com/search?q={}",
-        "gm":      "https://mail.google.com/mail/u/0/#search/{}",
-        "re":      "https://reddit.com/r/all/search?q={}",
-        "yt":      "https://www.youtube.com/results?search_query={}"
+    'DEFAULT': 'https://duckduckgo.com?q={}',
+    "au":      "https://aur.archlinux.org/packages/?K={}",
+    "aw":      "https://wiki.archlinux.org/?search={}",
+    "dd":      "https://duckduckgo.com?q={}",
+    "go":      "https://google.com/search?hl=en&q={}",
+    "gh":      "https://github.com/search?q={}",
+    "gm":      "https://mail.google.com/mail/u/0/#search/{}",
+    "re":      "https://reddit.com/r/all/search?q={}",
+    "yt":      "https://www.youtube.com/results?search_query={}"
 }
 
 ## Font family for standard fonts.

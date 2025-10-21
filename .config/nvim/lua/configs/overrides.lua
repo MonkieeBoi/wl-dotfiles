@@ -9,7 +9,8 @@ M.treesitter = {
         "latex",
         "java",
         "typst",
-        "rust"
+        "rust",
+        "go"
     },
     indent = {
         enable = true,

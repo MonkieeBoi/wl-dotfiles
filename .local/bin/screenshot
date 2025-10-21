@@ -35,3 +35,8 @@ esac
 kill "$picker_pid"
 [ -f "$file" ] && notify-send -i "$file" "Screenshot saved"
 [ -f "$tmp" ] && notify-send -i "$tmp" "Screenshot copied" && rm "$tmp"
+
+if ps -p "$picker_pid" > /dev/null; then
+    sleep 2
+    kill -SIGKILL "$picker_pid"
+fi
