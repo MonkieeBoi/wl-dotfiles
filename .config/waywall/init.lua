@@ -15,7 +15,7 @@ end
 local config = {
     input = {
         layout = "",
-        sensitivity = 1.0,
+        sensitivity = 12.800000599064097,
         repeat_rate = 50,
         repeat_delay = 300,
     },
@@ -33,20 +33,20 @@ local config = {
 }
 
 -- Eye magnifier
--- helpers.res_mirror(
---     {
---         src = {x = 130,     y = 7902,   w = 60,     h = 580},
---         dst = {x = 0,       y = 315,    w = 800,    h = 450},
---     },
---     320, 16384
--- )
--- helpers.res_image(
---     home_dir .. "/Pictures/boatoverlay.png",
---     {
---         dst = {x = 0,       y = 315,    w = 800,    h = 450},
---     },
---     320, 16384
--- )
+helpers.res_mirror(
+    {
+        src = {x = 162,     y = 7902,   w = 60,     h = 580},
+        dst = {x = 68,       y = 315,    w = 700,    h = 450},
+    },
+    384, 16384
+)
+helpers.res_image(
+    home_dir .. "/Pictures/boatoverlay.png",
+    {
+        dst = {x = 68,       y = 315,    w = 700,    h = 450},
+    },
+    384, 16384
+)
 
 -- F3 Entity Count
 helpers.res_mirror({
@@ -90,7 +90,7 @@ end
 
 local resolutions = {
     thin = pcal(ingame_only(helpers.toggle_res(350, 900))),
-    eye = pcal(helpers.toggle_res(1920, 16384, 0.1)),
+    eye = pcal(helpers.toggle_res(384, 16384, 0.8634803836976988)),
     wide = pcal(ingame_only(helpers.toggle_res(1920, 320))),
 }
 
