@@ -317,6 +317,8 @@ config.bind('<Alt-Escape>', 'mode-enter passthrough')
 config.bind('<Alt-Escape>', 'mode-leave',  mode='passthrough')
 config.unbind('<Shift-Escape>', 'passthrough')
 config.unbind('<Ctrl-v>', 'normal')
+for i in range(9):
+    config.bind(f'<Alt-{i}>', f'tab-focus {i}', mode='passthrough')
 
 # Fixes some issues with tetr.io
 config.bind('A', 'fake-key A', mode='passthrough')
