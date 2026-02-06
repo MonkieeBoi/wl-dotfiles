@@ -12,7 +12,7 @@ window.OneKF = class OneKF {
     // script will only run on the specified account or as a guest (unless it's set to "". then it will always run)
     // you probably shouldn't use 1KF on your main. it's unclear if it's allowed
     static expectedUsername = "MonkeyBoy1kf";
-    static runWhenGuest = true;
+    static runWhenGuest = false;
  
     // if true, you must press a key twice to actually hard drop it
     // useful for slower practice

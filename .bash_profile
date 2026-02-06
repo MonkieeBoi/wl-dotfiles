@@ -75,6 +75,6 @@ export FZF_DEFAULT_OPTS='--height=20 --reverse --border=rounded --info=inline-ri
 
 source "$HOME/.local/share/nord-tty"
 [[ -f ~/.bashrc ]] && . "$HOME/.bashrc"
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && type Hyprland >/dev/null 2>&1; then
-    exec dbus-run-session Hyprland
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && type start-hyprland >/dev/null 2>&1; then
+    exec dbus-run-session start-hyprland
 fi
