@@ -27,6 +27,7 @@ Item {
                 implicitSize: parent.height
 
                 source: modelData.icon
+                TapHandler {onTapped: modelData.activate()}
             }
         }
     }

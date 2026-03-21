@@ -94,8 +94,29 @@ local resolutions = {
     wide = pcal(ingame_only(helpers.toggle_res(1920, 320))),
 }
 
-local exec_ninb = function()
-    waywall.exec("ninbr")
+local is_ninb_running = function()
+    local handle = io.popen("ps aux | grep '[n]inb'")
+    local result = handle:read("*l")
+    handle:close()
+    return result ~= nil
+end
+
+local ninb = function()
+    if not is_ninb_running() then
+        waywall.exec("ninbr")
+        waywall.show_floating(true)
+    else
+        helpers.toggle_floating()
+    end
+end
+
+local crafting = true
+
+local toggle_layout = function()
+    waywall.set_keymap({
+        layout = crafting and "mc" or "",
+    })
+    crafting = not crafting
 end
 
 config.actions = {
@@ -106,11 +127,13 @@ config.actions = {
     ["Ctrl-H"] = toggle_ingame_override,
 
     -- Ninjabrain Bot
-    ["Ctrl-G"] = helpers.toggle_floating,
-    ["Ctrl-Shift-Alt-H"] = exec_ninb,
+    ["Ctrl-G"] = ninb,
 
     -- Disable narrator
     ["*-Ctrl-B"] = function() end,
+
+    -- Toggle crafting layout
+    ["*-Ctrl-l"] = toggle_layout,
 }
 
 return config
