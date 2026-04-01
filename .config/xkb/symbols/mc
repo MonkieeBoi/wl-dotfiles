@@ -4,19 +4,18 @@ xkb_symbols "basic" {
 
     name[Group1] = "Minecraft";
 
-    key <AD01> { [ u, U ] }; // q > u
-    key <AD02> { [ n, N ] }; // w > n
-    key <AD03> { [ e, E ] }; // e > e
-    key <AD04> { [ y, Y ] }; // r > y
+    key <AD01> { [ u    , Y     ] }; // q > u, Y
+    key <AD02> { [ n    , N     ] }; // w > n
+    key <AD03> { [ e    , U00CA ] }; // e > e, Ê
+    key <AD04> { [ m    ,     T ] }; // r > m, T
 
-    key <AC01> { [ i, I ] }; // a > i, I
-    key <AC02> { [ U01B0, U01AF ] }; // s > ư, Ư
+    key <AC01> { [ i    , I     ] }; // a > i, I
+    key <AC02> { [ U01B0, O     ] }; // s > ư, O
     key <AC03> { [ U00E1, U00C1 ] }; // d > á, Á
-    key <AC04> { [ U00F4, U00D4] }; // f > ô, Ô
+    key <AC04> { [ U00F4, U0168 ] }; // f > ô, Ũ
 
-    key <AB01> { [ U1EAF, U1EAE ] }; // z > ắ, Ắ
-    key <AB02> { [ U00E0, U00C0 ] }; // x > à, À
-
-    key <AB03> { [ c, C ] }; // c >
-    key <AB04> { [ U00EC, U00CC ] }; // v > ì, Ì
+    key <AB01> { [ U1EAF, U1ECE ] }; // z > ắ, Ỏ
+    key <AB02> { [ U00E0, X     ] }; // x > à, X
+    key <AB03> { [ c    , U1EAC ] }; // c > c, Ậ
+    key <AB04> { [ U00EC, U1EBA ] }; // v > ì, Ẻ
 };
