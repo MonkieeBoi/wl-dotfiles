@@ -2,6 +2,7 @@ local waywall = require("waywall")
 local helpers = require("waywall.helpers")
 
 local home_dir = os.getenv("HOME")
+local layout = "eng"
 
 local read_file = function(name)
     local file = io.open(home_dir .. "/.config/waywall/" .. name, "r")
@@ -114,7 +115,7 @@ local crafting = true
 
 local toggle_layout = function()
     waywall.set_keymap({
-        layout = crafting and "mc" or "",
+        layout = crafting and layout or "",
     })
     crafting = not crafting
 end
