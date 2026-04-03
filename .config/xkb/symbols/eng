@@ -1,0 +1,23 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "us(basic)"
+
+    name[Group1] = "Minecraft";
+    key <AE01> { [ 5, exclamation ] }; // 1 > 5
+    key <AE03> { [ 8, asterisk ] }; // 3 > 8
+
+    key <AD01> { [ n, N ] }; // q > n
+    key <AD02> { [ o, O ] }; // w > o
+    key <AD03> { [ t, T ] }; // e > t
+    key <AD04> { [ i, I ] }; // r > i
+
+    key <AC01> { [ b, B ] }; // a > b
+    key <AC02> { [ a, A ] }; // s > a
+    key <AC03> { [ w, W ] }; // d > w
+    key <AC04> { [ e, E ] }; // f > e
+
+    key <AB01> { [ g, G ] }; // z > g
+    key <AB02> { [ c, C ] }; // x > c
+    key <AB03> { [ r, R ] }; // c > r
+    key <AB04> { [ k, K ] }; // v > k
+};
