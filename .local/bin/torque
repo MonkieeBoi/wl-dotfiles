@@ -30,8 +30,8 @@ get_torrents() {
 t_print() {
     IFS=" %" read -r num perc have unit _ up down ratio stat name <<< "$1"
     have=${have%.*}
-
-    ((size=perc!=0?${have/.*}*100/perc:0,c=perc==100?34271340:31000000))
+    perc=${perc%.*}
+    ((size=perc>0?have*100/perc:0,c=perc==100?34271340:31000000))
 
     printf '\e[K\e[2m%s\e[m \e[1m\e[%s%b%s\e[m\n' \
            "$num:" "${c:0:2}m" "\\u${c:2:4}\\${c:6}" "$name"

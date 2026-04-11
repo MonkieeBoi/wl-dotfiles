@@ -2,7 +2,7 @@ local waywall = require("waywall")
 local helpers = require("waywall.helpers")
 
 local home_dir = os.getenv("HOME")
-local layout = "eng"
+local layout = "mc"
 
 local read_file = function(name)
     local file = io.open(home_dir .. "/.config/waywall/" .. name, "r")
@@ -19,6 +19,9 @@ local config = {
         sensitivity = 12.800000599064097,
         repeat_rate = 50,
         repeat_delay = 300,
+        remaps = {
+            ["MB4"] = "Backspace"
+        }
     },
     theme = {
         background = "#2e3440ff",
