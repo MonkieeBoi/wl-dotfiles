@@ -20,7 +20,7 @@ local config = {
         repeat_rate = 50,
         repeat_delay = 300,
         remaps = {
-            ["MB4"] = "Backspace"
+            ["MB4"] = "Backspace",
         }
     },
     theme = {

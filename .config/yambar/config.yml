@@ -73,11 +73,11 @@ bar:
 
   left:
     - label:
-        content: 
-          string: 
+        content:
+          string:
             text: "  "
-            deco: 
-              background: 
+            deco:
+              background:
                 color: *nord3
     - label: *lbs
     - foreign-toplevel:

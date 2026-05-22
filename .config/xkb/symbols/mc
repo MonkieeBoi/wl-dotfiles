@@ -3,10 +3,10 @@ xkb_symbols "basic" {
     include "us(basic)"
 
     name[Group1] = "Minecraft";
-    key <AE03> { [ s, asterisk ] }; // 3 > 8
-    key <AE01> { [ colon, colon ] }; // 1 > 1, :
+    key <AE03> { [ s    , S     ] }; // 3 > s
+    key <AE01> { [ colon, colon ] }; // 1 > :
 
-    key <LALT> { [ v, V ] };
+    key <LALT> { [ v    ,     V ] };
 
     key <AD01> { [ u    , U1EBE ] }; // q > u, Ế
     key <AD02> { [ n    , N     ] }; // w > n

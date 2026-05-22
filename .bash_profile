@@ -19,6 +19,7 @@ export TEXMFVAR="$XDG_CACHE_HOME"/texlive/texmf-var
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export GOPATH="$XDG_DATA_HOME"/go
 export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME"/ripgrep/config
 
 export EDITOR="nvim"
 export TERMINAL="foot"
@@ -55,7 +56,7 @@ export NNN_PLUG=\
 'p:preview-tui;'\
 'z:autojump;'\
 'd:blobdrop;'\
-'q:!qrcp send "$nnn";'\
+'q:!qrcp -p 54362 send "$nnn";'\
 'c:!wl-copy -t text/uri-list file://$(pwd)/$nnn*'
 export NNN_BMS="\
 d:$HOME/Documents;\
