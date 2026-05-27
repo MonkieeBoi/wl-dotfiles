@@ -6,7 +6,7 @@ vim.pack.add({
     "https://github.com/kdheepak/lazygit.nvim",
     "https://github.com/ejrichards/baredot.nvim",
     "https://github.com/shaunsingh/nord.nvim",
-    "https://github.com/kylechui/nvim-surround"
+    "https://github.com/kylechui/nvim-surround",
 })
 
 vim.g.nord_italic = false

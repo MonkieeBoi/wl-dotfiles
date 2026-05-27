@@ -12,7 +12,7 @@ opt.expandtab = true
 
 -- opt.wrap = false
 opt.smartindent = true
-opt.inccommand = "split"
+opt.inccommand = "nosplit"
 
 opt.splitbelow = true
 opt.splitright = true
@@ -27,18 +27,16 @@ opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 opt.undofile = true
 
 opt.completeopt = "menuone,noselect,fuzzy,nosort"
-opt.shortmess:append("c")
 opt.isfname:append("@-@")
 
 opt.signcolumn = "yes"
-
-o.cursorline = true
-o.cursorlineopt = "number"
-
 opt.fillchars = { eob = " " }
 opt.listchars:append({ trail = "•" })
 
-opt.shortmess:append "sI"
+opt.shortmess:append("cI")
+
+o.cursorline = true
+o.cursorlineopt = "number"
 
 o.mouse = ""
 o.dictionary = vim.env.WORDLIST
@@ -48,4 +46,3 @@ o.dictionary = vim.env.WORDLIST
 -- local sep = is_windows and "\\" or "/"
 -- local delim = is_windows and ";" or ":"
 -- vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. delim .. vim.env.PATH
-
