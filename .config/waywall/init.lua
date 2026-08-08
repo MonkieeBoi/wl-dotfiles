@@ -16,7 +16,7 @@ end
 local config = {
     input = {
         layout = "",
-        sensitivity = 12.800000599064097,
+        sensitivity = 11.90,
         repeat_rate = 50,
         repeat_delay = 300,
         remaps = {

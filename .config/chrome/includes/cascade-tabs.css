@@ -150,6 +150,8 @@
 #TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover { color: var(--toolbar-bgcolor) !important; }
 
 /* selected tab colour fix*/
-.tabbrowser-tab[selected] .tab-content {
+.tabbrowser-tab[selected] .tab-background {
   background-color: var(--lwt-selected-tab-background-color) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }

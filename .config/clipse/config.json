@@ -3,6 +3,14 @@
     "maxHistory": 100,
     "themeFile": "nord.json",
     "tempDir": "tmp_files",
+    "enableMouse": false,
+    "keyBindings": {
+        "up": "k",
+        "down": "j",
+        "nextPage": "l",
+        "prevPage": "h",
+        "quit": "q"
+    },
     "imageDisplay": {
         "type": "sixel",
         "scaleX": 15,

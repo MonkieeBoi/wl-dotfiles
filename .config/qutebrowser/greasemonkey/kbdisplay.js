@@ -18,7 +18,7 @@
 
         if (!isGame && !isReplayer) return;
 
-        const pos = {x: -450, y: 100};
+        const pos = {x: -480, y: 70};
 
         const keyConfig = [
             [
@@ -49,9 +49,9 @@
         var kbhold = document.createElement("div");
         kbhold.id = "keyboardHolder";
         kbhold.style.position = "absolute"
-        kbhold.style.left = (myCanvas.getBoundingClientRect().left + pos.x) + "px";
-        kbhold.style.top = (myCanvas.getBoundingClientRect().top + pos.y) + "px";
-        document.body.appendChild(kbhold);
+        kbhold.style.left = pos.x + "px";
+        kbhold.style.top = pos.y + "px";
+        document.querySelector("#stage").appendChild(kbhold);
 
         let keyTable = `
             <style>

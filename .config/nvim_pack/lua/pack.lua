@@ -33,20 +33,22 @@ require("mini.indentscope").setup({
     }
 })
 
-require('mini.statusline').section_lsp = function()
+local MiniStatus = require("mini.statusline")
+
+MiniStatus.section_lsp = function()
     local blacklist = { ["mini.snippets"] = true }
     local all_clients = vim.lsp.get_clients({ bufnr = 0 })
     local clients = vim.tbl_filter(function(c) return not blacklist[c.name] end, all_clients)
     return #clients > 0 and table.concat(vim.tbl_map(function(c) return c.name end, clients), ", ") or ""
 end
 
-require("mini.statusline").setup()
+MiniStatus.setup()
 
 local MiniDiff = require("mini.diff")
 MiniDiff.setup({
     view = {
-        style = 'sign',
-        signs = { add = '│', change = '│', delete = '󰍵' }
+        style = "sign",
+        signs = { add = "│", change = "│", delete = "󰍵" }
     }
 })
 
@@ -70,11 +72,15 @@ vim.keymap.set("n", "<leader>ff", function() MiniPick.builtin.files() end, { des
 vim.keymap.set("n", "<leader>fw", function() MiniPick.builtin.grep({ pattern = "" }) end,
     { desc = "Grep word/Search word" })
 vim.keymap.set("n", "<leader>fh", function() MiniPick.builtin.help() end, { desc = "Mini Help" })
-vim.keymap.set("n", "<leader>fk", function() MiniExtra.pickers.keymaps() end, { desc = 'Search keymaps' })
+vim.keymap.set("n", "<leader>fk", function() MiniExtra.pickers.keymaps() end, { desc = "Search keymaps" })
 
 require("mini.completion").setup({
     lsp_completion = {
         auto_setup = true,
+    },
+    mappings = {
+        scroll_down = "<C-d>",
+        scroll_up = "<C-u>",
     }
 })
 

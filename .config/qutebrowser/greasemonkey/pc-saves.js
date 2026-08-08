@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Wirelyre Select Saves (with next pc save)
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  save selection
 // @author       13pake, TamTheBoss111
 // @match        https://wirelyre.github.io/tetra-tools/pc-solver.html*
@@ -24,6 +24,8 @@
     "rgb(247, 211, 62)", // yellow
   ];
 
+  var MORE_BUTTON_THRESHOLD = 300;
+
   GM_addStyle("#solutions > a { border-radius: 4px; }");
   GM_addStyle("#solutions { row-gap: 20px; }");
   GM_addStyle("#label-save { margin-top: 10px; cursor: default; }");
@@ -41,9 +43,37 @@
   GM_addStyle(`#select-S { background-color: ${colors[4]}; }`);
   GM_addStyle(`#select-Z { background-color: ${colors[5]}; }`);
   GM_addStyle(`#select-O { background-color: ${colors[6]}; }`);
+  GM_addStyle(`#label-hide-solves { cursor: pointer; user-select: none; margin-top: 10px; }`);
+  GM_addStyle(`#hide-solves-checkbox { cursor: pointer; }`);
+  GM_addStyle(`#save-summary {
+    display: none;
+    flex-direction: row;
+    gap: 6px;
+    margin-top: 10px;
+  }`);
+  GM_addStyle(`.save-summary-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    width: fit-content;
+  }`);
 
   window.addEventListener("load", function () {
     document.querySelector('input[name="physics"][value="TETRIO"]').checked = true;
+
+    var solutionsNode = document.getElementById("solutions");
+
+    var summaryContainer = document.createElement("div");
+    summaryContainer.id = "save-summary";
+    solutionsNode.parentNode.insertBefore(
+      summaryContainer,
+      solutionsNode.nextSibling,
+    );
+
     // Add save selection
     var label = document.createElement("label");
     label.id = "label-save";
@@ -64,6 +94,22 @@
       label.appendChild(button);
     }
 
+    var summaryLabel = document.createElement("label");
+    summaryLabel.id = "label-hide-solves";
+    var hideSolvesCheckbox = document.createElement("input");
+    hideSolvesCheckbox.type = "checkbox";
+    hideSolvesCheckbox.id = "hide-solves-checkbox";
+    hideSolvesCheckbox.onchange = function () {
+      hideSolves = this.checked;
+      refreshSavesView();
+    };
+    summaryLabel.appendChild(hideSolvesCheckbox);
+    summaryLabel.appendChild(document.createTextNode(" Hide solves"));
+    label.parentElement.appendChild(summaryLabel);
+
+    // Current filter state
+    var hideSolves = false;
+
     function selectSave(value) {
       if (value !== "All") {
         document.querySelectorAll("#solutions > a").forEach(function (a) {
@@ -81,8 +127,62 @@
       }
     }
 
+    function updateSummary() {
+      var counts = {};
+      pieces.forEach(function (p) {
+        counts[p] = 0;
+      });
+
+      document.querySelectorAll("#solutions > a").forEach(function (a) {
+        for (var i = 0; i < pieces.length; i++) {
+          if (a.classList.contains(pieces[i])) {
+            counts[pieces[i]]++;
+            break;
+          }
+        }
+      });
+
+      summaryContainer.innerHTML = "";
+      var any = false;
+      pieces.forEach(function (p, i) {
+        if (counts[p] > 0) {
+          any = true;
+          var row = document.createElement("div");
+          row.className = "save-summary-row";
+          row.style.backgroundColor = colors[i];
+          row.textContent = p + ": " + counts[p];
+          summaryContainer.appendChild(row);
+        }
+      });
+      return any;
+    }
+
+    function refreshSavesView() {
+      if (!hideSolves) return;
+      var any = updateSummary();
+      if (any) {
+        solutionsNode.style.display = "none";
+        summaryContainer.style.display = "flex";
+      } else {
+        solutionsNode.style.display = "";
+        summaryContainer.style.display = "none";
+      }
+    }
+
+    function handleMoreButton(button) {
+      var match = button.textContent.match(/And (\d+) more/);
+      if (!match) return;
+      var remaining = parseInt(match[1], 10);
+      var shown = document.querySelectorAll("#solutions > a").length;
+      var total = shown + remaining;
+      if (total <= MORE_BUTTON_THRESHOLD) {
+        button.style.display = "none";
+        button.click();
+      }
+    }
+
     // Add listener for solutions and also the whole body for the slider
-    var targetNode = document.getElementById("solutions");
+    var targetNode = solutionsNode;
     var config = {
       // attributes: true,
       childList: true,
@@ -104,33 +204,43 @@
 
       // We're just gonna assume the queue length is correct !!!
 
-      //console.log('queue pieces', queuePieces);
+      var solutionsChanged = false;
 
       for (var mutation of mutationsList) {
         if (mutation.type == "childList") {
-          // console.log('A child node has been added or removed.', mutation.addedNodes[0]);
-          try {
-            var aNode = mutation.addedNodes[0];
-            var dataField = aNode.firstChild.getAttribute("data-field");
-            var solutionPieces = pieces.map(function (piece) {
-              return (dataField.split(piece).length - 1) / 4;
-            });
-            // console.log('pieces used', solutionPieces);
+          for (var aNode of mutation.addedNodes) {
+            if (aNode.nodeType !== 1) continue;
 
-            // get difference between arrays
-            var differentIndex = -1;
-            for (let i = 0; i < queuePieces.length; i++) {
-              if (queuePieces[i] !== solutionPieces[i]) {
-                differentIndex = i;
-              }
+            if (aNode.tagName === "BUTTON") {
+              handleMoreButton(aNode);
+              continue;
             }
-            // console.log('saved piece', pieces[differentIndex]);
-            aNode.style.borderTop = "10px solid " + colors[differentIndex];
-            aNode.classList.add(pieces[differentIndex]);
-          } catch (e) {
-            // do nothing lol
+
+            try {
+              var dataField = aNode.firstChild.getAttribute("data-field");
+              var solutionPieces = pieces.map(function (piece) {
+                return (dataField.split(piece).length - 1) / 4;
+              });
+
+              // get difference between arrays
+              var differentIndex = -1;
+              for (let i = 0; i < queuePieces.length; i++) {
+                if (queuePieces[i] !== solutionPieces[i]) {
+                  differentIndex = i;
+                }
+              }
+              aNode.style.borderTop = "10px solid " + colors[differentIndex];
+              aNode.classList.add(pieces[differentIndex]);
+              solutionsChanged = true;
+            } catch (e) {
+              // do nothing lol
+            }
           }
         }
+      }
+
+      if (solutionsChanged) {
+        refreshSavesView();
       }
     });
 
